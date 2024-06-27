@@ -1,0 +1,518 @@
+eagle_s20
+13 1999 629 499 238 8426 6 0
+-3.094 0.077 fpga_ed4g eagle_s20 EG4D20EG176 Detail NA 9 3
+clock: SYSCLK
+13 1856 88 2
+Setup check
+23 3
+Endpoint: reg0_syn_91
+23 35.928000 29 3
+Timing path: add0_syn_176.clk->reg0_syn_91
+add0_syn_176.clk
+reg0_syn_91
+25 35.928000 43.437000 7.509000 2 8
+rst_cnt[5] add0_syn_177.a[1]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[28] reg0_syn_91.mi[0]
+
+Timing path: reg0_syn_124.clk->reg0_syn_91
+reg0_syn_124.clk
+reg0_syn_91
+77 36.009000 43.437000 7.428000 2 8
+rst_cnt[3] add0_syn_177.a[0]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[28] reg0_syn_91.mi[0]
+
+Timing path: reg0_syn_129.clk->reg0_syn_91
+reg0_syn_129.clk
+reg0_syn_91
+129 36.069000 43.437000 7.368000 2 9
+rst_cnt[1] add0_syn_176.a[1]
+add0_syn_149 add0_syn_177.fci
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[28] reg0_syn_91.mi[0]
+
+
+Endpoint: reg0_syn_94
+183 35.970000 29 3
+Timing path: add0_syn_176.clk->reg0_syn_94
+add0_syn_176.clk
+reg0_syn_94
+185 35.970000 43.437000 7.467000 2 8
+rst_cnt[5] add0_syn_177.a[1]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[27] reg0_syn_94.mi[0]
+
+Timing path: reg0_syn_124.clk->reg0_syn_94
+reg0_syn_124.clk
+reg0_syn_94
+237 36.051000 43.437000 7.386000 2 8
+rst_cnt[3] add0_syn_177.a[0]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[27] reg0_syn_94.mi[0]
+
+Timing path: reg0_syn_129.clk->reg0_syn_94
+reg0_syn_129.clk
+reg0_syn_94
+289 36.111000 43.437000 7.326000 2 9
+rst_cnt[1] add0_syn_176.a[1]
+add0_syn_149 add0_syn_177.fci
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[27] reg0_syn_94.mi[0]
+
+
+Endpoint: reg0_syn_97
+343 35.994000 27 3
+Timing path: add0_syn_176.clk->reg0_syn_97
+add0_syn_176.clk
+reg0_syn_97
+345 35.994000 43.437000 7.443000 2 7
+rst_cnt[5] add0_syn_177.a[1]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+rst_cnt_b1[26] reg0_syn_97.mi[0]
+
+Timing path: reg0_syn_124.clk->reg0_syn_97
+reg0_syn_124.clk
+reg0_syn_97
+395 36.075000 43.437000 7.362000 2 7
+rst_cnt[3] add0_syn_177.a[0]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+rst_cnt_b1[26] reg0_syn_97.mi[0]
+
+Timing path: reg0_syn_129.clk->reg0_syn_97
+reg0_syn_129.clk
+reg0_syn_97
+445 36.135000 43.437000 7.302000 2 8
+rst_cnt[1] add0_syn_176.a[1]
+add0_syn_149 add0_syn_177.fci
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+rst_cnt_b1[26] reg0_syn_97.mi[0]
+
+
+
+Hold check
+497 3
+Endpoint: reg0_syn_115
+499 0.077000 1 1
+Timing path: reg0_syn_91.clk->reg0_syn_115
+reg0_syn_91.clk
+reg0_syn_115
+501 0.077000 4.026000 4.103000 0 1
+rst_cnt[28] reg0_syn_115.ce
+
+
+Endpoint: reg0_syn_112
+539 0.077000 1 1
+Timing path: reg0_syn_91.clk->reg0_syn_112
+reg0_syn_91.clk
+reg0_syn_112
+541 0.077000 4.026000 4.103000 0 1
+rst_cnt[28] reg0_syn_112.ce
+
+
+Endpoint: reg0_syn_103
+579 0.077000 1 1
+Timing path: reg0_syn_91.clk->reg0_syn_103
+reg0_syn_91.clk
+reg0_syn_103
+581 0.077000 4.026000 4.103000 0 1
+rst_cnt[28] reg0_syn_103.ce
+
+
+
+
+clock: u_PLL_150M/pll_inst.clkc[0]
+619 4714 62 2
+Setup check
+629 3
+Endpoint: sdo_syn_4
+629 -3.094000 1032 3
+Timing path: u_LED_send/reg3_syn_59.clk->sdo_syn_4
+u_LED_send/reg3_syn_59.clk
+sdo_syn_4
+631 -3.094000 8.629000 11.723000 7 8
+u_LED_send/send_cnt[1] u_LED_send/sub1_syn_75.b[0]
+u_LED_send/sdo_b[1] u_LED_send/reg2_syn_641.d[1]
+u_LED_send/sdo_n_syn_130 u_LED_send/reg2_syn_721.c[0]
+u_LED_send/sdo_n_syn_132 u_LED_send/reg2_syn_626.a[0]
+u_LED_send/mux0_syn_417 u_LED_send/reg2_syn_721.a[1]
+u_LED_send/sdo_n_syn_160 u_LED_send/reg2_syn_644.a[0]
+u_LED_send/sdo_n_syn_164 u_LED_send/sdo_reg_syn_5.b[1]
+u_LED_send/sdo_n sdo_syn_4.do[0]
+
+Timing path: u_LED_send/reg3_syn_59.clk->sdo_syn_4
+u_LED_send/reg3_syn_59.clk
+sdo_syn_4
+683 -3.094000 8.629000 11.723000 7 8
+u_LED_send/send_cnt[1] u_LED_send/sub1_syn_75.b[0]
+u_LED_send/sdo_b[1] u_LED_send/reg2_syn_641.d[1]
+u_LED_send/sdo_n_syn_130 u_LED_send/reg2_syn_721.c[0]
+u_LED_send/sdo_n_syn_132 u_LED_send/reg2_syn_626.a[0]
+u_LED_send/mux0_syn_417 u_LED_send/reg2_syn_721.a[1]
+u_LED_send/sdo_n_syn_160 u_LED_send/reg2_syn_644.a[0]
+u_LED_send/sdo_n_syn_164 u_LED_send/sdo_reg_syn_5.b[0]
+u_LED_send/sdo_n sdo_syn_4.do[0]
+
+Timing path: u_LED_send/reg3_syn_59.clk->sdo_syn_4
+u_LED_send/reg3_syn_59.clk
+sdo_syn_4
+735 -3.059000 8.629000 11.688000 8 9
+u_LED_send/send_cnt[0] u_LED_send/sub1_syn_72.b[1]
+u_LED_send/sub1_syn_44 u_LED_send/sub1_syn_75.fci
+u_LED_send/sdo_b[1] u_LED_send/reg2_syn_641.d[1]
+u_LED_send/sdo_n_syn_130 u_LED_send/reg2_syn_721.c[0]
+u_LED_send/sdo_n_syn_132 u_LED_send/reg2_syn_626.a[0]
+u_LED_send/mux0_syn_417 u_LED_send/reg2_syn_721.a[1]
+u_LED_send/sdo_n_syn_160 u_LED_send/reg2_syn_644.a[0]
+u_LED_send/sdo_n_syn_164 u_LED_send/sdo_reg_syn_5.b[1]
+u_LED_send/sdo_n sdo_syn_4.do[0]
+
+
+Endpoint: u_LED_send/sdo_reg_syn_5
+789 -1.078000 1032 3
+Timing path: u_LED_send/reg3_syn_59.clk->u_LED_send/sdo_reg_syn_5
+u_LED_send/reg3_syn_59.clk
+u_LED_send/sdo_reg_syn_5
+791 -1.078000 8.762000 9.840000 7 7
+u_LED_send/send_cnt[1] u_LED_send/sub1_syn_75.b[0]
+u_LED_send/sdo_b[1] u_LED_send/reg2_syn_641.d[1]
+u_LED_send/sdo_n_syn_130 u_LED_send/reg2_syn_721.c[0]
+u_LED_send/sdo_n_syn_132 u_LED_send/reg2_syn_626.a[0]
+u_LED_send/mux0_syn_417 u_LED_send/reg2_syn_721.a[1]
+u_LED_send/sdo_n_syn_160 u_LED_send/reg2_syn_644.a[0]
+u_LED_send/sdo_n_syn_164 u_LED_send/sdo_reg_syn_5.b[1]
+
+Timing path: u_LED_send/reg3_syn_59.clk->u_LED_send/sdo_reg_syn_5
+u_LED_send/reg3_syn_59.clk
+u_LED_send/sdo_reg_syn_5
+841 -1.078000 8.762000 9.840000 7 7
+u_LED_send/send_cnt[1] u_LED_send/sub1_syn_75.b[0]
+u_LED_send/sdo_b[1] u_LED_send/reg2_syn_641.d[1]
+u_LED_send/sdo_n_syn_130 u_LED_send/reg2_syn_721.c[0]
+u_LED_send/sdo_n_syn_132 u_LED_send/reg2_syn_626.a[0]
+u_LED_send/mux0_syn_417 u_LED_send/reg2_syn_721.a[1]
+u_LED_send/sdo_n_syn_160 u_LED_send/reg2_syn_644.a[0]
+u_LED_send/sdo_n_syn_164 u_LED_send/sdo_reg_syn_5.b[0]
+
+Timing path: u_LED_send/reg3_syn_59.clk->u_LED_send/sdo_reg_syn_5
+u_LED_send/reg3_syn_59.clk
+u_LED_send/sdo_reg_syn_5
+891 -1.043000 8.762000 9.805000 8 8
+u_LED_send/send_cnt[0] u_LED_send/sub1_syn_72.b[1]
+u_LED_send/sub1_syn_44 u_LED_send/sub1_syn_75.fci
+u_LED_send/sdo_b[1] u_LED_send/reg2_syn_641.d[1]
+u_LED_send/sdo_n_syn_130 u_LED_send/reg2_syn_721.c[0]
+u_LED_send/sdo_n_syn_132 u_LED_send/reg2_syn_626.a[0]
+u_LED_send/mux0_syn_417 u_LED_send/reg2_syn_721.a[1]
+u_LED_send/sdo_n_syn_160 u_LED_send/reg2_syn_644.a[0]
+u_LED_send/sdo_n_syn_164 u_LED_send/sdo_reg_syn_5.b[1]
+
+
+Endpoint: u_LED_send/reg4_syn_31
+943 2.780000 12 3
+Timing path: u_LED_send/n_state[0]_syn_19.clk->u_LED_send/reg4_syn_31
+u_LED_send/n_state[0]_syn_19.clk
+u_LED_send/reg4_syn_31
+945 2.780000 8.762000 5.982000 4 4
+u_LED_send/c_state[3] u_LED_send/reg0_syn_24.d[1]
+u_LED_send/sdo_n_syn_2 u_LED_send/n_state[0]_syn_19.d[0]
+u_LED_send/wait_cnt_b1_n u_LED_send/wait_cnt_b[3]_syn_10.a[0]
+u_LED_send/wait_cnt_b[3]_syn_3 u_LED_send/reg4_syn_31.a[1]
+
+Timing path: u_LED_send/reg0_syn_24.clk->u_LED_send/reg4_syn_31
+u_LED_send/reg0_syn_24.clk
+u_LED_send/reg4_syn_31
+989 2.860000 8.762000 5.902000 4 4
+u_LED_send/c_state[2] u_LED_send/reg0_syn_24.c[1]
+u_LED_send/sdo_n_syn_2 u_LED_send/n_state[0]_syn_19.d[0]
+u_LED_send/wait_cnt_b1_n u_LED_send/wait_cnt_b[3]_syn_10.a[0]
+u_LED_send/wait_cnt_b[3]_syn_3 u_LED_send/reg4_syn_31.a[1]
+
+Timing path: u_LED_send/cko_p_reg_syn_5.clk->u_LED_send/reg4_syn_31
+u_LED_send/cko_p_reg_syn_5.clk
+u_LED_send/reg4_syn_31
+1033 3.231000 8.762000 5.531000 3 3
+u_LED_send/cko_p u_LED_send/n_state[0]_syn_19.c[0]
+u_LED_send/wait_cnt_b1_n u_LED_send/wait_cnt_b[3]_syn_10.a[0]
+u_LED_send/wait_cnt_b[3]_syn_3 u_LED_send/reg4_syn_31.a[1]
+
+
+
+Hold check
+1075 3
+Endpoint: u_LED_send/reg4_syn_31
+1077 0.497000 12 3
+Timing path: u_LED_send/reg4_syn_34.clk->u_LED_send/reg4_syn_31
+u_LED_send/reg4_syn_34.clk
+u_LED_send/reg4_syn_31
+1079 0.497000 2.044000 2.541000 1 1
+u_LED_send/wait_cnt[3] u_LED_send/reg4_syn_31.d[1]
+
+Timing path: u_LED_send/reg4_syn_31.clk->u_LED_send/reg4_syn_31
+u_LED_send/reg4_syn_31.clk
+u_LED_send/reg4_syn_31
+1117 0.700000 2.044000 2.744000 1 1
+u_LED_send/wait_cnt[4] u_LED_send/reg4_syn_31.c[1]
+
+Timing path: u_LED_send/reg4_syn_31.clk->u_LED_send/reg4_syn_31
+u_LED_send/reg4_syn_31.clk
+u_LED_send/reg4_syn_31
+1155 1.030000 2.044000 3.074000 2 2
+u_LED_send/wait_cnt[1] u_LED_send/wait_cnt_b[3]_syn_10.c[0]
+u_LED_send/wait_cnt_b[3]_syn_3 u_LED_send/reg4_syn_31.a[1]
+
+
+Endpoint: u_LED_send/reg4_syn_28
+1195 0.524000 19 3
+Timing path: u_LED_send/reg4_syn_31.clk->u_LED_send/reg4_syn_28
+u_LED_send/reg4_syn_31.clk
+u_LED_send/reg4_syn_28
+1197 0.524000 2.014000 2.538000 1 1
+u_LED_send/wait_cnt[1] u_LED_send/reg4_syn_28.d[0]
+
+Timing path: u_LED_send/reg4_syn_31.clk->u_LED_send/reg4_syn_28
+u_LED_send/reg4_syn_31.clk
+u_LED_send/reg4_syn_28
+1235 0.524000 2.014000 2.538000 1 1
+u_LED_send/wait_cnt[1] u_LED_send/reg4_syn_28.d[1]
+
+Timing path: u_LED_send/reg4_syn_34.clk->u_LED_send/reg4_syn_28
+u_LED_send/reg4_syn_34.clk
+u_LED_send/reg4_syn_28
+1273 0.531000 2.014000 2.545000 1 1
+u_LED_send/wait_cnt[0] u_LED_send/reg4_syn_28.mi[0]
+
+
+Endpoint: u_LED_send/reg1_syn_27
+1311 0.531000 2 2
+Timing path: u_LED_send/reg1_syn_27.clk->u_LED_send/reg1_syn_27
+u_LED_send/reg1_syn_27.clk
+u_LED_send/reg1_syn_27
+1313 0.531000 1.999000 2.530000 1 1
+u_LED_send/cnt[2] u_LED_send/reg1_syn_27.a[1]
+
+Timing path: u_LED_send/reg1_syn_40.clk->u_LED_send/reg1_syn_27
+u_LED_send/reg1_syn_40.clk
+u_LED_send/reg1_syn_27
+1351 0.996000 1.999000 2.995000 2 2
+u_LED_send/cnt[0] u_LED_send/add1_syn_51.a[1]
+u_LED_send/add1_syn_32 u_LED_send/reg1_syn_27.fci
+
+
+
+
+clock: clk_150m
+1391 1856 88 2
+Setup check
+1401 3
+Endpoint: reg0_syn_91
+1401 35.928000 29 3
+Timing path: add0_syn_176.clk->reg0_syn_91
+add0_syn_176.clk
+reg0_syn_91
+1403 35.928000 43.437000 7.509000 2 8
+rst_cnt[5] add0_syn_177.a[1]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[28] reg0_syn_91.mi[0]
+
+Timing path: reg0_syn_124.clk->reg0_syn_91
+reg0_syn_124.clk
+reg0_syn_91
+1455 36.009000 43.437000 7.428000 2 8
+rst_cnt[3] add0_syn_177.a[0]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[28] reg0_syn_91.mi[0]
+
+Timing path: reg0_syn_129.clk->reg0_syn_91
+reg0_syn_129.clk
+reg0_syn_91
+1507 36.069000 43.437000 7.368000 2 9
+rst_cnt[1] add0_syn_176.a[1]
+add0_syn_149 add0_syn_177.fci
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[28] reg0_syn_91.mi[0]
+
+
+Endpoint: reg0_syn_94
+1561 35.970000 29 3
+Timing path: add0_syn_176.clk->reg0_syn_94
+add0_syn_176.clk
+reg0_syn_94
+1563 35.970000 43.437000 7.467000 2 8
+rst_cnt[5] add0_syn_177.a[1]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[27] reg0_syn_94.mi[0]
+
+Timing path: reg0_syn_124.clk->reg0_syn_94
+reg0_syn_124.clk
+reg0_syn_94
+1615 36.051000 43.437000 7.386000 2 8
+rst_cnt[3] add0_syn_177.a[0]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[27] reg0_syn_94.mi[0]
+
+Timing path: reg0_syn_129.clk->reg0_syn_94
+reg0_syn_129.clk
+reg0_syn_94
+1667 36.111000 43.437000 7.326000 2 9
+rst_cnt[1] add0_syn_176.a[1]
+add0_syn_149 add0_syn_177.fci
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+add0_syn_173 add0_syn_183.fci
+rst_cnt_b1[27] reg0_syn_94.mi[0]
+
+
+Endpoint: reg0_syn_97
+1721 35.994000 27 3
+Timing path: add0_syn_176.clk->reg0_syn_97
+add0_syn_176.clk
+reg0_syn_97
+1723 35.994000 43.437000 7.443000 2 7
+rst_cnt[5] add0_syn_177.a[1]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+rst_cnt_b1[26] reg0_syn_97.mi[0]
+
+Timing path: reg0_syn_124.clk->reg0_syn_97
+reg0_syn_124.clk
+reg0_syn_97
+1773 36.075000 43.437000 7.362000 2 7
+rst_cnt[3] add0_syn_177.a[0]
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+rst_cnt_b1[26] reg0_syn_97.mi[0]
+
+Timing path: reg0_syn_129.clk->reg0_syn_97
+reg0_syn_129.clk
+reg0_syn_97
+1823 36.135000 43.437000 7.302000 2 8
+rst_cnt[1] add0_syn_176.a[1]
+add0_syn_149 add0_syn_177.fci
+add0_syn_153 add0_syn_178.fci
+add0_syn_157 add0_syn_179.fci
+add0_syn_161 add0_syn_180.fci
+add0_syn_165 add0_syn_181.fci
+add0_syn_169 add0_syn_182.fci
+rst_cnt_b1[26] reg0_syn_97.mi[0]
+
+
+
+Hold check
+1875 3
+Endpoint: reg0_syn_115
+1877 0.077000 1 1
+Timing path: reg0_syn_91.clk->reg0_syn_115
+reg0_syn_91.clk
+reg0_syn_115
+1879 0.077000 4.026000 4.103000 0 1
+rst_cnt[28] reg0_syn_115.ce
+
+
+Endpoint: reg0_syn_112
+1917 0.077000 1 1
+Timing path: reg0_syn_91.clk->reg0_syn_112
+reg0_syn_91.clk
+reg0_syn_112
+1919 0.077000 4.026000 4.103000 0 1
+rst_cnt[28] reg0_syn_112.ce
+
+
+Endpoint: reg0_syn_103
+1957 0.077000 1 1
+Timing path: reg0_syn_91.clk->reg0_syn_103
+reg0_syn_91.clk
+reg0_syn_103
+1959 0.077000 4.026000 4.103000 0 1
+rst_cnt[28] reg0_syn_103.ce
+
+
+
+
+
+Timing group statistics: 
+	Clock constraints: 
+	  Clock Name                                  Min Period     Max Freq           Skew      Fanout            TNS
+	  u_PLL_150M/pll_inst.clkc[0] (150.0MHz)         9.760ns     102.459MHz        0.326ns        90       -4.172ns
+	  SYSCLK (25.0MHz)                               4.072ns     245.580MHz        0.066ns        15        0.000ns
+	  clk_150m (4.2MHz)                            204.072ns       4.900MHz        0.066ns        15        0.000ns
+	Minimum input arrival time before clock: no constraint path
+	Maximum output required time after clock: no constraint path
+	Maximum combinational path delay: no constraint path
+

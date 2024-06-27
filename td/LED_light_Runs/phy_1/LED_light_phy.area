@@ -1,0 +1,62 @@
+standard
+***Report Model: fpga_ed4g Device: EG4D20EG176***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+Utilization Statistics
+#lut                      180   out of  19600    0.92%
+#reg                      188   out of  19600    0.96%
+#le                       251
+  #lut only                63   out of    251   25.10%
+  #reg only                71   out of    251   28.29%
+  #lut&reg                117   out of    251   46.61%
+#dsp                        0   out of     29    0.00%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#pad                        3   out of    130    2.31%
+  #ireg                     0
+  #oreg                     2
+  #treg                     0
+#pll                        1   out of      4   25.00%
+#gclk                       1   out of     16    6.25%
+
+Clock Resource Statistics
+Index     ClockNet               Type               DriverType         Driver                       Fanout
+#1        u_PLL_150M/clk0_buf    GCLK               pll                u_PLL_150M/pll_inst.clkc0    90
+#2        sysclk_i_dup_1         GCLK               io                 sysclk_i_syn_2.di            16
+
+
+Detailed IO Report
+
+    Name      Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+  sysclk_i      INPUT        P63        LVCMOS25          N/A          PULLUP      NONE    
+    cko        OUTPUT        P83        LVCMOS25           8            NONE       OREG    
+    sdo        OUTPUT        P82        LVCMOS25           8            NONE       OREG    
+
+Report Hierarchy Area:
++-----------------------------------------------------------------------------+
+|Instance     |Module    |le     |lut     |ripple  |seq     |bram    |dsp     |
++-----------------------------------------------------------------------------+
+|top          |fpga_ed4g |251    |157     |23      |190     |0       |0       |
+|  u_LED_send |LED_send  |207    |148     |15      |159     |0       |0       |
+|  u_PLL_150M |PLL_150M  |1      |1       |0       |0       |0       |0       |
++-----------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout    Nets  
+    #1         1       312   
+    #2         2        18   
+    #3         3        15   
+    #4         4        5    
+    #5        5-10      9    
+    #6       11-50      6    
+    #7       51-100     2    
+  Average     1.97           

@@ -1,0 +1,37 @@
+standard
+***Report Model: fpga_ed4g Device: EG4D20EG176***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+Gate Statistics
+#Basic gates              207
+  #and                      6
+  #nand                     0
+  #or                       3
+  #nor                      0
+  #xor                      0
+  #xnor                     0
+  #buf                      0
+  #not                      6
+  #bufif1                   0
+  #MX21                     4
+  #FADD                     0
+  #DFF                    188
+  #LATCH                    0
+#MACRO_ADD                  6
+#MACRO_EQ                  10
+#MACRO_MUX                 41
+#MACRO_OTHERS               1
+
+Report Hierarchy Area:
++------------------------------------------------+
+|Instance     |Module    |gates  |seq    |macros |
++------------------------------------------------+
+|top          |fpga_ed4g |19     |188    |17     |
+|  u_LED_send |LED_send  |18     |159    |15     |
+|  u_PLL_150M |PLL_150M  |0      |0      |1      |
++------------------------------------------------+

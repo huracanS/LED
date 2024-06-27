@@ -1,0 +1,40 @@
+standard
+***Report Model: fpga_ed4g Device: EG4D20EG176***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+LUT Statistics
+#Total_luts               189
+  #lut4                   110
+  #lut5                    21
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b              58
+
+Utilization Statistics
+#lut                      189   out of  19600    0.96%
+#reg                      188   out of  19600    0.96%
+#le                         0
+#dsp                        0   out of     29    0.00%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#pad                        3   out of    130    2.31%
+  #ireg                     0
+  #oreg                     2
+  #treg                     0
+#pll                        1   out of      4   25.00%
+
+Report Hierarchy Area:
++---------------------------------------------------------------------+
+|Instance     |Module    |lut     |ripple  |seq     |bram    |dsp     |
++---------------------------------------------------------------------+
+|top          |fpga_ed4g |131     |58      |190     |0       |0       |
+|  u_LED_send |LED_send  |130     |28      |159     |0       |0       |
+|  u_PLL_150M |PLL_150M  |1       |0       |0       |0       |0       |
++---------------------------------------------------------------------+

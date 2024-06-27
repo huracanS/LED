@@ -1,0 +1,79 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/basic_test
+vLED_send
+Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 jSh5HDNj]EXBTBZ`IJl=e2
+IFW<0LPkJHFQDhMH6E9CSJ1
+!s105 LED_send_sv_unit
+S1
+R0
+w1719479222
+8../../src/rtl/led_phy/LED_send.sv
+F../../src/rtl/led_phy/LED_send.sv
+L0 1
+Z3 OL;L;10.4;61
+Z4 !s108 1719479241.795000
+Z5 !s107 ../../src/rtl/led_phy/test_pattern.sv|../../src/rtl/led_phy/LED_send.sv|
+Z6 !s90 -f|./dut.f|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@l@e@d_send
+vtb_LED_send
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 RDdiLV73HV1ebiS5lnZ8m2
+I;So3nc[@NRn=KPSVg@F?82
+!s105 tb_LED_send_sv_unit
+S1
+R0
+w1719397466
+8tb_LED_send.sv
+Ftb_LED_send.sv
+L0 3
+R3
+!s108 1719479241.852000
+!s107 tb_LED_send.sv|
+!s90 tb_LED_send.sv|
+!i113 0
+R7
+ntb_@l@e@d_send
+vtest_pattern
+R1
+!s110 1719479241
+!i10b 1
+!s100 Ocm4nL5^aHTQ8Oz9e3Lz32
+IneSDh8OXK9J2lTKf8gH=]2
+R2
+!s105 test_pattern_sv_unit
+S1
+R0
+w1719476929
+8../../src/rtl/led_phy/test_pattern.sv
+F../../src/rtl/led_phy/test_pattern.sv
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
