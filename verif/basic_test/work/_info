@@ -15,22 +15,44 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 jSh5HDNj]EXBTBZ`IJl=e2
-IFW<0LPkJHFQDhMH6E9CSJ1
+!s100 9[G[HKM6BjH:f?Gf60h8A2
+IZzczCAC75B7Fz;DhFBZgA0
 !s105 LED_send_sv_unit
 S1
 R0
-w1719479222
+w1719557279
 8../../src/rtl/led_phy/LED_send.sv
 F../../src/rtl/led_phy/LED_send.sv
 L0 1
 Z3 OL;L;10.4;61
-Z4 !s108 1719479241.795000
-Z5 !s107 ../../src/rtl/led_phy/test_pattern.sv|../../src/rtl/led_phy/LED_send.sv|
+Z4 !s108 1719557806.257000
+Z5 !s107 ../../src/rtl/led_phy/test_pattern.sv|../../src/rtl/led_phy/multi_cycle_calculator.sv|../../src/rtl/led_phy/LED_send.sv|
 Z6 !s90 -f|./dut.f|
 !i113 0
 Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 n@l@e@d_send
+vmulti_cycle_calculator
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 U]F27`nPGd>4HNh9JnAV;3
+IQUGG1abaBP<<c<lBmodS>3
+!s105 multi_cycle_calculator_sv_unit
+S1
+R0
+w1719557799
+8../../src/rtl/led_phy/multi_cycle_calculator.sv
+F../../src/rtl/led_phy/multi_cycle_calculator.sv
+L0 1
+R3
+R4
+R5
+R6
+!i113 0
+R7
 vtb_LED_send
 R1
 R2
@@ -48,7 +70,7 @@ w1719397466
 Ftb_LED_send.sv
 L0 3
 R3
-!s108 1719479241.852000
+!s108 1719557806.325000
 !s107 tb_LED_send.sv|
 !s90 tb_LED_send.sv|
 !i113 0
@@ -56,15 +78,15 @@ R7
 ntb_@l@e@d_send
 vtest_pattern
 R1
-!s110 1719479241
+!s110 1719557806
 !i10b 1
-!s100 Ocm4nL5^aHTQ8Oz9e3Lz32
-IneSDh8OXK9J2lTKf8gH=]2
+!s100 T^Q:CVU[040_4cTFz8]me2
+IJbW4OjczH0eaAVIg[1SNd3
 R2
 !s105 test_pattern_sv_unit
 S1
 R0
-w1719476929
+w1719480834
 8../../src/rtl/led_phy/test_pattern.sv
 F../../src/rtl/led_phy/test_pattern.sv
 L0 1

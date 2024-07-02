@@ -8,12 +8,12 @@ IO Statistics
   #inout                    0
 
 Utilization Statistics
-#lut                      180   out of  19600    0.92%
-#reg                      188   out of  19600    0.96%
-#le                       251
-  #lut only                63   out of    251   25.10%
-  #reg only                71   out of    251   28.29%
-  #lut&reg                117   out of    251   46.61%
+#lut                      238   out of  19600    1.21%
+#reg                      217   out of  19600    1.11%
+#le                       298
+  #lut only                81   out of    298   27.18%
+  #reg only                60   out of    298   20.13%
+  #lut&reg                157   out of    298   52.68%
 #dsp                        0   out of     29    0.00%
 #bram                       0   out of     64    0.00%
   #bram9k                   0
@@ -28,7 +28,7 @@ Utilization Statistics
 
 Clock Resource Statistics
 Index     ClockNet               Type               DriverType         Driver                       Fanout
-#1        u_PLL_150M/clk0_buf    GCLK               pll                u_PLL_150M/pll_inst.clkc0    90
+#1        u_PLL_150M/clk0_buf    GCLK               pll                u_PLL_150M/pll_inst.clkc0    107
 #2        sysclk_i_dup_1         GCLK               io                 sysclk_i_syn_2.di            16
 
 
@@ -40,23 +40,26 @@ Detailed IO Report
     sdo        OUTPUT        P82        LVCMOS25           8            NONE       OREG    
 
 Report Hierarchy Area:
-+-----------------------------------------------------------------------------+
-|Instance     |Module    |le     |lut     |ripple  |seq     |bram    |dsp     |
-+-----------------------------------------------------------------------------+
-|top          |fpga_ed4g |251    |157     |23      |190     |0       |0       |
-|  u_LED_send |LED_send  |207    |148     |15      |159     |0       |0       |
-|  u_PLL_150M |PLL_150M  |1      |1       |0       |0       |0       |0       |
-+-----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+|Instance                     |Module                 |le     |lut     |ripple  |seq     |bram    |dsp     |
++----------------------------------------------------------------------------------------------------------+
+|top                          |fpga_ed4g              |298    |203     |35      |219     |0       |0       |
+|  u_LED_send                 |LED_send               |216    |171     |17      |166     |0       |0       |
+|    u_multi_cycle_calculator |multi_cycle_calculator |12     |12      |0       |9       |0       |0       |
+|  u_PLL_150M                 |PLL_150M               |1      |1       |0       |0       |0       |0       |
+|  u_test_pattern             |test_pattern           |28     |18      |5       |20      |0       |0       |
++----------------------------------------------------------------------------------------------------------+
 
 
 DataNet Average Fanout:
 
-   Index     Fanout    Nets  
-    #1         1       312   
-    #2         2        18   
-    #3         3        15   
-    #4         4        5    
-    #5        5-10      9    
-    #6       11-50      6    
-    #7       51-100     2    
-  Average     1.97           
+   Index     Fanout     Nets  
+    #1          1       355   
+    #2          2        33   
+    #3          3        13   
+    #4          4        13   
+    #5        5-10       18   
+    #6        11-50      10   
+    #7       51-100      1    
+    #8       101-500     1    
+  Average     2.21            

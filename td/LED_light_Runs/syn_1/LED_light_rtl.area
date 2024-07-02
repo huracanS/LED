@@ -8,30 +8,32 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates              207
-  #and                      6
+#Basic gates              251
+  #and                     11
   #nand                     0
-  #or                       3
+  #or                       7
   #nor                      0
   #xor                      0
   #xnor                     0
   #buf                      0
-  #not                      6
+  #not                      9
   #bufif1                   0
-  #MX21                     4
+  #MX21                     7
   #FADD                     0
-  #DFF                    188
+  #DFF                    217
   #LATCH                    0
-#MACRO_ADD                  6
-#MACRO_EQ                  10
-#MACRO_MUX                 41
+#MACRO_ADD                 10
+#MACRO_EQ                  16
+#MACRO_MUX                 59
 #MACRO_OTHERS               1
 
 Report Hierarchy Area:
-+------------------------------------------------+
-|Instance     |Module    |gates  |seq    |macros |
-+------------------------------------------------+
-|top          |fpga_ed4g |19     |188    |17     |
-|  u_LED_send |LED_send  |18     |159    |15     |
-|  u_PLL_150M |PLL_150M  |0      |0      |1      |
-+------------------------------------------------+
++-----------------------------------------------------------------------------+
+|Instance                     |Module                 |gates  |seq    |macros |
++-----------------------------------------------------------------------------+
+|top                          |fpga_ed4g              |34     |217    |27     |
+|  u_LED_send                 |LED_send               |33     |168    |23     |
+|    u_multi_cycle_calculator |multi_cycle_calculator |13     |9      |6      |
+|  u_PLL_150M                 |PLL_150M               |0      |0      |1      |
+|  u_test_pattern             |test_pattern           |0      |20     |2      |
++-----------------------------------------------------------------------------+

@@ -34,6 +34,14 @@
                     <Attr Name="CompileOrder" Val="4"/>
                 </FileInfo>
             </File>
+            <File Path="../src/rtl/led_phy/multi_cycle_calculator.sv">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="6"/>
+                </FileInfo>
+            </File>
         </System_Verilog>
         <ADC_FILE>
             <File Path="pin.adc">

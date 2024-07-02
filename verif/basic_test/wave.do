@@ -15,8 +15,16 @@ add wave -noupdate /tb_LED_send/uut/c_state
 add wave -noupdate /tb_LED_send/uut/n_state
 add wave -noupdate /tb_LED_send/uut/cnt
 add wave -noupdate /tb_LED_send/uut/data_reg
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/clk
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/rst_n
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/led_num
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/done
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/result
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/state
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/next_state
+add wave -noupdate -expand -group multi_cycle_calculator /tb_LED_send/uut/u_multi_cycle_calculator/temp_result
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {14712533 ps} 0}
+WaveRestoreCursors {{Cursor 1} {8573308 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100

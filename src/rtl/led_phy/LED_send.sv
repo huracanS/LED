@@ -69,7 +69,7 @@ always @(*) begin
         end
 
         WAIT_SEND: begin
-            if(wait_cnt <= WAIT_CNT) begin
+            if(wait_cnt <= WAIT_CNT && cac_done) begin
                 n_state = WAIT_SEND;
             end else begin
                 n_state = SEND;
@@ -77,7 +77,7 @@ always @(*) begin
         end
 
         SEND: begin
-            if(send_cnt < (1 + LED_NUM + 1)*32) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
+            if(send_cnt < cac_result ) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
                 n_state = SEND;
             end else begin
                 n_state = SEND_DONE;
@@ -209,8 +209,22 @@ always @(posedge clk or negedge rstn) begin
     end else if(c_state != SEND) begin
         sdo <= 1'b1;
     end else if(c_state == SEND && cko_n) begin
-        sdo <= data_reg[( (1 + LED_NUM + 1)*32 -1) - send_cnt];
+        //sdo <= data_reg[( (1 + LED_NUM + 1)*32 -1) - send_cnt];
+        sdo <= data_reg[( cac_result -1) - send_cnt];
         //$display("Sending data: sdo = %b, send_cnt = %d", data_reg[((1 + LED_NUM + 1)*32-1) - send_cnt], ((1 + LED_NUM + 1)*32-1) - send_cnt);
     end
 end
+
+
+//多步计算乘法结果,优化时序
+logic cac_done;//计算完成.
+logic [9:0] cac_result;//计算的结果最大1024.
+multi_cycle_calculator u_multi_cycle_calculator(
+    .clk(clk),          // 时钟信号
+    .rst_n(rstn),        // 复位信号（低电平有效）
+    .led_num(LED_NUM),// 输入LED的frame数量,这里假设最大32.
+    .done(cac_done),         // 计算完成.
+    .result(cac_result)  // 最大1024.
+);
+
 endmodule

@@ -43,7 +43,7 @@ LED_send #(
     .DIV_CNT(5)//分频系数: 150M/30M = 5.
 ) u_LED_send(
     .clk(clk_150m),//时钟150M
-    .rstn(!lock),
+    .rstn(lock),
     
     //输入数据使能和数据.
     .enable(enable),//发送的数据使能
@@ -59,7 +59,7 @@ LED_send #(
 //----测试PATTERN
 test_pattern u_test_pattern( 
     .clk(clk_150m),
-    .rstn(!lock),
+    .rstn(lock),
 
     //输出LED控制信号.
     .enable(enable),
