@@ -1,0 +1,75 @@
+standard
+***Report Model: fpga_ed4g Device: EG4S20BG256***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+Utilization Statistics
+#lut                      509   out of  19600    2.60%
+#reg                      383   out of  19600    1.95%
+#le                       639
+  #lut only               256   out of    639   40.06%
+  #reg only               130   out of    639   20.34%
+  #lut&reg                253   out of    639   39.59%
+#dsp                        0   out of     29    0.00%
+#bram                       1   out of     64    1.56%
+  #bram9k                   1
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#pad                        3   out of    188    1.60%
+  #ireg                     0
+  #oreg                     2
+  #treg                     0
+#pll                        1   out of      4   25.00%
+#gclk                       2   out of     16   12.50%
+
+Clock Resource Statistics
+Index     ClockNet               Type               DriverType         Driver                       Fanout
+#1        u_PLL_150M/clk0_buf    GCLK               pll                u_PLL_150M/pll_inst.clkc0    157
+#2        config_inst_syn_9      GCLK               config             config_inst.jtck             54
+#3        sysclk_i_dup_1         GCLK               io                 sysclk_i_syn_2.di            16
+
+
+Detailed IO Report
+
+    Name      Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+  sysclk_i      INPUT         R7        LVCMOS33          N/A          PULLUP      NONE    
+    cko        OUTPUT        D16        LVCMOS33           8            NONE       OREG    
+    sdo        OUTPUT        F15        LVCMOS33           8            NONE       OREG    
+
+Report Hierarchy Area:
++-----------------------------------------------------------------------------------------------------------------+
+|Instance                            |Module                 |le     |lut     |ripple  |seq     |bram    |dsp     |
++-----------------------------------------------------------------------------------------------------------------+
+|top                                 |fpga_ed4g              |639    |405     |104     |385     |1       |0       |
+|  u_LED_send                        |LED_send               |209    |155     |17      |164     |0       |0       |
+|    u_multi_cycle_calculator        |multi_cycle_calculator |8      |8       |0       |7       |0       |0       |
+|  u_PLL_150M                        |PLL_150M               |1      |1       |0       |0       |0       |0       |
+|  u_test_pattern                    |test_pattern           |28     |17      |5       |20      |0       |0       |
+|  cw_top                            |CW_TOP_WRAPPER         |342    |213     |69      |164     |0       |0       |
+|    wrapper_cwc_top                 |cwc_top                |342    |213     |69      |164     |0       |0       |
+|      cfg_int_inst                  |cwc_cfg_int            |94     |47      |0       |83      |0       |0       |
+|        reg_inst                    |register               |91     |44      |0       |80      |0       |0       |
+|        tap_inst                    |tap                    |3      |3       |0       |3       |0       |0       |
+|      trigger_inst                  |trigger                |248    |166     |69      |81      |0       |0       |
+|        bus_inst                    |bus_top                |1      |0       |0       |1       |0       |0       |
+|          BUS_DETECTOR[1]$bus_nodes |bus_det                |1      |0       |0       |1       |0       |0       |
+|        emb_ctrl_inst               |emb_ctrl               |159    |122     |37      |52      |0       |0       |
++-----------------------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout     Nets  
+    #1          1       588   
+    #2          2       136   
+    #3          3        53   
+    #4          4        27   
+    #5        5-10       43   
+    #6        11-50      20   
+    #7       51-100      3    
+    #8       101-500     1    
+  Average     2.40            

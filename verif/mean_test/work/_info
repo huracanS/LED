@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d//wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/mean_test
+vmean_cal
+Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ZSgPW56CkgQ4HeQPMClG40
+IzBCWo>Ca]B`Rg`[Ebil_g1
+!s105 mean_cal_sv_unit
+S1
+R0
+w1720019347
+8../../src/rtl/mean_cal/mean_cal.sv
+F../../src/rtl/mean_cal/mean_cal.sv
+L0 1
+Z3 OL;L;10.4;61
+Z4 !s108 1720019360.088000
+Z5 !s107 ../../src/rtl/mean_cal/mean_cal.sv|../../src/rtl/mean_cal/square_shift.sv|../../src/rtl/mean_cal/square_adder.sv|
+Z6 !s90 -f|./dut.f|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vsquare_adder
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 5_LUglB8`SXSKbJOMfaP`0
+IAYljY?nLf5ZN>N[=0lf]V0
+!s105 square_adder_sv_unit
+S1
+R0
+w1720018388
+8../../src/rtl/mean_cal/square_adder.sv
+F../../src/rtl/mean_cal/square_adder.sv
+L0 1
+R3
+R4
+R5
+R6
+!i113 0
+R7
+vsquare_shift
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 >dPCWGEUgz^P3;Bo[DEO90
+I7Y2kRRZh3H<UkQCA559Wo0
+!s105 square_shift_sv_unit
+S1
+R0
+w1720018422
+8../../src/rtl/mean_cal/square_shift.sv
+F../../src/rtl/mean_cal/square_shift.sv
+L0 1
+R3
+R4
+R5
+R6
+!i113 0
+R7
+vtb_mean
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 JZnVCVJf510E]bLh9Rj5E3
+ILK]?cJBIR3MH2TSFf3cLJ2
+!s105 tb_mean_sv_unit
+S1
+R0
+w1720018936
+8tb_mean.sv
+Ftb_mean.sv
+L0 3
+R3
+!s108 1720019360.572000
+!s107 tb_mean.sv|
+!s90 tb_mean.sv|
+!i113 0
+R7

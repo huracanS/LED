@@ -1,0 +1,42 @@
+standard
+***Report Model: fpga_ed4g Device: EG4S20BG256***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+LUT Statistics
+#Total_luts               246
+  #lut4                   135
+  #lut5                    20
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b              91
+
+Utilization Statistics
+#lut                      246   out of  19600    1.26%
+#reg                      217   out of  19600    1.11%
+#le                         0
+#dsp                        0   out of     29    0.00%
+#bram                       0   out of     64    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of     16    0.00%
+#pad                        3   out of    188    1.60%
+  #ireg                     0
+  #oreg                     2
+  #treg                     0
+#pll                        1   out of      4   25.00%
+
+Report Hierarchy Area:
++--------------------------------------------------------------------------------------------------+
+|Instance                     |Module                 |lut     |ripple  |seq     |bram    |dsp     |
++--------------------------------------------------------------------------------------------------+
+|top                          |fpga_ed4g              |155     |91      |219     |0       |0       |
+|  u_LED_send                 |LED_send               |140     |32      |168     |0       |0       |
+|    u_multi_cycle_calculator |multi_cycle_calculator |10      |0       |9       |0       |0       |
+|  u_PLL_150M                 |PLL_150M               |1       |0       |0       |0       |0       |
+|  u_test_pattern             |test_pattern           |12      |20      |20      |0       |0       |
++--------------------------------------------------------------------------------------------------+

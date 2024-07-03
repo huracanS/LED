@@ -1,0 +1,262 @@
+============================================================
+   Tang Dynasty, V5.6.71036
+      Copyright (c) 2012-2023 Anlogic Inc.
+   Executable = D:/TD/bin/td.exe
+   Built at =   20:34:38 Mar 21 2023
+   Run by =     32863
+   Run Date =   Wed Jul  3 15:21:22 2024
+
+   Run on =     SUPERIOR-LEGION
+============================================================
+ARC-1001 : Device Initialization.
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :            OPTION            |          IO          |   SETTING   
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :   cso_b/cclk/mosi/miso/dout  |  T3/R11/T10/P10/S11  |    gpio    
+ARC-1001 :             done             |         P13          |    gpio    
+ARC-1001 :           program_b          |          T2          |  dedicate  
+ARC-1001 :        tdi/tms/tck/tdo       |   C12/A15/C14/E14    |  dedicate  
+ARC-1001 : ------------------------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+RUN-1001 : Print Global Property
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :        Parameters        |  Settings  |  Default Values  |  Note  
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :          message         |  standard  |     standard     |        
+RUN-1001 :   mixed_pack_place_flow  |     on     |        on        |        
+RUN-1001 :        qor_monitor       |    off     |       off        |        
+RUN-1001 :        syn_ip_flow       |    off     |       off        |        
+RUN-1001 :          thread          |    auto    |       auto       |        
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 : Print Design Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :   default_reg_initial   |    auto    |       auto       |        
+RUN-1001 :        infer_add        |     on     |        on        |        
+RUN-1001 :        infer_fsm        |    off     |       off        |        
+RUN-1001 :        infer_mult       |     on     |        on        |        
+RUN-1001 :        infer_ram        |     on     |        on        |        
+RUN-1001 :        infer_reg        |     on     |        on        |        
+RUN-1001 :   infer_reg_init_value  |     on     |        on        |        
+RUN-1001 :        infer_rom        |     on     |        on        |        
+RUN-1001 :      infer_shifter      |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 : Print Rtl Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :       compress_add      |   ripple   |      ripple      |        
+RUN-1001 :        elf_sload        |    off     |       off        |        
+RUN-1001 :       fix_undriven      |     0      |        0         |        
+RUN-1001 :         flatten         |    off     |       off        |        
+RUN-1001 :       gate_sharing      |     on     |        on        |        
+RUN-1001 :    hdl_warning_level    |   normal   |      normal      |        
+RUN-1001 :   impl_internal_tribuf  |     on     |        on        |        
+RUN-1001 :      impl_set_reset     |     on     |        on        |        
+RUN-1001 :        infer_gsr        |    off     |       off        |        
+RUN-1001 :      keep_hierarchy     |    auto    |       auto       |        
+RUN-1001 :        max_fanout       |    9999    |       9999       |        
+RUN-1001 :      max_oh2bin_len     |     10     |        10        |        
+RUN-1001 :       merge_equal       |     on     |        on        |        
+RUN-1001 :       merge_equiv       |     on     |        on        |        
+RUN-1001 :        merge_mux        |    off     |       off        |        
+RUN-1001 :     min_control_set     |     8      |        8         |        
+RUN-1001 :      min_ripple_len     |    auto    |       auto       |        
+RUN-1001 :       oh2bin_ratio      |    0.08    |       0.08       |        
+RUN-1001 :     opt_adder_fanout    |     on     |        on        |        
+RUN-1001 :        opt_arith        |     on     |        on        |        
+RUN-1001 :       opt_big_gate      |    off     |       off        |        
+RUN-1001 :        opt_const        |     on     |        on        |        
+RUN-1001 :      opt_const_mult     |     on     |        on        |        
+RUN-1001 :       opt_lessthan      |     on     |        on        |        
+RUN-1001 :         opt_mux         |    off     |       off        |        
+RUN-1001 :         opt_ram         |    high    |       high       |        
+RUN-1001 :      rtl_sim_model      |    off     |       off        |        
+RUN-1001 :         seq_syn         |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+HDL-1007 : analyze verilog file al_ip/PLL_150M.v
+HDL-1007 : undeclared symbol 'open', assumed default net type 'wire' in al_ip/PLL_150M.v(71)
+RUN-1001 : Print Global Property
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :        Parameters        |  Settings  |  Default Values  |  Note  
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :          message         |  standard  |     standard     |        
+RUN-1001 :   mixed_pack_place_flow  |     on     |        on        |        
+RUN-1001 :        qor_monitor       |    off     |       off        |        
+RUN-1001 :        syn_ip_flow       |    off     |       off        |        
+RUN-1001 :          thread          |    auto    |       auto       |        
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 : Print Design Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :   default_reg_initial   |    auto    |       auto       |        
+RUN-1001 :        infer_add        |     on     |        on        |        
+RUN-1001 :        infer_fsm        |    off     |       off        |        
+RUN-1001 :        infer_mult       |     on     |        on        |        
+RUN-1001 :        infer_ram        |     on     |        on        |        
+RUN-1001 :        infer_reg        |     on     |        on        |        
+RUN-1001 :   infer_reg_init_value  |     on     |        on        |        
+RUN-1001 :        infer_rom        |     on     |        on        |        
+RUN-1001 :      infer_shifter      |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 : Print Rtl Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :       compress_add      |   ripple   |      ripple      |        
+RUN-1001 :        elf_sload        |    off     |       off        |        
+RUN-1001 :       fix_undriven      |     0      |        0         |        
+RUN-1001 :         flatten         |    off     |       off        |        
+RUN-1001 :       gate_sharing      |     on     |        on        |        
+RUN-1001 :    hdl_warning_level    |   normal   |      normal      |        
+RUN-1001 :   impl_internal_tribuf  |     on     |        on        |        
+RUN-1001 :      impl_set_reset     |     on     |        on        |        
+RUN-1001 :        infer_gsr        |    off     |       off        |        
+RUN-1001 :      keep_hierarchy     |    auto    |       auto       |        
+RUN-1001 :        max_fanout       |    9999    |       9999       |        
+RUN-1001 :      max_oh2bin_len     |     10     |        10        |        
+RUN-1001 :       merge_equal       |     on     |        on        |        
+RUN-1001 :       merge_equiv       |     on     |        on        |        
+RUN-1001 :        merge_mux        |    off     |       off        |        
+RUN-1001 :     min_control_set     |     8      |        8         |        
+RUN-1001 :      min_ripple_len     |    auto    |       auto       |        
+RUN-1001 :       oh2bin_ratio      |    0.08    |       0.08       |        
+RUN-1001 :     opt_adder_fanout    |     on     |        on        |        
+RUN-1001 :        opt_arith        |     on     |        on        |        
+RUN-1001 :       opt_big_gate      |    off     |       off        |        
+RUN-1001 :        opt_const        |     on     |        on        |        
+RUN-1001 :      opt_const_mult     |     on     |        on        |        
+RUN-1001 :       opt_lessthan      |     on     |        on        |        
+RUN-1001 :         opt_mux         |    off     |       off        |        
+RUN-1001 :         opt_ram         |    high    |       high       |        
+RUN-1001 :      rtl_sim_model      |    off     |       off        |        
+RUN-1001 :         seq_syn         |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+HDL-1007 : analyze verilog file ../../src/rtl/FPGA/fpga_ed4g.sv
+HDL-1007 : undeclared symbol 'lock', assumed default net type 'wire' in ../../src/rtl/FPGA/fpga_ed4g.sv(34)
+HDL-1007 : analyze verilog file ../../src/rtl/led_phy/LED_send.sv
+HDL-1007 : analyze verilog file ../../src/rtl/led_phy/multi_cycle_calculator.sv
+HDL-1007 : analyze verilog file ../../src/rtl/led_phy/test_pattern.sv
+RUN-1001 : launch_runs syn_1 -step opt_gate.
+RUN-1001 : reset_run phy_1.
+RUN-1001 : syn_1: run complete.
+RUN-1001 : open_run syn_1.
+RUN-1002 : start command "import_db //wsl.localhost/Ubuntu-20.04/home/superior/LED/td/EG4S20/led_spi_Runs/syn_1/led_spi_gate.db"
+RUN-1001 : Importing database generated by Tang Dynasty, V5.6.71036.
+RUN-1001 : Database version number 46146.
+RUN-1001 : Import flow parameters
+RUN-1001 : Import IO constraints
+RUN-1001 : Import Inst constraints
+RUN-1001 : Import design success TD_VERSION=5.6.71036 , DB_VERSION=46146
+RUN-1001 : launch_runs phy_1 -step bitgen.
+RUN-1001 : phy_1: run complete.
+RUN-1001 : open_run phy_1.
+RUN-1002 : start command "import_db //wsl.localhost/Ubuntu-20.04/home/superior/LED/td/EG4S20/led_spi_Runs/phy_1/led_spi_pr.db"
+RUN-1001 : Importing database generated by Tang Dynasty, V5.6.71036.
+RUN-1001 : Database version number 46146.
+RUN-1001 : Import flow parameters
+PHY-1001 : Generate detailed routing grids ...
+PHY-1001 : Generate nets ...
+PHY-1001 : clock net clk_150m will be merged with clock u_PLL_150M/clk0_buf
+PHY-1001 : net sysclk_i_dup_1 will be routed on clock mesh
+PHY-1001 : eco open net = 0
+PHY-1001 : 1 feed throughs used by 1 nets
+RUN-1001 : Import IO constraints
+RUN-1001 : Import Inst constraints
+RUN-1001 : Import design success TD_VERSION=5.6.71036 , DB_VERSION=46146
+RUN-1003 : finish command "import_db //wsl.localhost/Ubuntu-20.04/home/superior/LED/td/EG4S20/led_spi_Runs/phy_1/led_spi_pr.db" in  2.496545s wall, 2.296875s user + 0.093750s system = 2.390625s CPU (95.8%)
+
+RUN-1004 : used memory is 557 MB, reserved memory is 475 MB, peak memory is 587 MB
+RUN-1002 : start command "download -bit led_spi_Runs\phy_1\led_spi.bit -mode jtag -spd 7 -sec 64 -cable 0"
+PRG-2014 : Chip validation success: EAGLE_S20_BG256
+RUN-1002 : start command "bit_to_vec -chip EAGLE_S20_BG256 -m jtag_burst -freq 4 -bit led_spi_Runs/phy_1/led_spi.bit"
+RUN-1002 : start command "program -cable 0 -mode svf -spd 7 -p"
+RUN-1003 : finish command "program -cable 0 -mode svf -spd 7 -p" in  6.241213s wall, 0.031250s user + 0.046875s system = 0.078125s CPU (1.3%)
+
+RUN-1004 : used memory is 601 MB, reserved memory is 519 MB, peak memory is 617 MB
+RUN-1003 : finish command "download -bit led_spi_Runs\phy_1\led_spi.bit -mode jtag -spd 7 -sec 64 -cable 0" in  6.658467s wall, 0.062500s user + 0.046875s system = 0.109375s CPU (1.6%)
+
+RUN-1004 : used memory is 601 MB, reserved memory is 519 MB, peak memory is 617 MB
+GUI-1001 : Downloading succeeded!
+GUI-1001 : User opens ChipWatcher ...
+PRG-1000 : <!-- HMAC is: cdaa6582e4f4c1f2b86fc60397d114230122638ff4b34f8c888cf71755a86ae0 -->
+RUN-1001 : reset_run phy_1.
+RUN-1001 : launch_runs phy_1 -step bitgen.
+GUI-6001 WARNING: File //wsl.localhost/Ubuntu-20.04/home/superior/LED/td/EG4S20/led_spi_Runs/phy_1/led_spi.bit does not exist!
+RUN-1001 : phy_1: run complete.
+RUN-1001 : open_run phy_1.
+RUN-1002 : start command "import_db //wsl.localhost/Ubuntu-20.04/home/superior/LED/td/EG4S20/led_spi_Runs/phy_1/led_spi_pr.db"
+RUN-1001 : Importing database generated by Tang Dynasty, V5.6.71036.
+RUN-1001 : Database version number 46146.
+RUN-1001 : Import flow parameters
+PHY-1001 : Generate detailed routing grids ...
+PHY-1001 : Generate nets ...
+PHY-1001 : clock net clk_150m will be merged with clock u_PLL_150M/clk0_buf
+PHY-1001 : net sysclk_i_dup_1 will be routed on clock mesh
+PHY-1001 : clock net config_inst_syn_10 will be merged with clock config_inst_syn_9
+PHY-1001 : eco open net = 0
+PHY-1001 : 1 feed throughs used by 1 nets
+RUN-1001 : Import IO constraints
+RUN-1001 : Import Inst constraints
+RUN-1001 : Import ChipWatcher
+RUN-1001 : Import design success TD_VERSION=5.6.71036 , DB_VERSION=46146
+RUN-1003 : finish command "import_db //wsl.localhost/Ubuntu-20.04/home/superior/LED/td/EG4S20/led_spi_Runs/phy_1/led_spi_pr.db" in  1.196223s wall, 0.406250s user + 0.031250s system = 0.437500s CPU (36.6%)
+
+RUN-1004 : used memory is 634 MB, reserved memory is 552 MB, peak memory is 656 MB
+RUN-1002 : start command "config_chipwatcher -sync chipwatcher/cwc001.cwc -dir "
+KIT-1004 : ChipWatcher: import watcher inst auto_chipwatcher_0 completed, there are 2 view nodes, 2 trigger nets, 2 data nets.
+GUI-1001 : Import chipwatcher/cwc001.cwc success!
+PRG-1000 : <!-- HMAC is: cdaa6582e4f4c1f2b86fc60397d114230122638ff4b34f8c888cf71755a86ae0 -->
+RUN-1002 : start command "download -bit led_spi_Runs/phy_1/led_spi.bit -mode jtag_burst -spd 7 -cable 0 -total_dev 1 -cur_dev 1"
+PRG-9505 ERROR: USB device open error, please re-connect the USB cable!
+PRG-9505 ERROR: USB device open error, please re-connect the USB cable!
+PRG-9525 ERROR: Chip validation failed! Please check the connection or type of chip!
+GUI-8702 ERROR: Downloading failed!
+PRG-9505 ERROR: USB device open error, please re-connect the USB cable!
+GUI-8501 ERROR: Get bit file Ucode failed.
+GUI-8501 ERROR: Bit file code (0001100111101110) does not match with the ChipWatcher's (1101000110100111).
+RUN-1002 : start command "download -bit led_spi_Runs/phy_1/led_spi.bit -mode jtag_burst -spd 7 -cable 0 -total_dev 1 -cur_dev 1"
+PRG-2014 : Chip validation success: EAGLE_S20_BG256
+RUN-1002 : start command "bit_to_vec -chip EAGLE_S20_BG256 -m jtag_burst -freq 4 -bit led_spi_Runs/phy_1/led_spi.bit"
+RUN-1002 : start command "program -cable 0 -mode svf -spd 7 -p"
+RUN-1003 : finish command "program -cable 0 -mode svf -spd 7 -p" in  6.245969s wall, 0.000000s user + 0.078125s system = 0.078125s CPU (1.3%)
+
+RUN-1004 : used memory is 645 MB, reserved memory is 563 MB, peak memory is 660 MB
+RUN-1003 : finish command "download -bit led_spi_Runs/phy_1/led_spi.bit -mode jtag_burst -spd 7 -cable 0 -total_dev 1 -cur_dev 1" in  6.671208s wall, 0.046875s user + 0.078125s system = 0.125000s CPU (1.9%)
+
+RUN-1004 : used memory is 645 MB, reserved memory is 563 MB, peak memory is 660 MB
+GUI-1001 : Downloading succeeded!
+KIT-1004 : ChipWatcher: write ctrl reg value: 0000000000000000000000000000000000000000
+KIT-1004 : ChipWatcher: write ctrl reg value: 0101110101110001000000000000000001000000
+KIT-1004 : ChipWatcher: the value of status register = 001111111111111111
+KIT-1004 : ChipWatcher: the value of status register = 001111111111111111
+KIT-1004 : ChipWatcher: the value of status register = 001111111111111111
+KIT-1004 : ChipWatcher: the value of status register = 001111111111111111
+KIT-1004 : ChipWatcher: the value of status register = 001111111111111111
+KIT-1004 : ChipWatcher: the value of status register = 001111111111111111
+KIT-1004 : ChipWatcher: the value of status register = 001111111111111111
+KIT-1004 : ChipWatcher: the value of status register = 110000000000001000
+RUN-1002 : start command "rdbk_bram -bram 0X0004 -cable 0 -total_dev 1 -cur_dev 1"
+KIT-1001 : Read back data from BRAM 0X0004 successfully.
+SYN-2541 : Attrs-to-init for 1 logic bram(s)
+SYN-2541 : Reading sub[0] auto_chipwatcher_0_logicbram_syn_1
+KIT-1004 : ChipWatcher: write ctrl reg value: 0101110101110001000000000000000000000000
+KIT-1004 : ChipWatcher: write ctrl reg value: 0000000000000000000000000000000000000000
+KIT-1004 : ChipWatcher: write ctrl reg value: 0101110101110001000000000000000001000000
+KIT-1004 : ChipWatcher: the value of status register = 110000000000001000
+RUN-1002 : start command "rdbk_bram -bram 0X0004 -cable 0 -total_dev 1 -cur_dev 1"
+KIT-1001 : Read back data from BRAM 0X0004 successfully.
+SYN-2541 : Attrs-to-init for 1 logic bram(s)
+SYN-2541 : Reading sub[0] auto_chipwatcher_0_logicbram_syn_1
+KIT-1004 : ChipWatcher: write ctrl reg value: 0101110101110001000000000000000000000000
+KIT-1004 : ChipWatcher: write ctrl reg value: 0000000000000000000000000000000000000000
+KIT-1004 : ChipWatcher: write ctrl reg value: 0101110101110001000000000000000001000000
+KIT-1004 : ChipWatcher: the value of status register = 100000101100000111
+RUN-1002 : start command "rdbk_bram -bram 0X0004 -cable 0 -total_dev 1 -cur_dev 1"
+KIT-1001 : Read back data from BRAM 0X0004 successfully.
+SYN-2541 : Attrs-to-init for 1 logic bram(s)
+SYN-2541 : Reading sub[0] auto_chipwatcher_0_logicbram_syn_1
+KIT-1004 : ChipWatcher: write ctrl reg value: 0101110101110001000000000000000000000000
+GUI-1001 : User closes ChipWatcher ...

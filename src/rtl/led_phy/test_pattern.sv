@@ -33,8 +33,8 @@ always @(posedge clk or negedge rstn) begin
     end
 end
 
-assign data_in = 128'h5555_5555_5555_5555_5555_5555_5555_5555;//输出固定 用于测试波形.
-//assign data_in = 128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff;//输出固定 用于上板灯亮度.
+// assign data_in = 128'h5555_5555_5555_5555_5555_5555_5555_5555;//输出固定 用于测试波形.
+assign data_in = 128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff;//输出固定 用于上板灯亮度.
 //----测试PATTERN 1
 //1.data_in不变，enable循环拉起控制:
 //检测步骤:
