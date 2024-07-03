@@ -6,12 +6,17 @@ module LED_send #(
     input logic clk,//150M
     input logic rstn,
     
+    //控制fifo.
+    input logic [23:0] fifo_data_in,//输入的数据 RGB
+    output logic rd,//fifo读使能.
+    output logic sdo_2,//输出的数据信号测试
+
     //输入数据使能和数据.
     input logic enable,//发送的数据使能
     input logic [127:0] data_in,//发送的数据
 
     //输出信号.
-    output logic cko,//输出的时钟信号
+    output logic cko_o,//输出的时钟信号
     output logic sdo//输出的数据信号
 );
 
@@ -37,11 +42,14 @@ logic [4:0] wait_cnt; /*synthesis keep*/
 logic [10:0] send_cnt; /*synthesis keep*/
 logic [5:0] cnt;
 logic cko_p,cko_n;
+logic cko;
 send_state_t c_state; /*synthesis keep*/
 send_state_t n_state; /*synthesis keep*/
+logic cac_done;//计算完成.
+logic [9:0] cac_result;//计算的结果最大1024.
 //logic SEND_length;
 //>>>>>
-
+ assign cko_o = cko && (c_state == SEND);
 //>>>>>
 //标志信号.
 //busy标志位.
@@ -69,10 +77,16 @@ always @(*) begin
         end
 
         WAIT_SEND: begin
-            if(wait_cnt <= WAIT_CNT && cac_done) begin
-                n_state = WAIT_SEND;
-            end else begin
+            // if(wait_cnt <= WAIT_CNT && cac_done) begin
+            //     n_state = WAIT_SEND;
+            // end else begin
+            //     n_state = WAIT_SEND;
+            // end
+
+            if(wait_cnt >= WAIT_CNT && cac_done && cko_p) begin
                 n_state = SEND;
+            end else begin
+                n_state = WAIT_SEND;
             end
         end
 
@@ -189,6 +203,46 @@ always @(posedge clk or negedge rstn) begin
     end
 end
 
+//>>>>> 增加功能
+//读使能
+always @(posedge clk or negedge rstn) begin
+    if(!rstn) begin
+        rd <= 'd0;
+    end else if(c_state == SEND && (cnt == ((DIV_CNT * 2) - 1) - 1)) begin
+        rd <= 1'b1;
+    end else begin
+        rd <= 1'b0;
+    end
+end
+
+logic en;
+assign en = rd;
+
+//锁存每一帧的数据.
+logic [31:0] frame_reg;
+always @(posedge clk or negedge rstn) begin
+    if(!rstn) begin
+        frame_reg <= 'd0;
+    end else if(rd) begin
+        frame_reg <= {8'hff,fifo_data_in};
+    end else begin
+        frame_reg <= frame_reg;
+    end
+end
+
+always @(posedge clk or negedge rstn) begin
+    if(!rstn) begin
+        sdo_2 <= 1'b1;
+    end else if(c_state != SEND) begin
+        sdo_2 <= 1'b1;
+    end else if( ((c_state == WAIT_SEND && n_state == SEND) || c_state == SEND) && cko_n) begin
+        //sdo <= data_reg[( (1 + LED_NUM + 1)*32 -1) - send_cnt];
+        sdo_2 <= frame_reg[ 31 - send_cnt];
+        //$display("Sending data: sdo = %b, send_cnt = %d", data_reg[((1 + LED_NUM + 1)*32-1) - send_cnt], ((1 + LED_NUM + 1)*32-1) - send_cnt);
+    end
+end
+//>>>>>
+
 //发送数据计数.
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
@@ -217,8 +271,6 @@ end
 
 
 //多步计算乘法结果,优化时序
-logic cac_done;//计算完成.
-logic [9:0] cac_result;//计算的结果最大1024.
 multi_cycle_calculator u_multi_cycle_calculator(
     .clk(clk),          // 时钟信号
     .rst_n(rstn),        // 复位信号（低电平有效）
