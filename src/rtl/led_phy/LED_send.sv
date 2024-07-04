@@ -208,7 +208,7 @@ end
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         rd <= 'd0;
-    end else if(c_state == SEND && (cnt == ((DIV_CNT * 2) - 1) - 1)) begin
+    end else if(c_state == SEND && (send_cnt != 11'b0) && (cnt == ((DIV_CNT * 2) - 1) - 1)) begin
         rd <= 1'b1;
     end else begin
         rd <= 1'b0;
