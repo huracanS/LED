@@ -1,4 +1,4 @@
-# Reading D:/Modelsim/tcl/vsim/pref.tcl
+# Reading E:/Modelsim/tcl/vsim/pref.tcl
 # //  ModelSim SE-64 10.4 Dec  3 2014 
 # //
 # //  Copyright 1991-2014 Mentor Graphics Corporation
@@ -15,6 +15,3 @@
 # //
 # vsim.wlf opened as dataset "vsim"
 # do wave.do
-add wave -position insertpoint  \
-vsim:/tb_mean/uut/dbg_R
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf //wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/mean_test/wave.do

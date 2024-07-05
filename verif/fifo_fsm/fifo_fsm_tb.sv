@@ -3,7 +3,7 @@
 module fifo_fsm_tb;
 
 // 测试模块的参数
-parameter CLK_PERIOD = 20; // 时钟周期为5纳秒
+parameter CLK_PERIOD = 10; // 时钟周期为10纳秒
 
 // 测试模块的输入和输出
 reg clk;
@@ -34,13 +34,41 @@ initial begin
     forever #(CLK_PERIOD/2) clk = ~clk; // 产生时钟信号
 end
 
+// 初始化信号
+initial start = 0;
+// 每隔N个周期产生一个单周期的信号
+parameter N = 1000; // 每隔5个时钟周期
+integer cycle_count = 0;
+always @(posedge clk) begin
+    if (cycle_count == N) begin
+        start <= 1; // 产生单周期信号
+        #(CLK_PERIOD) start <= 0; // 下一个时钟周期结束信号
+        cycle_count <= 0; // 重置计数器
+    end else if (start == 0) begin
+        cycle_count <= cycle_count + 1;
+    end
+end
+
+// 初始化信号
+initial en = 0;
+// 每隔N个周期产生一个单周期的信号
+parameter N2 = 5000; // 每隔5个时钟周期
+integer cycle_count2 = 0;
+always @(posedge clk) begin
+    if (cycle_count2 == N2) begin
+        en <= 1; // 产生单周期信号
+        #(CLK_PERIOD) en <= 0; // 下一个时钟周期结束信号
+        cycle_count2 <= 0; // 重置计数器
+    end else if (en == 0) begin
+        cycle_count2 <= cycle_count2 + 1;
+    end
+end
+
 // 测试模块初始化
 initial begin
     // 初始化输入
     clk = 0;
     rstn = 0;
-    en = 0;
-    start = 0;
     MeanR = {4'h8,4'h7,4'h6,4'h5,4'h4,4'h3,4'h2,4'h1};
     MeanG = {4'h8,4'h7,4'h6,4'h5,4'h4,4'h3,4'h2,4'h1};
     MeanB = {4'h8,4'h7,4'h6,4'h5,4'h4,4'h3,4'h2,4'h1};
@@ -59,19 +87,14 @@ initial begin
     rstn = 1;
     
     // 等待几个时钟周期
-    #(CLK_PERIOD * 5);
-    
-    // 使能FIFO功能
-    en = 1;
-    
-    // 触发开始传输
-    #(CLK_PERIOD * 5) start = 1;
+    #100;
+
     
     // 等待发送完成
     #(CLK_PERIOD * 20);
     
     // 停止测试
-    #40000;
+    #40000000;
     $finish;
 end
 

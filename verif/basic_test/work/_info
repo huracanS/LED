@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/basic_test
 vfifo_fsm
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z2 !s110 1720146401
+Z2 !s110 1720160326
 !i10b 1
 !s100 VCM:=Tj7:C0GL=@fg8VTH3
 I4?PaJ8=a<3@bd@g5OfmzI2
@@ -26,7 +26,7 @@ Z4 OL;L;10.4;61
 r1
 !s85 0
 31
-Z5 !s108 1720146400.995000
+Z5 !s108 1720160326.012000
 Z6 !s107 ../../src/rtl/led_phy/test_pattern.sv|../../src/rtl/led_phy/multi_cycle_calculator.sv|../../src/rtl/led_phy/LED_send.sv|../../src/rtl/led_phy/fifo_fsm.sv|
 Z7 !s90 -f|./dut.f|
 !i113 0
@@ -93,7 +93,7 @@ w1720006585
 Ftb_LED_send.sv
 L0 3
 R4
-!s108 1720146401.074000
+!s108 1720160326.103000
 !s107 tb_LED_send.sv|
 !s90 tb_LED_send.sv|
 !i113 0

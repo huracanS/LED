@@ -1,5 +1,5 @@
 vlib    work   
-vmap    -modelsimini "D:/Modelsim/modelsim.ini" work    work
+vmap    -modelsimini "E:/Modelsim/modelsim.ini" work    work
 vlog    -f ./dut.f 
 vlog    tb_mean.sv
 vsim    -novopt -L eg work.tb_mean 
