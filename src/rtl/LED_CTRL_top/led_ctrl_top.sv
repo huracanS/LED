@@ -17,8 +17,10 @@ module led_ctrl_top(
 //----------fifo_fsm-----------------------------------------------
 // 功能:外部中断给出en后进入等待传输有效Frame数据的状态，如果main_cac模块给出传输信号，将数据存入fifo中.
 logic we;
-logic [11:0] fifo_data;
+logic [11:0] fifo_data_in;
 logic send_start;
+logic rd;
+logic [11:0] fifo_data_out;
 fifo_fsm #(
 //发送灯带分区帧格式
     .FRAME_N7_front  (4),
@@ -43,32 +45,33 @@ fifo_fsm #(
     .MeanB(MeanB), //8分区的总共B像素 8bit
 
     .we        (we),//输出写FIFO
-    .fifo_data (fifo_data),
+    .fifo_data (fifo_data_in),
     .send_start(send_start)//开启物理PHY.
 );
 //-----------------------------------------------------------------
 
 //----------同步模块-----------------------------------------------
 logic send_start_sync;
-always @(posedge clk_slow or negedge rstn) begin
-    if(!rstn) begin
-        send_start_sync <= 1'b0;
-    end else begin
-        send_start_sync <= send_start;
-    end
-end
+cdc_sbit_handshake u_cdc_sbit_handshake(
+    .aclk    (clk_fast)       ,	//快时钟
+    .arst_n  (rstn)           ,	//快时钟域复位信号
+    .signal_a(send_start)     ,//快时钟域信号
+    .bclk    (clk_slow)       ,	//慢时钟
+    .brst_n  (rstn)           ,	//慢时钟域复位信号
+    .signal_b(send_start_sync)//慢时钟域输出信号
+    );
 //-----------------------------------------------------------------
 
 //----------异步fifo-----------------------------------------------
 logic empty_flag;
-hasyncfifo_ahead12 u_hasyncfifo_ahead(
+hasyncfifo_ahead12to12 u_hasyncfifo_ahead12to12(
     .clkw      (clk_fast),
     .clkr      (clk_slow),
     .rst       (!rstn),
     .we        (we),
-    .di        (fifo_data),
-    .re        (),
-    .dout      (),
+    .di        (fifo_data_in),
+    .re        (rd),
+    .dout      (fifo_data_out),
     .valid     (),
     .full_flag (),
     .empty_flag(),
@@ -76,6 +79,26 @@ hasyncfifo_ahead12 u_hasyncfifo_ahead(
 );
 //----------------------------------------------------------------
 
+//-----------LED_SEND---------------------------------------------
+logic cko_o;
+LED_send u_LED_send(
+    .clk (clk_slow),//150M
+    .rstn(rstn),
+    
+    //控制fifo.
+    .fifo_data_in({fifo_data_out[11:8],4'b1111,fifo_data_out[7:4],4'b1111,fifo_data_out[3:0],4'b1111}),//输入的数据 RGB
+    .rd          (rd),//fifo读使能.
+    .sdo_2       (),//输出的数据信号测试
+
+    //输入数据使能和数据.
+    .enable(send_start_sync),//发送的数据使能
+    .data_in('d0),//发送的数据
+
+    //输出信号.
+    .cko_o(cko_o),//输出的时钟信号
+    .sdo()//输出的数据信号
+);
+//----------------------------------------------------------------
 
 
 endmodule

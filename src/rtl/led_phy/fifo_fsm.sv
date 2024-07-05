@@ -3,6 +3,7 @@ module fifo_fsm #(
     parameter FRAME_N7_front = 4,
     parameter FRAME_N6       = 4,
     parameter FRAME_N5_front = 4,
+    parameter FRAME_N5_back  = 1,
     parameter FRAME_N3       = 4,
     parameter FRAME_N0_front = 1,
     parameter FRAME_N0_back  = 4,
@@ -38,7 +39,7 @@ typedef enum logic[3:0]
 send_state_t c_state,n_state ;
 logic [3:0] block_choose;
 logic wr_done;
-parameter TOTAL_CNT = FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front +  FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7;
+parameter TOTAL_CNT = FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front +  FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7;
 logic [5:0] wr_cnt;
 
 //状态转移
@@ -143,18 +144,32 @@ assign wr_done = (wr_cnt == TOTAL_CNT) && (c_state == FIFO_WR);
 assign fifo_data = {MeanR[block_choose],MeanG[block_choose],MeanB[block_choose]};
 //选中区块.
 
-logic condition_n0,condition_n1,condition_n2,condition_n3,condition_n4,condition_n5,condition_n6,condition_n7,condition_n8,condition_n9,condition_na;
-assign condition_n0 = wr_cnt < (FRAME_N7_front + 1 - 1);
-assign condition_n1 =  (wr_cnt >= (FRAME_N7_front + 1 - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 - 1)) ;
-assign condition_n2 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front - 1)) ;
-assign condition_n3 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 - 1)) ;
-assign condition_n4 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 + FRAME_N0_front - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front - 1)) ;
-assign condition_n5 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 + FRAME_N0_front + FRAME_N0_back - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front + FRAME_N0_back - 1)) ;
-assign condition_n6 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 - 1)) ;
-assign condition_n7 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front - 1)) ;
-assign condition_n8 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back - 1)) ;
-assign condition_n9 =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 - 1)) ;
-assign condition_na =  (wr_cnt >= (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7 - 1)) && (wr_cnt < (FRAME_N7_front + 1 + FRAME_N6 + FRAME_N5_front + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7 - 1)) ;
+    // parameter FRAME_N7_front = 4,
+    // parameter FRAME_N6       = 4,
+    // parameter FRAME_N5_front = 4,
+    // parameter FRAME_N5_back  = 1,
+    // parameter FRAME_N3       = 4,
+    // parameter FRAME_N0_front = 1,
+    // parameter FRAME_N0_back  = 4,
+    // parameter FRAME_N1       = 4,
+    // parameter FRAME_N2_front = 4,
+    // parameter FRAME_N2_back  = 1,
+    // parameter FRAME_N4       = 4,
+    // parameter FRAME_N7       = 1
+
+logic condition_n0,condition_n1,condition_n2,condition_n3,condition_n4,condition_n5,condition_n6,condition_n7,condition_n8,condition_n9,condition_na,conidtion_nb;
+assign condition_n0 = wr_cnt < (FRAME_N7_front);
+assign condition_n1 =  (wr_cnt >= (FRAME_N7_front)) &&                                                                                                                                                (wr_cnt < (FRAME_N7_front + FRAME_N6)) ;//
+assign condition_n2 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6)) &&                                                                                                                                     (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front)) ;//
+assign condition_n3 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front)) &&                                                                                                                    (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back)) ;
+assign condition_n4 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back)) &&                                                                                                    (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3)) ;
+assign condition_n5 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3)) &&                                                                                         (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front)) ;
+assign condition_n6 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front)) &&                                                                        (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back)) ;
+assign condition_n7 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back)) &&                                                        (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1)) ;
+assign condition_n8 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1)) &&                                             (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front)) ;
+assign condition_n9 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front)) &&                            (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back)) ;
+assign condition_na =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back)) &&            (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4)) ;
+assign condition_nb =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4)) && (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front + FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7)) ;
 
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
@@ -164,23 +179,23 @@ always @(posedge clk or negedge rstn) begin
             block_choose <= 4'h7;
         else if(condition_n1) //4-7 FRAME_N6
             block_choose <= 4'h6;
-        else if(condition_n2)//8-11 FRAME_N5_front
+        else if(condition_n2 || condition_n3)//8-11 FRAME_N5_front
             block_choose <= 4'h5;
-        else if(condition_n3) //12-15 FRAME_N3
+        else if(condition_n4) //12-15 FRAME_N3
             block_choose <= 4'h3;
-        else if(condition_n4) //16 FRAME_N0_front
+        else if(condition_n5) //16 FRAME_N0_front
             block_choose <= 4'h0;
-        else if(condition_n5) //17-20 FRAME_N0_back
+        else if(condition_n6) //17-20 FRAME_N0_back
             block_choose <= 4'h0;
-        else if(condition_n6) //FRAME_N1
+        else if(condition_n7) //FRAME_N1
             block_choose <= 4'h1;
-        else if(condition_n7) //FRAME_N2_front
+        else if(condition_n8) //FRAME_N2_front
             block_choose <= 4'h2;
-        else if(condition_n8) //FRAME_N2_back
+        else if(condition_n9) //FRAME_N2_back
             block_choose <= 4'h2;
-        else if(condition_n9) //FRAME_N4
+        else if(condition_na) //FRAME_N4
             block_choose <= 4'h3;
-        else if(condition_na) //FRAME_N7
+        else if(condition_nb) //FRAME_N7
             block_choose <= 4'h7;
         else begin
             block_choose <= 4'b0;

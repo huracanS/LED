@@ -1,0 +1,242 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/ctrl_test
+vcdc_sbit_handshake
+Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 :RMTZL=U09P=BPe_fXYG^2
+I>_CB]lO?cA4k4bA0=1Thl1
+!s105 cdc_sbit_handshake_sv_unit
+S1
+R0
+Z3 w1720193934
+8../../src/rtl/led_phy/cdc_sbit_handshake.sv
+F../../src/rtl/led_phy/cdc_sbit_handshake.sv
+L0 2
+Z4 OL;L;10.4;61
+Z5 !s108 1720194648.127000
+Z6 !s107 ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv|../../src/rtl/led_phy/hasyncfifo_ahead12to12.v|../../src/rtl/led_phy/hasyncfifo_12to12.v|../../src/rtl/led_phy/test_pattern.sv|../../src/rtl/led_phy/multi_cycle_calculator.sv|../../src/rtl/led_phy/LED_send.sv|../../src/rtl/led_phy/fifo_fsm.sv|../../src/rtl/led_phy/cdc_sbit_handshake.sv|
+Z7 !s90 -f|./dut.f|
+!i113 0
+Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vfifo_cross_domain_addr_process_al_hasyncfifo_12to12
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ?_;a>zgW5e<Glc_396A4_1
+IS_aCbb=A@<ljAPk:[MMYn1
+R0
+Z9 w1720145639
+Z10 8../../src/rtl/led_phy/hasyncfifo_12to12.v
+Z11 F../../src/rtl/led_phy/hasyncfifo_12to12.v
+L0 290
+R4
+R5
+R6
+R7
+!i113 0
+R8
+vfifo_fsm
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 fSQ][?a7ZWGNCV[7ci>Q31
+IihSa2C2EHD>=[0AMooObb0
+!s105 fifo_fsm_sv_unit
+S1
+R0
+w1720192627
+8../../src/rtl/led_phy/fifo_fsm.sv
+F../../src/rtl/led_phy/fifo_fsm.sv
+L0 1
+R4
+R5
+R6
+R7
+!i113 0
+R8
+vhasyncfifo_12to12
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 CI<PXXJUjJ:HiAH?<VLJX1
+IFR1bcd<59D1E6Wb:^S8ZR2
+R0
+R9
+R10
+R11
+L0 26
+R4
+R5
+R6
+R7
+!i113 0
+R8
+vhasyncfifo_ahead12to12
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 7_MQ:19KTXMNDWWLFeXZW1
+IOg2[Nm]Oo[zKJO;B9[:@P1
+R0
+w1720194637
+8../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
+F../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
+L0 2
+R4
+R5
+R6
+R7
+!i113 0
+R8
+vled_ctrl_top
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 nQ3;L^@UEjB1HdX]I85n^1
+IiKW>M7m2WMFP19k3FMUb32
+!s105 led_ctrl_top_sv_unit
+S1
+R0
+w1720194382
+8../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
+F../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
+L0 1
+R4
+R5
+R6
+R7
+!i113 0
+R8
+vLED_send
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ed7?]@XF:>4=c8bkEoZgZ3
+IWHMQT_8N1mhRIWGRW7Vok0
+!s105 LED_send_sv_unit
+S1
+R0
+R3
+8../../src/rtl/led_phy/LED_send.sv
+F../../src/rtl/led_phy/LED_send.sv
+L0 1
+R4
+R5
+R6
+R7
+!i113 0
+R8
+n@l@e@d_send
+vmulti_cycle_calculator
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 U]F27`nPGd>4HNh9JnAV;3
+IQUGG1abaBP<<c<lBmodS>3
+!s105 multi_cycle_calculator_sv_unit
+S1
+R0
+w1719557799
+8../../src/rtl/led_phy/multi_cycle_calculator.sv
+F../../src/rtl/led_phy/multi_cycle_calculator.sv
+L0 1
+R4
+R5
+R6
+R7
+!i113 0
+R8
+vram_infer_hasyncfifo_12to12
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 IlhCfJ>JcXm;o3KCUX<oG2
+IJUgm;OVM7bT3l>OIdmXHg1
+R0
+R9
+R10
+R11
+L0 378
+R4
+R5
+R6
+R7
+!i113 0
+R8
+vtb_led_ctrl_top
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 Z5T3Nd0fjzmzg0]]SYE`z3
+IUO459GUInY_QS]03[FH0`0
+!s105 tb_led_ctrl_top_sv_unit
+S1
+R0
+w1720194486
+8tb_led_ctrl_top.sv
+Ftb_led_ctrl_top.sv
+L0 3
+R4
+!s108 1720194648.232000
+!s107 tb_led_ctrl_top.sv|
+!s90 tb_led_ctrl_top.sv|
+!i113 0
+R8
+vtest_pattern
+R1
+!s110 1720194648
+!i10b 1
+!s100 T^Q:CVU[040_4cTFz8]me2
+IJbW4OjczH0eaAVIg[1SNd3
+R2
+!s105 test_pattern_sv_unit
+S1
+R0
+w1720021341
+8../../src/rtl/led_phy/test_pattern.sv
+F../../src/rtl/led_phy/test_pattern.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8

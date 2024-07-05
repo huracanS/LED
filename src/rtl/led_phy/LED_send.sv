@@ -136,7 +136,7 @@ end
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         wait_cnt <= 'd0;
-    end else if(c_state == SEND || c_state == IDLE) begin
+    end else if((c_state == SEND || c_state == IDLE) && cko_p) begin
         wait_cnt <= 'd0;
     end else if((c_state == WAIT_SEND || c_state == SEND_DONE) && cko_p) begin //cko_p开始一次计数
         wait_cnt <= wait_cnt + 1;
