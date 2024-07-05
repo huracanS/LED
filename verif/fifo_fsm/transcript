@@ -15,5 +15,3 @@
 # //
 # vsim.wlf opened as dataset "vsim"
 # do wave.do
-find drivers -source -time {630.879 ns} -cause vsim:/tb_LED_send/uut/rd
-find drivers -source -time {623.271 ns} -cause vsim:/tb_LED_send/uut/rd
