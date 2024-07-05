@@ -152,7 +152,7 @@ end
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         cnt <= 6'd0;
-    end else if(cnt == DIV_CNT * 2 - 1) begin //0-9
+    end else if((cnt == DIV_CNT * 2 - 1) && cko_p) begin //0-9
         cnt <= 6'd0;
     end else begin
         cnt <= cnt + 1;
