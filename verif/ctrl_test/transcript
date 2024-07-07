@@ -14,29 +14,12 @@
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
 # vsim.wlf opened as dataset "vsim"
-# wave.do
-# invalid command name "wave.do"
-add wave -position insertpoint  \
-vsim:/tb_led_ctrl_top/clk_fast \
-vsim:/tb_led_ctrl_top/clk_slow \
-vsim:/tb_led_ctrl_top/rstn \
-vsim:/tb_led_ctrl_top/en \
-vsim:/tb_led_ctrl_top/start \
-vsim:/tb_led_ctrl_top/we \
-vsim:/tb_led_ctrl_top/fifo_data_in \
-vsim:/tb_led_ctrl_top/send_start \
-vsim:/tb_led_ctrl_top/rd \
-vsim:/tb_led_ctrl_top/fifo_data_out \
-vsim:/tb_led_ctrl_top/send_start_sync \
-vsim:/tb_led_ctrl_top/empty_flag \
-vsim:/tb_led_ctrl_top/cko_o \
-vsim:/tb_led_ctrl_top/sdo \
-vsim:/tb_led_ctrl_top/cycle_count \
-vsim:/tb_led_ctrl_top/cycle_count2
-add wave -position insertpoint vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/*
-find drivers -source -time {260787.447 ns} -chasex vsim:/tb_led_ctrl_top/fifo_data_in
-add wave -position insertpoint  \
-vsim:/tb_led_ctrl_top/uut/fifo_data_in
-add wave -position insertpoint  \
-vsim:/tb_led_ctrl_top/uut/u_hasyncfifo_ahead12to12/u_hasyncfifo_12to12/we \
-vsim:/tb_led_ctrl_top/uut/u_hasyncfifo_ahead12to12/u_hasyncfifo_12to12/di
+# do wave.do
+# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/cac_done'.
+# Executing ONERROR command at macro ./wave.do line 19
+# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/cac_result'.
+# Executing ONERROR command at macro ./wave.do line 20
+# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/sdo_2'.
+# Executing ONERROR command at macro ./wave.do line 25
+# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/cac_result'.
+# Executing ONERROR command at macro ./wave.do line 36

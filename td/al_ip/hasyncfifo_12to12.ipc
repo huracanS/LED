@@ -1,27 +1,48 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<SoftFifoConfig>
-    <Config>
-        <A_EMPTY_NUM>2</A_EMPTY_NUM>
-        <A_FULL_NUM>253</A_FULL_NUM>
-        <CLKMODE>ASYNC</CLKMODE>
-        <IMP_OPT>Auto</IMP_OPT>
-        <OUT_REG>Disable</OUT_REG>
-        <RAM_OPT>ERAM</RAM_OPT>
-        <R_DEPTH>256</R_DEPTH>
-        <R_WIDTH>8</R_WIDTH>
-        <SHOW_AHEAD>Disable</SHOW_AHEAD>
-        <W_DEPTH>256</W_DEPTH>
-        <W_WIDTH>8</W_WIDTH>
-    </Config>
+<FIFOConfig>
     <GeneralConfig>
+        <Type>EG_LOGIC_FIFO</Type>
         <Device>EG4D20EG176</Device>
-        <Type>EG4_Soft_FIFO</Type>
-        <Version>1.1</Version>
-        <create_VHDL>false</create_VHDL>
+        <create_VHDL>true</create_VHDL>
         <inst>hasyncfifo_12to12</inst>
     </GeneralConfig>
+    <DataPortOption>
+        <write_width>12</write_width>
+        <write_depth>512</write_depth>
+        <read_width>12</read_width>
+        <read_depth>512</read_depth>
+    </DataPortOption>
+    <FlagOption>
+        <aempty_flag>true</aempty_flag>
+        <afull_flag>true</afull_flag>
+        <aef_threshold>6</aef_threshold>
+        <aff_threshold>506</aff_threshold>
+        <resetmode>ASYNC</resetmode>
+        <reset_release>SYNC</reset_release>
+    </FlagOption>
+    <OutputOption>
+        <regmode_r>None</regmode_r>
+    </OutputOption>
+    <InputOption>
+        <regmode_w>None</regmode_w>
+    </InputOption>
+    <EndianOption>
+        <endian>Big</endian>
+    </EndianOption>
+    <SyncClockOption>
+        <sync_clk>false</sync_clk>
+        <SSROVERCE>false</SSROVERCE>
+    </SyncClockOption>
+    <ECC>
+        <ecc_is_enable>false</ecc_is_enable>
+        <ecc_is_de_enable>false</ecc_is_de_enable>
+    </ECC>
+    <PH_OutputOption>
+        <ph_regmode_r>OUTREG</ph_regmode_r>
+    </PH_OutputOption>
     <GeneratedFiles>
         <Verilog Enable="true">hasyncfifo_12to12.v</Verilog>
-        <SDC_FILE Enable="true">hasyncfifo_12to12.tcl</SDC_FILE>
+        <SimVerilog Enable="false">hasyncfifo_12to12_sim.v</SimVerilog>
+        <VHDL Enable="false">hasyncfifo_12to12.vhd</VHDL>
     </GeneratedFiles>
-</SoftFifoConfig>
+</FIFOConfig>

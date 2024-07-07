@@ -23,10 +23,10 @@ hasyncfifo_12to12 u_hasyncfifo_12to12
     .we          (  we         ),
     .di          (  di         ),
     .re          (  re_tmp     ),
-    .dout        (  dout       ),  
+    .do          (  dout       ),  
     .full_flag   (  full_flag  ),
     .empty_flag  (  empty_tmp  ),
-    .afull       (  afull      )
+    .afull_flag  (  afull      )
 );
 //////////////////////////////////////////////
 assign  empty_flag = ~valid;

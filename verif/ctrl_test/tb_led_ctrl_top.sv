@@ -26,7 +26,7 @@ logic send_start_sync;
 logic empty_flag;
 logic cko_o;
 logic [7:0] sdo;
-
+glbl glbl();
 // 实例化待测试模块
 led_ctrl_top uut (
     .clk_fast(clk_fast),

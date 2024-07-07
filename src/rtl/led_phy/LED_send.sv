@@ -9,11 +9,10 @@ module LED_send #(
     //控制fifo.
     input logic [23:0] fifo_data_in,//输入的数据 RGB
     output logic rd,//fifo读使能.
-    output logic sdo_2,//输出的数据信号测试
 
     //输入数据使能和数据.
     input logic enable,//发送的数据使能
-    input logic [127:0] data_in,//发送的数据
+
 
     //输出信号.
     output logic cko_o,//输出的时钟信号
@@ -26,6 +25,11 @@ module LED_send #(
 //3.发送END Frame 32bit 1.
 //>>>>>
 
+//>>功能描述:
+//1.enable之后进入WAIT_SEND状态.
+//2.进入等待状态后，计算当前需要发送的总帧数量,然后等待时间结束且算完了总帧数量，进入SEND状态.
+//3.发送完一帧进入给出rd使能，发送下一帧.
+
 //>>>>>状态信号定义
 //状态定义
 typedef enum logic[3:0]
@@ -36,8 +40,8 @@ typedef enum logic[3:0]
     SEND_DONE // 发送完成，等待时间进入空闲.
 }send_state_t;
 //信号定义.
+logic [5:0] bit_cnt;
 logic busy; /*synthesis keep*/
-logic done;//发送完成
 logic [4:0] wait_cnt; /*synthesis keep*/
 logic [10:0] send_cnt; /*synthesis keep*/
 logic [5:0] cnt;
@@ -45,8 +49,6 @@ logic cko_p,cko_n;
 logic cko;
 send_state_t c_state; /*synthesis keep*/
 send_state_t n_state; /*synthesis keep*/
-logic cac_done;//计算完成.
-logic [9:0] cac_result;//计算的结果最大1024.
 //logic SEND_length;
 //>>>>>
  assign cko_o = cko && (c_state == SEND);
@@ -77,13 +79,7 @@ always @(*) begin
         end
 
         WAIT_SEND: begin
-            // if(wait_cnt <= WAIT_CNT && cac_done) begin
-            //     n_state = WAIT_SEND;
-            // end else begin
-            //     n_state = WAIT_SEND;
-            // end
-
-            if(wait_cnt >= WAIT_CNT && cac_done && cko_p) begin
+            if(wait_cnt >= WAIT_CNT && cko_p) begin
                 n_state = SEND;
             end else begin
                 n_state = WAIT_SEND;
@@ -91,7 +87,7 @@ always @(*) begin
         end
 
         SEND: begin
-            if(send_cnt < cac_result ) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
+            if(send_cnt < LED_NUM ) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
                 n_state = SEND;
             end else begin
                 n_state = SEND_DONE;
@@ -112,26 +108,6 @@ always @(*) begin
     endcase
 end
 
-//WAIT_SEND流水线计算发送数量:
-// logic [10:0] send_length;
-// logic [10:0] send_c0;
-// logic [10:0] send_c1;
-// logic [10:0] send_c2;
-// logic cac_done;
-// assign SEND_length = (1 + LED_NUM + 1)*32;
-
-
-// always @(posedge clk or negedge rstn) begin
-//     if(!rstn) begin
-//         send_c0 <= 'd0;
-//     end else if(!cac_done)begin
-//         send_c0 <= (1 + LED_NUM + 1);
-//         send_c1 <= send_c0 * 32;
-//     end else begin
-
-//     end
-// end
-
 //wait_cnt
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
@@ -144,7 +120,6 @@ always @(posedge clk or negedge rstn) begin
 end
 
 //>>>>>输出时钟
-
 // 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6  
 // 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1
 //         1                   1               上升沿
@@ -152,7 +127,7 @@ end
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         cnt <= 6'd0;
-    end else if((cnt == DIV_CNT * 2 - 1) && cko_p) begin //0-9
+    end else if((cnt == DIV_CNT * 2 - 1)) begin //0-9
         cnt <= 6'd0;
     end else begin
         cnt <= cnt + 1;
@@ -190,26 +165,16 @@ always @(posedge clk or negedge rstn) begin
 end
 //>>>>>
 
-//>>>>>发送数据
-//锁存数据
-logic [(1+LED_NUM+1)*32-1:0] data_reg;
-always @(posedge clk or negedge rstn) begin
-    if(!rstn) begin
-        data_reg <= 'd0;
-    end else if(c_state == IDLE && !busy && enable) begin
-        data_reg <= {32'h00000000,data_in,32'hffffffff};
-    end else begin
-        data_reg <= data_reg;
-    end
-end
-
 //>>>>> 增加功能
 //读使能
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         rd <= 'd0;
-    end else if(c_state == SEND && (send_cnt != 11'b0) && (cnt == ((DIV_CNT * 2) - 1) - 1)) begin
-        rd <= 1'b1;
+    end else if(c_state == SEND && cko_n)begin
+        if(bit_cnt == 'd31)
+            rd <= 1'b1;
+        else 
+            rd <= 1'b0;
     end else begin
         rd <= 1'b0;
     end
@@ -222,61 +187,65 @@ assign en = rd;
 logic [31:0] frame_reg;
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
-        frame_reg <= 'd0;
-    end else if(rd) begin
-        frame_reg <= {8'hff,fifo_data_in};
+        frame_reg <= 32'd0;
+    end else if(en) begin
+        if(send_cnt == 32'd0) //第一帧 0000_0000.
+            frame_reg <= 32'h0000_0000;
+            //frame_reg <= 32'h5555_5555;
+        else if(send_cnt == LED_NUM - 1)
+            frame_reg <= 32'hffff_ffff;
+        else
+            frame_reg <= 32'h5555_5555;
+            //frame_reg <= {8'hff,fifo_data_in};
     end else begin
         frame_reg <= frame_reg;
     end
 end
 
+logic send_vld;//发送vld.
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
-        sdo_2 <= 1'b1;
+        send_vld <= 1'b0;
+        sdo <= 1'b1;
     end else if(c_state != SEND) begin
-        sdo_2 <= 1'b1;
+        send_vld <= 1'b0;
+        sdo <= 1'b1;
     end else if( ((c_state == WAIT_SEND && n_state == SEND) || c_state == SEND) && cko_n) begin
-        //sdo <= data_reg[( (1 + LED_NUM + 1)*32 -1) - send_cnt];
-        sdo_2 <= frame_reg[ 31 - send_cnt];
-        //$display("Sending data: sdo = %b, send_cnt = %d", data_reg[((1 + LED_NUM + 1)*32-1) - send_cnt], ((1 + LED_NUM + 1)*32-1) - send_cnt);
+        send_vld <= 1'b1;
+        sdo <= frame_reg[ 31 - bit_cnt];
+        $display("Sending data: sdo = %b, send_cnt = %d ,bit_cnt = %d", frame_reg[ 31 - bit_cnt], send_cnt,31 - bit_cnt);
     end
 end
 //>>>>>
 
-//发送数据计数.
+//发送数据计数. 计发送的帧数量.
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         send_cnt <= 'd0;
     end else if(c_state != SEND) begin
         send_cnt <= 'd0;
     end else if(c_state == SEND && cko_n) begin
-        send_cnt <= send_cnt + 1;
+        if(bit_cnt < 'd31)
+            send_cnt <= send_cnt;
+        else 
+            send_cnt <= send_cnt + 1;
     end else begin
         send_cnt <= send_cnt;
     end
 end
 
-//发送数据.
+//发送数据计数.计发送的bit数.
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
-        sdo <= 1'b1;
-    end else if(c_state != SEND) begin
-        sdo <= 1'b1;
-    end else if(c_state == SEND && cko_n) begin
-        //sdo <= data_reg[( (1 + LED_NUM + 1)*32 -1) - send_cnt];
-        sdo <= data_reg[( cac_result -1) - send_cnt];
-        //$display("Sending data: sdo = %b, send_cnt = %d", data_reg[((1 + LED_NUM + 1)*32-1) - send_cnt], ((1 + LED_NUM + 1)*32-1) - send_cnt);
+        bit_cnt <= 6'd0;
+    end else if(c_state == SEND && cko_n)begin
+        if(bit_cnt < 6'd31) 
+            bit_cnt <= bit_cnt + 1;
+        else 
+            bit_cnt <= 6'd0;
+    end else begin
+        bit_cnt <= bit_cnt;
     end
 end
-
-
-//多步计算乘法结果,优化时序
-multi_cycle_calculator u_multi_cycle_calculator(
-    .clk(clk),          // 时钟信号
-    .rst_n(rstn),        // 复位信号（低电平有效）
-    .led_num(LED_NUM),// 输入LED的frame数量,这里假设最大32.
-    .done(cac_done),         // 计算完成.
-    .result(cac_result)  // 最大1024.
-);
 
 endmodule

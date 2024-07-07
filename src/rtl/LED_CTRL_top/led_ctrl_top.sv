@@ -74,29 +74,32 @@ hasyncfifo_ahead12to12 u_hasyncfifo_ahead12to12(
     .dout      (fifo_data_out),
     .valid     (),
     .full_flag (),
-    .empty_flag(),
+    .empty_flag(empty_flag),
     .afull     ()
 );
 //----------------------------------------------------------------
 
 //-----------LED_SEND---------------------------------------------
 logic cko_o;
-LED_send u_LED_send(
+logic sdo_o;
+LED_send #(
+    .LED_NUM(35),//LED帧个数：发送LED帧图像的个数.
+    .WAIT_CNT(5),//等待时间：发送开始和结束等待的时间.
+    .DIV_CNT (5)//分频系数: 150M/30M = 5.
+) u_LED_send(
     .clk (clk_slow),//150M
     .rstn(rstn),
     
     //控制fifo.
     .fifo_data_in({fifo_data_out[11:8],4'b1111,fifo_data_out[7:4],4'b1111,fifo_data_out[3:0],4'b1111}),//输入的数据 RGB
     .rd          (rd),//fifo读使能.
-    .sdo_2       (),//输出的数据信号测试
 
     //输入数据使能和数据.
     .enable(send_start_sync),//发送的数据使能
-    .data_in('d0),//发送的数据
 
     //输出信号.
     .cko_o(cko_o),//输出的时钟信号
-    .sdo()//输出的数据信号
+    .sdo(sdo_o)//输出的数据信号
 );
 //----------------------------------------------------------------
 
