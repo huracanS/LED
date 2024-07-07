@@ -10,7 +10,10 @@ module led_ctrl_top(
     input logic start,//开始传输信号.
     input  logic [3:0]  MeanR [7:0], //8分区的总共R像素 8bit
     input  logic [3:0]  MeanG [7:0], //8分区的总共G像素 8bit
-    input  logic [3:0]  MeanB [7:0] //8分区的总共B像素 8bit
+    input  logic [3:0]  MeanB [7:0], //8分区的总共B像素 8bit
+
+    output logic cko_o,
+    output logic sdo_o
 );
 
 
@@ -80,8 +83,8 @@ hasyncfifo_ahead12to12 u_hasyncfifo_ahead12to12(
 //----------------------------------------------------------------
 
 //-----------LED_SEND---------------------------------------------
-logic cko_o;
-logic sdo_o;
+// logic cko_o;
+// logic sdo_o;
 LED_send #(
     .LED_NUM(35),//LED帧个数：发送LED帧图像的个数.
     .WAIT_CNT(5),//等待时间：发送开始和结束等待的时间.

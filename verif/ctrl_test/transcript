@@ -15,11 +15,3 @@
 # //
 # vsim.wlf opened as dataset "vsim"
 # do wave.do
-# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/cac_done'.
-# Executing ONERROR command at macro ./wave.do line 19
-# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/cac_result'.
-# Executing ONERROR command at macro ./wave.do line 20
-# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/sdo_2'.
-# Executing ONERROR command at macro ./wave.do line 25
-# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_LED_send/cac_result'.
-# Executing ONERROR command at macro ./wave.do line 36

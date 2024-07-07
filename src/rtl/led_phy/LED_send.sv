@@ -79,7 +79,7 @@ always @(*) begin
         end
 
         WAIT_SEND: begin
-            if(wait_cnt >= WAIT_CNT && cko_p) begin
+            if(wait_cnt >= WAIT_CNT && cko_n) begin
                 n_state = SEND;
             end else begin
                 n_state = WAIT_SEND;
@@ -87,18 +87,18 @@ always @(*) begin
         end
 
         SEND: begin
-            if(send_cnt < LED_NUM ) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
-                n_state = SEND;
-            end else begin
+            if((send_cnt >= LED_NUM + 2) && (bit_cnt == 'd31) && cko_n) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
                 n_state = SEND_DONE;
+            end else begin
+                n_state = SEND;
             end
         end
 
         SEND_DONE: begin
-            if(wait_cnt <= WAIT_CNT) begin
-                n_state = SEND_DONE;
-            end else begin
+            if((wait_cnt >= WAIT_CNT) && cko_n) begin
                 n_state = IDLE;
+            end else begin
+                n_state = SEND_DONE;
             end
         end
 
@@ -112,9 +112,9 @@ end
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         wait_cnt <= 'd0;
-    end else if((c_state == SEND || c_state == IDLE) && cko_p) begin
+    end else if((c_state == SEND || c_state == IDLE) && cko_n) begin
         wait_cnt <= 'd0;
-    end else if((c_state == WAIT_SEND || c_state == SEND_DONE) && cko_p) begin //cko_p开始一次计数
+    end else if((c_state == WAIT_SEND || c_state == SEND_DONE) && cko_n) begin //cko_p开始一次计数
         wait_cnt <= wait_cnt + 1;
     end
 end
@@ -192,11 +192,11 @@ always @(posedge clk or negedge rstn) begin
         if(send_cnt == 32'd0) //第一帧 0000_0000.
             frame_reg <= 32'h0000_0000;
             //frame_reg <= 32'h5555_5555;
-        else if(send_cnt == LED_NUM - 1)
+        else if(send_cnt == LED_NUM + 2)
             frame_reg <= 32'hffff_ffff;
         else
-            frame_reg <= 32'h5555_5555;
-            //frame_reg <= {8'hff,fifo_data_in};
+            //frame_reg <= 32'h5555_5555;
+            frame_reg <= {8'hff,fifo_data_in};
     end else begin
         frame_reg <= frame_reg;
     end

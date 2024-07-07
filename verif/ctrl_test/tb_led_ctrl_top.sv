@@ -48,9 +48,9 @@ always #(CLK_SLOW_PERIOD/2) clk_slow = ~clk_slow;
 // 初始化信号
 initial start = 0;
 // 每隔N个周期产生一个单周期的信号
-parameter N = 1000; // 每隔5个时钟周期
+parameter N = 3000; // 每隔5个时钟周期
 integer cycle_count = 0;
-always @(posedge clk_fast) begin
+always @(posedge clk_slow) begin
     if (cycle_count == N) begin
         start <= 1; // 产生单周期信号
         #(CLK_FAST_PERIOD) start <= 0; // 下一个时钟周期结束信号
@@ -64,9 +64,9 @@ end
 // 初始化信号
 initial en = 0;
 // 每隔N个周期产生一个单周期的信号
-parameter N2 = 5000; // 每隔5个时钟周期
+parameter N2 = 20000; // 每隔5个时钟周期
 integer cycle_count2 = 0;
-always @(posedge clk_fast) begin
+always @(posedge clk_slow) begin
     if (cycle_count2 == N2) begin
         en <= 1; // 产生单周期信号
         #(CLK_FAST_PERIOD) en <= 0; // 下一个时钟周期结束信号
