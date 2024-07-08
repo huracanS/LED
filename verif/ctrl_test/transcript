@@ -17,3 +17,5 @@
 # do wave.do
 add wave -position 32  vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/block_choose_real
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/ctrl_test/wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/ctrl_test/wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/ctrl_test/wave.do
