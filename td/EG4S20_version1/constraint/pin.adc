@@ -1,0 +1,4 @@
+set_pin_assignment	{ cko }	{ LOCATION = F15; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+set_pin_assignment	{ sdo }	{ LOCATION = D16; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+set_pin_assignment	{ sysclk_i }	{ LOCATION = R7; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+

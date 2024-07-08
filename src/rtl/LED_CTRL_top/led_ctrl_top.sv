@@ -1,6 +1,6 @@
 module led_ctrl_top(
-    input logic clk_fast,
-    input logic clk_slow,
+    input logic clk_fast,//150M
+    input logic clk_slow,//10M
     input logic rstn,
 
     //cpu 

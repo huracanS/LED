@@ -40,7 +40,7 @@ send_state_t c_state,n_state ;
 logic [3:0] block_choose;
 logic [3:0] block_choose_real;
 logic wr_done;
-parameter TOTAL_CNT = FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front +  FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7;
+localparam TOTAL_CNT = FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front +  FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7;
 logic [5:0] wr_cnt;
 
 //状态转移

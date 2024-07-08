@@ -1,0 +1,42 @@
+standard
+***Report Model: fpga_ed4g Device: EG4S20BG256***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+Gate Statistics
+#Basic gates              225
+  #and                     33
+  #nand                     0
+  #or                       6
+  #nor                      0
+  #xor                      0
+  #xnor                     0
+  #buf                      0
+  #not                     16
+  #bufif1                   0
+  #MX21                    33
+  #FADD                     0
+  #DFF                    137
+  #LATCH                    0
+#MACRO_ADD                 23
+#MACRO_EQ                  21
+#MACRO_MUX                150
+#MACRO_OTHERS               2
+
+Report Hierarchy Area:
++-----------------------------------------------------------------------------+
+|Instance                     |Module                 |gates  |seq    |macros |
++-----------------------------------------------------------------------------+
+|top                          |fpga_ed4g              |88     |137    |46     |
+|  u_PLL_150M                 |PLL_150M               |0      |0      |1      |
+|  u_ctrl_top                 |led_ctrl_top           |86     |68     |38     |
+|    u_LED_send               |LED_send               |41     |49     |23     |
+|    u_cdc_sbit_handshake     |cdc_sbit_handshake     |4      |6      |0      |
+|    u_fifo_fsm               |fifo_fsm               |30     |12     |14     |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |11     |1      |1      |
+|      u_hasyncfifo_12to12    |hasyncfifo_12to12      |0      |0      |1      |
++-----------------------------------------------------------------------------+

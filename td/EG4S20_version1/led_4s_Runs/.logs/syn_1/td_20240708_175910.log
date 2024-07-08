@@ -1,0 +1,475 @@
+============================================================
+   Tang Dynasty, V5.6.71036
+      Copyright (c) 2012-2023 Anlogic Inc.
+   Executable = D:/TD/bin/td.exe
+   Built at =   20:34:38 Mar 21 2023
+   Run by =     32863
+   Run Date =   Mon Jul  8 17:59:10 2024
+
+   Run on =     SUPERIOR-LEGION
+============================================================
+RUN-1002 : start command "open_project led_4s.prj"
+RUN-1001 : Print Global Property
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :        Parameters        |  Settings  |  Default Values  |  Note  
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :          message         |  standard  |     standard     |        
+RUN-1001 :   mixed_pack_place_flow  |     on     |        on        |        
+RUN-1001 :        qor_monitor       |    off     |       off        |        
+RUN-1001 :        syn_ip_flow       |    off     |       off        |        
+RUN-1001 :          thread          |    auto    |       auto       |        
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 : Print Design Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :   default_reg_initial   |    auto    |       auto       |        
+RUN-1001 :        infer_add        |     on     |        on        |        
+RUN-1001 :        infer_fsm        |    off     |       off        |        
+RUN-1001 :        infer_mult       |     on     |        on        |        
+RUN-1001 :        infer_ram        |     on     |        on        |        
+RUN-1001 :        infer_reg        |     on     |        on        |        
+RUN-1001 :   infer_reg_init_value  |     on     |        on        |        
+RUN-1001 :        infer_rom        |     on     |        on        |        
+RUN-1001 :      infer_shifter      |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 : Print Rtl Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :       compress_add      |   ripple   |      ripple      |        
+RUN-1001 :        elf_sload        |    off     |       off        |        
+RUN-1001 :       fix_undriven      |     0      |        0         |        
+RUN-1001 :         flatten         |    off     |       off        |        
+RUN-1001 :       gate_sharing      |     on     |        on        |        
+RUN-1001 :    hdl_warning_level    |   normal   |      normal      |        
+RUN-1001 :   impl_internal_tribuf  |     on     |        on        |        
+RUN-1001 :      impl_set_reset     |     on     |        on        |        
+RUN-1001 :        infer_gsr        |    off     |       off        |        
+RUN-1001 :      keep_hierarchy     |    auto    |       auto       |        
+RUN-1001 :        max_fanout       |    9999    |       9999       |        
+RUN-1001 :      max_oh2bin_len     |     10     |        10        |        
+RUN-1001 :       merge_equal       |     on     |        on        |        
+RUN-1001 :       merge_equiv       |     on     |        on        |        
+RUN-1001 :        merge_mux        |    off     |       off        |        
+RUN-1001 :     min_control_set     |     8      |        8         |        
+RUN-1001 :      min_ripple_len     |    auto    |       auto       |        
+RUN-1001 :       oh2bin_ratio      |    0.08    |       0.08       |        
+RUN-1001 :     opt_adder_fanout    |     on     |        on        |        
+RUN-1001 :        opt_arith        |     on     |        on        |        
+RUN-1001 :       opt_big_gate      |    off     |       off        |        
+RUN-1001 :        opt_const        |     on     |        on        |        
+RUN-1001 :      opt_const_mult     |     on     |        on        |        
+RUN-1001 :       opt_lessthan      |     on     |        on        |        
+RUN-1001 :         opt_mux         |    off     |       off        |        
+RUN-1001 :         opt_ram         |    high    |       high       |        
+RUN-1001 :      rtl_sim_model      |    off     |       off        |        
+RUN-1001 :         seq_syn         |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+HDL-1007 : analyze verilog file ../../al_ip/PLL_150M.v
+HDL-1007 : undeclared symbol 'open', assumed default net type 'wire' in ../../al_ip/PLL_150M.v(78)
+HDL-1007 : analyze verilog file ../../al_ip/hasyncfifo_ahead12to12.v
+HDL-1007 : analyze verilog file ../../../../src/rtl/FPGA/fpga_eg4s.sv
+HDL-1007 : undeclared symbol 'lock', assumed default net type 'wire' in ../../../../src/rtl/FPGA/fpga_eg4s.sv(44)
+HDL-1007 : undeclared symbol 'en', assumed default net type 'wire' in ../../../../src/rtl/FPGA/fpga_eg4s.sv(55)
+HDL-1007 : undeclared symbol 'start', assumed default net type 'wire' in ../../../../src/rtl/FPGA/fpga_eg4s.sv(56)
+HDL-1007 : analyze verilog file ../../../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
+HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/LED_send.sv
+HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/cdc_sbit_handshake.sv
+HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/fifo_fsm.sv
+HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
+RUN-1001 : Project manager successfully analyzed 8 source files.
+RUN-1002 : start command "import_device eagle_s20.db -package EG4S20BG256"
+ARC-1001 : Device Initialization.
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :            OPTION            |          IO          |   SETTING   
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :   cso_b/cclk/mosi/miso/dout  |  T3/R11/T10/P10/S11  |    gpio    
+ARC-1001 :             done             |         P13          |    gpio    
+ARC-1001 :           program_b          |          T2          |  dedicate  
+ARC-1001 :        tdi/tms/tck/tdo       |   C12/A15/C14/E14    |  dedicate  
+ARC-1001 : ------------------------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+RUN-1002 : start command "elaborate -top fpga_ed4g"
+RUN-1001 : Print Design Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :   default_reg_initial   |    auto    |       auto       |        
+RUN-1001 :        infer_add        |     on     |        on        |        
+RUN-1001 :        infer_fsm        |    off     |       off        |        
+RUN-1001 :        infer_mult       |     on     |        on        |        
+RUN-1001 :        infer_ram        |     on     |        on        |        
+RUN-1001 :        infer_reg        |     on     |        on        |        
+RUN-1001 :   infer_reg_init_value  |     on     |        on        |        
+RUN-1001 :        infer_rom        |     on     |        on        |        
+RUN-1001 :      infer_shifter      |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 : Print Rtl Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :       compress_add      |   ripple   |      ripple      |        
+RUN-1001 :        elf_sload        |    off     |       off        |        
+RUN-1001 :       fix_undriven      |     0      |        0         |        
+RUN-1001 :         flatten         |    off     |       off        |        
+RUN-1001 :       gate_sharing      |     on     |        on        |        
+RUN-1001 :    hdl_warning_level    |   normal   |      normal      |        
+RUN-1001 :   impl_internal_tribuf  |     on     |        on        |        
+RUN-1001 :      impl_set_reset     |     on     |        on        |        
+RUN-1001 :        infer_gsr        |    off     |       off        |        
+RUN-1001 :      keep_hierarchy     |    auto    |       auto       |        
+RUN-1001 :        max_fanout       |    9999    |       9999       |        
+RUN-1001 :      max_oh2bin_len     |     10     |        10        |        
+RUN-1001 :       merge_equal       |     on     |        on        |        
+RUN-1001 :       merge_equiv       |     on     |        on        |        
+RUN-1001 :        merge_mux        |    off     |       off        |        
+RUN-1001 :     min_control_set     |     8      |        8         |        
+RUN-1001 :      min_ripple_len     |    auto    |       auto       |        
+RUN-1001 :       oh2bin_ratio      |    0.08    |       0.08       |        
+RUN-1001 :     opt_adder_fanout    |     on     |        on        |        
+RUN-1001 :        opt_arith        |     on     |        on        |        
+RUN-1001 :       opt_big_gate      |    off     |       off        |        
+RUN-1001 :        opt_const        |     on     |        on        |        
+RUN-1001 :      opt_const_mult     |     on     |        on        |        
+RUN-1001 :       opt_lessthan      |     on     |        on        |        
+RUN-1001 :         opt_mux         |    off     |       off        |        
+RUN-1001 :         opt_ram         |    high    |       high       |        
+RUN-1001 :      rtl_sim_model      |    off     |       off        |        
+RUN-1001 :         seq_syn         |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 : Print Global Property
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :        Parameters        |  Settings  |  Default Values  |  Note  
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :          message         |  standard  |     standard     |        
+RUN-1001 :   mixed_pack_place_flow  |     on     |        on        |        
+RUN-1001 :        qor_monitor       |    off     |       off        |        
+RUN-1001 :        syn_ip_flow       |    off     |       off        |        
+RUN-1001 :          thread          |    auto    |       auto       |        
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 : Print Design Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :   default_reg_initial   |    auto    |       auto       |        
+RUN-1001 :        infer_add        |     on     |        on        |        
+RUN-1001 :        infer_fsm        |    off     |       off        |        
+RUN-1001 :        infer_mult       |     on     |        on        |        
+RUN-1001 :        infer_ram        |     on     |        on        |        
+RUN-1001 :        infer_reg        |     on     |        on        |        
+RUN-1001 :   infer_reg_init_value  |     on     |        on        |        
+RUN-1001 :        infer_rom        |     on     |        on        |        
+RUN-1001 :      infer_shifter      |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+HDL-1007 : elaborate module fpga_ed4g in ../../../../src/rtl/FPGA/fpga_eg4s.sv(3)
+HDL-1007 : elaborate module PLL_150M in ../../al_ip/PLL_150M.v(23)
+HDL-1007 : elaborate module EG_LOGIC_BUFG in D:/TD/arch/eagle_macro.v(8)
+HDL-1007 : elaborate module EG_PHY_PLL(FIN="50.000",FBCLK_DIV=3,CLKC0_DIV=7,CLKC1_DIV=105,CLKC0_ENABLE="ENABLE",CLKC1_ENABLE="ENABLE",FEEDBK_PATH="CLKC0_EXT",STDBY_ENABLE="DISABLE",CLKC0_CPHASE=6,CLKC1_CPHASE=104,GMC_GAIN=4,ICP_CURRENT=13,KVCO=4,LPF_CAPACITOR=1,LPF_RESISTOR=4,SYNC_ENABLE="DISABLE") in D:/TD/arch/eagle_macro.v(930)
+HDL-1007 : elaborate module led_ctrl_top in ../../../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(1)
+HDL-1007 : elaborate module fifo_fsm in ../../../../src/rtl/led_phy/fifo_fsm.sv(1)
+HDL-1007 : elaborate module cdc_sbit_handshake in ../../../../src/rtl/led_phy/cdc_sbit_handshake.sv(2)
+HDL-1007 : port 'aempty_flag' remains unconnected for this instance in ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v(18)
+HDL-1007 : elaborate module hasyncfifo_ahead12to12 in ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v(2)
+HDL-1007 : elaborate module hasyncfifo_12to12 in ../../al_ip/hasyncfifo_ahead12to12.v(14)
+HDL-1007 : elaborate module EG_LOGIC_FIFO(DATA_WIDTH_W=12,DATA_WIDTH_R=12,DATA_DEPTH_W=512,DATA_DEPTH_R=512,AF=506,F=512,ASYNC_RESET_RELEASE="ASYNC",ENDIAN="BIG") in D:/TD/arch/eagle_macro.v(142)
+HDL-1007 : elaborate module LED_send(LED_NUM=47) in ../../../../src/rtl/led_phy/LED_send.sv(1)
+HDL-5007 WARNING: system task 'display' is ignored for synthesis in ../../../../src/rtl/led_phy/LED_send.sv(227)
+HDL-1200 : Current top model is fpga_ed4g
+HDL-1100 : Inferred 0 RAMs.
+RUN-1002 : start command "export_db led_4s_elaborate.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported flow parameters
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1002 : start command "read_adc ../../constraint/pin.adc"
+RUN-1002 : start command "set_pin_assignment  sysclk_i   LOCATION = R7; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; "
+RUN-1001 : Starting of IO setups legality check.
+RUN-1001 : Starting of IO setups legality check.
+RUN-1001 : Starting of IO vref setups legality check.
+USR-6010 WARNING: ADC constraints: top model pin cko has no constraint.
+USR-6010 WARNING: ADC constraints: top model pin sdo has no constraint.
+RUN-1002 : start command "optimize_rtl"
+RUN-1001 : Open license file D:/TD/license/Anlogic.lic
+RUN-1001 : Print Global Property
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :        Parameters        |  Settings  |  Default Values  |  Note  
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :          message         |  standard  |     standard     |        
+RUN-1001 :   mixed_pack_place_flow  |     on     |        on        |        
+RUN-1001 :        qor_monitor       |    off     |       off        |        
+RUN-1001 :        syn_ip_flow       |    off     |       off        |        
+RUN-1001 :          thread          |    auto    |       auto       |        
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 : Print Rtl Property
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :        Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------------
+RUN-1001 :       compress_add      |   ripple   |      ripple      |        
+RUN-1001 :        elf_sload        |    off     |       off        |        
+RUN-1001 :       fix_undriven      |     0      |        0         |        
+RUN-1001 :         flatten         |    off     |       off        |        
+RUN-1001 :       gate_sharing      |     on     |        on        |        
+RUN-1001 :    hdl_warning_level    |   normal   |      normal      |        
+RUN-1001 :   impl_internal_tribuf  |     on     |        on        |        
+RUN-1001 :      impl_set_reset     |     on     |        on        |        
+RUN-1001 :        infer_gsr        |    off     |       off        |        
+RUN-1001 :      keep_hierarchy     |    auto    |       auto       |        
+RUN-1001 :        max_fanout       |    9999    |       9999       |        
+RUN-1001 :      max_oh2bin_len     |     10     |        10        |        
+RUN-1001 :       merge_equal       |     on     |        on        |        
+RUN-1001 :       merge_equiv       |     on     |        on        |        
+RUN-1001 :        merge_mux        |    off     |       off        |        
+RUN-1001 :     min_control_set     |     8      |        8         |        
+RUN-1001 :      min_ripple_len     |    auto    |       auto       |        
+RUN-1001 :       oh2bin_ratio      |    0.08    |       0.08       |        
+RUN-1001 :     opt_adder_fanout    |     on     |        on        |        
+RUN-1001 :        opt_arith        |     on     |        on        |        
+RUN-1001 :       opt_big_gate      |    off     |       off        |        
+RUN-1001 :        opt_const        |     on     |        on        |        
+RUN-1001 :      opt_const_mult     |     on     |        on        |        
+RUN-1001 :       opt_lessthan      |     on     |        on        |        
+RUN-1001 :         opt_mux         |    off     |       off        |        
+RUN-1001 :         opt_ram         |    high    |       high       |        
+RUN-1001 :      rtl_sim_model      |    off     |       off        |        
+RUN-1001 :         seq_syn         |     on     |        on        |        
+RUN-1001 : --------------------------------------------------------------
+SYN-1012 : SanityCheck: Model "fpga_ed4g"
+SYN-1012 : SanityCheck: Model "PLL_150M"
+SYN-1012 : SanityCheck: Model "led_ctrl_top"
+SYN-1012 : SanityCheck: Model "LED_send(LED_NUM=47)"
+SYN-1012 : SanityCheck: Model "cdc_sbit_handshake"
+SYN-1012 : SanityCheck: Model "fifo_fsm"
+SYN-1012 : SanityCheck: Model "hasyncfifo_ahead12to12"
+SYN-1012 : SanityCheck: Model "hasyncfifo_12to12"
+SYN-1043 : Mark PLL_150M as IO macro for instance bufg_feedback
+SYN-1011 : Flatten model fpga_ed4g
+SYN-1032 : 1037/11 useful/useless nets, 466/3 useful/useless insts
+SYN-1016 : Merged 21 instances.
+SYN-1032 : 778/93 useful/useless nets, 243/33 useful/useless insts
+SYN-1016 : Merged 98 instances.
+SYN-1032 : 696/3 useful/useless nets, 580/25 useful/useless insts
+SYN-1014 : Optimize round 1
+SYN-1017 : Remove 1 const input seq instances
+SYN-1002 :     reg2_syn_23
+SYN-1021 : Optimized 6 onehot mux instances.
+SYN-1020 : Optimized 21 distributor mux.
+SYN-1001 : Optimize 13 less-than instances
+SYN-1019 : Optimized 5 mux instances.
+SYN-1016 : Merged 31 instances.
+SYN-1015 : Optimize round 1, 308 better
+SYN-1014 : Optimize round 2
+SYN-1032 : 597/22 useful/useless nets, 481/45 useful/useless insts
+SYN-1017 : Remove 1 const input seq instances
+SYN-1002 :     u_ctrl_top/u_LED_send/reg0_syn_7
+SYN-1019 : Optimized 2 mux instances.
+SYN-1015 : Optimize round 2, 77 better
+SYN-1014 : Optimize round 1
+SYN-1015 : Optimize round 1, 0 better
+RUN-1002 : start command "report_area -file led_4s_rtl.area"
+RUN-1001 : standard
+***Report Model: fpga_ed4g Device: EG4S20BG256***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+Gate Statistics
+#Basic gates              228
+  #and                     33
+  #nand                     0
+  #or                       6
+  #nor                      0
+  #xor                      0
+  #xnor                     0
+  #buf                      0
+  #not                     16
+  #bufif1                   0
+  #MX21                    33
+  #FADD                     0
+  #DFF                    140
+  #LATCH                    0
+#MACRO_ADD                 23
+#MACRO_EQ                  21
+#MACRO_MUX                150
+#MACRO_OTHERS               2
+
+Report Hierarchy Area:
++-----------------------------------------------------------------------------+
+|Instance                     |Module                 |gates  |seq    |macros |
++-----------------------------------------------------------------------------+
+|top                          |fpga_ed4g              |88     |140    |46     |
+|  u_PLL_150M                 |PLL_150M               |0      |0      |1      |
+|  u_ctrl_top                 |led_ctrl_top           |86     |68     |38     |
+|    u_LED_send               |LED_send               |41     |49     |23     |
+|    u_cdc_sbit_handshake     |cdc_sbit_handshake     |4      |6      |0      |
+|    u_fifo_fsm               |fifo_fsm               |30     |12     |14     |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |11     |1      |1      |
+|      u_hasyncfifo_12to12    |hasyncfifo_12to12      |0      |0      |1      |
++-----------------------------------------------------------------------------+
+
+RUN-1002 : start command "export_db led_4s_rtl.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported flow parameters
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1002 : start command "optimize_gate -maparea led_4s_gate.area"
+RUN-1001 : Open license file D:/TD/license/Anlogic.lic
+RUN-1001 : Print Global Property
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :        Parameters        |  Settings  |  Default Values  |  Note  
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 :          message         |  standard  |     standard     |        
+RUN-1001 :   mixed_pack_place_flow  |     on     |        on        |        
+RUN-1001 :        qor_monitor       |    off     |       off        |        
+RUN-1001 :        syn_ip_flow       |    off     |       off        |        
+RUN-1001 :          thread          |    auto    |       auto       |        
+RUN-1001 : ---------------------------------------------------------------
+RUN-1001 : Print Gate Property
+RUN-1001 : ------------------------------------------------------------------
+RUN-1001 :          Parameters         |  Settings  |  Default Values  |  Note  
+RUN-1001 : ------------------------------------------------------------------
+RUN-1001 :         cascade_dsp         |    off     |       off        |        
+RUN-1001 :         cascade_eram        |    off     |       off        |        
+RUN-1001 :        gate_sim_model       |    off     |       off        |        
+RUN-1001 :        map_sim_model        |    off     |       off        |        
+RUN-1001 :         map_strategy        |     1      |        1         |        
+RUN-1001 :           opt_area          |   medium   |      medium      |        
+RUN-1001 :          opt_timing         |    auto    |       auto       |        
+RUN-1001 :         pack_effort         |   medium   |      medium      |        
+RUN-1001 :      pack_lslice_ripple     |     on     |        on        |        
+RUN-1001 :   pack_lslice_ripple_ratio  |    0.5     |       0.5        |        
+RUN-1001 :        pack_seq_in_io       |    auto    |       auto       |        
+RUN-1001 :        ph1_mux_ratio        |    1.0     |       1.0        |        
+RUN-1001 :            report           |  standard  |     standard     |        
+RUN-1001 :           retiming          |    off     |       off        |        
+RUN-1001 : ------------------------------------------------------------------
+SYN-2001 : Map 3 IOs to PADs
+SYN-1032 : 596/1 useful/useless nets, 481/0 useful/useless insts
+RUN-1002 : start command "update_pll_param -module fpga_ed4g"
+SYN-2501 : Processed 0 LOGIC_BUF instances.
+SYN-2501 : 1 BUFG to GCLK
+SYN-2541 : Write 512x12, read 512x12.
+SYN-2571 : Optimize after map_dsp, round 1
+SYN-1016 : Merged 1 instances.
+SYN-2571 : Optimize after map_dsp, round 1, 1 better
+SYN-2571 : Optimize after map_dsp, round 2
+SYN-2571 : Optimize after map_dsp, round 2, 0 better
+SYN-1001 : Throwback 8 control mux instances
+SYN-2501 : Optimize round 1
+SYN-1016 : Merged 20 instances.
+SYN-2501 : Optimize round 1, 171 better
+SYN-2501 : Optimize round 2
+SYN-2501 : Optimize round 2, 0 better
+SYN-2501 : Map 23 macro adder
+SYN-3001 : Mapper mapped 7 instances into 1 LUTs, name keeping = 100%.
+SYN-3001 : Mapper mapped 7 instances into 1 LUTs, name keeping = 100%.
+SYN-3001 : Mapper mapped 7 instances into 1 LUTs, name keeping = 100%.
+SYN-2501 : Inferred 3 ROM instances
+SYN-1019 : Optimized 69 mux instances.
+SYN-1016 : Merged 55 instances.
+SYN-1032 : 1012/3 useful/useless nets, 897/0 useful/useless insts
+SYN-3001 : Running gate level optimization.
+SYN-2581 : Mapping with K=5, #lut = 173 (3.49), #lev = 5 (2.44)
+SYN-2551 : Post LUT mapping optimization.
+SYN-2581 : Mapping with K=5, #lut = 176 (3.52), #lev = 4 (2.03)
+SYN-3001 : Logic optimization runtime opt =   0.01 sec, map =   0.00 sec
+SYN-3001 : Mapper mapped 499 instances into 180 LUTs, name keeping = 67%.
+RUN-1002 : start command "report_area -file led_4s_gate.area"
+RUN-1001 : standard
+***Report Model: fpga_ed4g Device: EG4S20BG256***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+LUT Statistics
+#Total_luts               378
+  #lut4                   145
+  #lut5                    38
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b             195
+
+Utilization Statistics
+#lut                      378   out of  19600    1.93%
+#reg                      140   out of  19600    0.71%
+#le                         0
+#dsp                        0   out of     29    0.00%
+#bram                       1   out of     64    1.56%
+  #bram9k                   0
+  #fifo9k                   1
+#bram32k                    0   out of     16    0.00%
+#pad                        3   out of    188    1.60%
+  #ireg                     0
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      4   25.00%
+
+Report Hierarchy Area:
++--------------------------------------------------------------------------------------------------+
+|Instance                     |Module                 |lut     |ripple  |seq     |bram    |dsp     |
++--------------------------------------------------------------------------------------------------+
+|top                          |fpga_ed4g              |183     |195     |141     |1       |0       |
+|  u_PLL_150M                 |PLL_150M               |1       |0       |0       |0       |0       |
+|  u_ctrl_top                 |led_ctrl_top           |137     |83      |68      |1       |0       |
+|    u_LED_send               |LED_send               |82      |28      |49      |0       |0       |
+|    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1       |0       |6       |0       |0       |
+|    u_fifo_fsm               |fifo_fsm               |49      |55      |12      |0       |0       |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |5       |0       |1       |1       |0       |
+|      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1       |0       |0       |1       |0       |
++--------------------------------------------------------------------------------------------------+
+
+SYN-1001 : Packing model "fpga_ed4g" ...
+SYN-4010 : Pack lib has 58 rtl pack models with 25 top pack blocks
+SYN-1014 : Optimize round 1
+SYN-1015 : Optimize round 1, 0 better
+SYN-4002 : Packing 140 DFF/LATCH to SEQ ...
+SYN-4009 : Pack 4 carry chain into lslice
+SYN-4007 : Packing 108 adder to BLE ...
+SYN-4008 : Packed 108 adder and 3 SEQ to BLE.
+SYN-4007 : Packing 0 gate4 to BLE ...
+SYN-4008 : Packed 0 gate4 and 0 SEQ to BLE.
+SYN-4012 : Packed 0 FxMUX
+RUN-1002 : start command "legalize_phy_inst"
+SYN-1011 : Flatten model fpga_ed4g
+RUN-1002 : start command "export_db led_4s_gate.db"
+RUN-1001 : Exported /
+RUN-1001 : Exported flow parameters
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240708_175910.log"

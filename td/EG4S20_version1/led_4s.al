@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project Version="3" Minor="2" Path="//wsl.localhost/Ubuntu-20.04/home/superior/LED/td">
+<Project Version="3" Minor="2" Path="//wsl.localhost/Ubuntu-20.04/home/superior/LED/td/EG4S20_version1">
     <Project_Created_Time></Project_Created_Time>
     <TD_Version>5.6.71036</TD_Version>
-    <Name>LED_light</Name>
+    <Name>led_4s</Name>
     <HardWare>
         <Family>EG4</Family>
-        <Device>EG4D20EG176</Device>
+        <Device>EG4S20BG256</Device>
         <Speed></Speed>
     </HardWare>
     <Source_Files>
-        <System_Verilog>
-            <File Path="../src/rtl/FPGA/fpga_ed4g.sv">
+        <Verilog>
+            <File Path="../../src/rtl/led_phy/hasyncfifo_ahead12to12.v">
                 <FileInfo>
-                    <Attr Name="AutoExcluded" Val="true"/>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="8"/>
+                </FileInfo>
+            </File>
+        </Verilog>
+        <System_Verilog>
+            <File Path="../../src/rtl/FPGA/fpga_eg4s.sv">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="1"/>
+                </FileInfo>
+            </File>
+            <File Path="../../src/rtl/LED_CTRL_top/led_ctrl_top.sv">
+                <FileInfo>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
                     <Attr Name="BelongTo" Val="design_1"/>
                     <Attr Name="CompileOrder" Val="2"/>
                 </FileInfo>
             </File>
-            <File Path="../src/rtl/led_phy/LED_send.sv">
+            <File Path="../../src/rtl/led_phy/LED_send.sv">
                 <FileInfo>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
@@ -27,7 +44,7 @@
                     <Attr Name="CompileOrder" Val="3"/>
                 </FileInfo>
             </File>
-            <File Path="../src/rtl/led_phy/test_pattern.sv">
+            <File Path="../../src/rtl/led_phy/cdc_sbit_handshake.sv">
                 <FileInfo>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
@@ -35,18 +52,17 @@
                     <Attr Name="CompileOrder" Val="4"/>
                 </FileInfo>
             </File>
-            <File Path="../src/rtl/led_phy/multi_cycle_calculator.sv">
+            <File Path="../../src/rtl/led_phy/fifo_fsm.sv">
                 <FileInfo>
-                    <Attr Name="AutoExcluded" Val="true"/>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
                     <Attr Name="BelongTo" Val="design_1"/>
-                    <Attr Name="CompileOrder" Val="6"/>
+                    <Attr Name="CompileOrder" Val="5"/>
                 </FileInfo>
             </File>
         </System_Verilog>
         <ADC_FILE>
-            <File Path="pin.adc">
+            <File Path="constraint/pin.adc">
                 <FileInfo>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
@@ -55,39 +71,17 @@
                 </FileInfo>
             </File>
         </ADC_FILE>
-        <SDC_FILE>
-            <File Path="LED_light.sdc">
-                <FileInfo>
-                    <Attr Name="UsedInSyn" Val="true"/>
-                    <Attr Name="UsedInP&R" Val="true"/>
-                    <Attr Name="BelongTo" Val="constraint_1"/>
-                    <Attr Name="CompileOrder" Val="2"/>
-                </FileInfo>
-            </File>
-        </SDC_FILE>
-        <CWC_FILE>
-            <File Path="debug_150m.cwc">
-                <FileInfo>
-                    <Attr Name="Enable" Val="false"/>
-                    <Attr Name="UsedInSyn" Val="true"/>
-                    <Attr Name="UsedInP&R" Val="true"/>
-                    <Attr Name="BelongTo" Val="design_1"/>
-                    <Attr Name="CompileOrder" Val="5"/>
-                </FileInfo>
-            </File>
-        </CWC_FILE>
         <IP_FILE>
             <File Path="al_ip/PLL_150M.ipc">
                 <FileInfo>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
                     <Attr Name="BelongTo" Val="design_1"/>
-                    <Attr Name="CompileOrder" Val="1"/>
+                    <Attr Name="CompileOrder" Val="6"/>
                 </FileInfo>
             </File>
-            <File Path="al_ip/hasyncfifo_12to12.ipc">
+            <File Path="al_ip/hasyncfifo_ahead12to12.ipc">
                 <FileInfo>
-                    <Attr Name="AutoExcluded" Val="true"/>
                     <Attr Name="UsedInSyn" Val="true"/>
                     <Attr Name="UsedInP&R" Val="true"/>
                     <Attr Name="BelongTo" Val="design_1"/>

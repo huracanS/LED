@@ -1,0 +1,68 @@
+standard
+***Report Model: fpga_ed4g Device: EG4S20BG256***
+
+IO Statistics
+#IO                         3
+  #input                    1
+  #output                   2
+  #inout                    0
+
+Utilization Statistics
+#lut                      337   out of  19600    1.72%
+#reg                      136   out of  19600    0.69%
+#le                       361
+  #lut only               225   out of    361   62.33%
+  #reg only                24   out of    361    6.65%
+  #lut&reg                112   out of    361   31.02%
+#dsp                        0   out of     29    0.00%
+#bram                       1   out of     64    1.56%
+  #bram9k                   0
+  #fifo9k                   1
+#bram32k                    0   out of     16    0.00%
+#pad                        3   out of    188    1.60%
+  #ireg                     0
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      4   25.00%
+#gclk                       1   out of     16    6.25%
+
+Clock Resource Statistics
+Index     ClockNet                     Type               DriverType         Driver                       Fanout
+#1        u_ctrl_top/u_LED_send/clk    GCLK               pll                u_PLL_150M/pll_inst.clkc1    38
+#2        u_PLL_150M/clk0_buf          GCLK               pll                u_PLL_150M/pll_inst.clkc0    37
+#3        sysclk_i_dup_1               GCLK               io                 sysclk_i_syn_2.di            14
+
+
+Detailed IO Report
+
+    Name      Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+  sysclk_i      INPUT         R7        LVCMOS33          N/A          PULLUP      NONE    
+    cko        OUTPUT        F15        LVCMOS33           8           PULLUP      NONE    
+    sdo        OUTPUT        D16        LVCMOS33           8           PULLUP      OREG    
+
+Report Hierarchy Area:
++----------------------------------------------------------------------------------------------------------+
+|Instance                     |Module                 |le     |lut     |ripple  |seq     |bram    |dsp     |
++----------------------------------------------------------------------------------------------------------+
+|top                          |fpga_ed4g              |361    |259     |78      |137     |1       |0       |
+|  u_PLL_150M                 |PLL_150M               |1      |1       |0       |0       |0       |0       |
+|  u_ctrl_top                 |led_ctrl_top           |217    |177     |40      |72      |1       |0       |
+|    u_LED_send               |LED_send               |104    |92      |12      |53      |0       |0       |
+|    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1      |1       |0       |1       |0       |0       |
+|    u_fifo_fsm               |fifo_fsm               |107    |79      |28      |17      |0       |0       |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |5      |5       |0       |1       |1       |0       |
+|      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1      |1       |0       |0       |1       |0       |
++----------------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout    Nets  
+    #1         1       256   
+    #2         2        46   
+    #3         3        31   
+    #4         4        28   
+    #5        5-10      22   
+    #6       11-50      13   
+    #7       51-100     1    
+  Average     2.55           
