@@ -3,7 +3,7 @@
 module tb_led_ctrl_top;
 
 // Parameters
-localparam CLK_FAST_PERIOD = 4; // 假设clk_fast为250MHz
+localparam CLK_FAST_PERIOD = 6; // 假设clk_fast为250MHz
 localparam CLK_SLOW_PERIOD = 20; // 假设clk_slow为50MHz
 
 // Inputs

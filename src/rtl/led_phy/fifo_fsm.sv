@@ -1,16 +1,16 @@
 module fifo_fsm #(
 //发送灯带分区帧格式
-    parameter FRAME_N7_front = 4,
-    parameter FRAME_N6       = 4,
-    parameter FRAME_N5_front = 4,
+    parameter FRAME_N7_front = 5,
+    parameter FRAME_N6       = 6,
+    parameter FRAME_N5_front = 5,
     parameter FRAME_N5_back  = 1,
-    parameter FRAME_N3       = 4,
+    parameter FRAME_N3       = 6,
     parameter FRAME_N0_front = 1,
-    parameter FRAME_N0_back  = 4,
-    parameter FRAME_N1       = 4,
-    parameter FRAME_N2_front = 4,
+    parameter FRAME_N0_back  = 5,
+    parameter FRAME_N1       = 5,
+    parameter FRAME_N2_front = 5,
     parameter FRAME_N2_back  = 1,
-    parameter FRAME_N4       = 4,
+    parameter FRAME_N4       = 6,
     parameter FRAME_N7       = 1
 )(
     input logic clk,
@@ -125,7 +125,7 @@ assign wr_done = (wr_cnt == TOTAL_CNT) && (c_state == FIFO_WR);
 assign fifo_data = {MeanR[block_choose_real],MeanG[block_choose_real],MeanB[block_choose_real]} & {12{c_state == FIFO_WR}};
 
 //选中区块.
-logic condition_n0,condition_n1,condition_n2,condition_n3,condition_n4,condition_n5,condition_n6,condition_n7,condition_n8,condition_n9,condition_na,conidtion_nb;
+logic condition_n0,condition_n1,condition_n2,condition_n3,condition_n4,condition_n5,condition_n6,condition_n7,condition_n8,condition_n9,condition_na,condition_nb;
 assign condition_n0 =  wr_cnt < (FRAME_N7_front);
 assign condition_n1 =  (wr_cnt >= (FRAME_N7_front)) &&                                                                                                                                                (wr_cnt < (FRAME_N7_front + FRAME_N6)) ;//
 assign condition_n2 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6)) &&                                                                                                                                     (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front)) ;//
