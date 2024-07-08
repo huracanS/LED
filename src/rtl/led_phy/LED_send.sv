@@ -51,7 +51,7 @@ send_state_t c_state; /*synthesis keep*/
 send_state_t n_state; /*synthesis keep*/
 //logic SEND_length;
 //>>>>>
- assign cko_o = cko && (c_state == SEND);
+ assign cko_o = cko && (c_state == SEND || (c_state == SEND_DONE && wait_cnt == 'd0));
 //>>>>>
 //标志信号.
 //busy标志位.
@@ -171,7 +171,7 @@ always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         rd <= 'd0;
     end else if(c_state == SEND && cko_n)begin
-        if(bit_cnt == 'd31)
+        if(( send_cnt != LED_NUM + 1 && send_cnt != LED_NUM + 2) && bit_cnt == 'd31)//有头帧和尾帧，不读fifo -2.
             rd <= 1'b1;
         else 
             rd <= 1'b0;
@@ -192,12 +192,16 @@ always @(posedge clk or negedge rstn) begin
         if(send_cnt == 32'd0) //第一帧 0000_0000.
             frame_reg <= 32'h0000_0000;
             //frame_reg <= 32'h5555_5555;
-        else if(send_cnt == LED_NUM + 2)
-            frame_reg <= 32'hffff_ffff;
-        else
+        else 
+        // if(send_cnt == LED_NUM + 2)
+        //     frame_reg <= 32'hffff_ffff;
+        // else
             //frame_reg <= 32'h5555_5555;
             frame_reg <= {8'hff,fifo_data_in};
-    end else begin
+    end 
+    else if(send_cnt == LED_NUM + 2)
+        frame_reg <= 32'hffff_ffff;
+    else begin
         frame_reg <= frame_reg;
     end
 end
@@ -211,9 +215,14 @@ always @(posedge clk or negedge rstn) begin
         send_vld <= 1'b0;
         sdo <= 1'b1;
     end else if( ((c_state == WAIT_SEND && n_state == SEND) || c_state == SEND) && cko_n) begin
-        send_vld <= 1'b1;
-        sdo <= frame_reg[ 31 - bit_cnt];
-        $display("Sending data: sdo = %b, send_cnt = %d ,bit_cnt = %d", frame_reg[ 31 - bit_cnt], send_cnt,31 - bit_cnt);
+        if((send_cnt == LED_NUM + 2) && bit_cnt == 'd31) begin
+            send_vld <= 1'b0;
+            sdo <= 1'b1;
+        end else begin
+            send_vld <= 1'b1;
+            sdo <= frame_reg[ 31 - bit_cnt];
+            $display("Sending data:frame_reg = %h, sdo = %b, send_cnt = %d ,bit_cnt = %d",frame_reg, frame_reg[ 31 - bit_cnt], send_cnt,31 - bit_cnt);
+        end
     end
 end
 //>>>>>
@@ -225,10 +234,14 @@ always @(posedge clk or negedge rstn) begin
     end else if(c_state != SEND) begin
         send_cnt <= 'd0;
     end else if(c_state == SEND && cko_n) begin
-        if(bit_cnt < 'd31)
-            send_cnt <= send_cnt;
-        else 
-            send_cnt <= send_cnt + 1;
+            if(bit_cnt < 'd31)
+                send_cnt <= send_cnt;
+            else begin
+                if(send_cnt == LED_NUM + 2)
+                    send_cnt <= 'd0;
+                else 
+                    send_cnt <= send_cnt + 1;
+            end
     end else begin
         send_cnt <= send_cnt;
     end

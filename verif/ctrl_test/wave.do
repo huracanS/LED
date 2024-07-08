@@ -46,8 +46,8 @@ add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/send_start_sync
 add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/empty_flag
 add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/cko_o
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {256509132 ps} 0} {{Cursor 2} {137597614 ps} 0} {{Cursor 3} {37933647 ps} 0}
-quietly wave cursor active 3
+WaveRestoreCursors {{Cursor 1} {664946583 ps} 0} {{Cursor 2} {137597614 ps} 0} {{Cursor 3} {37993704 ps} 0} {{Cursor 4} {637540426 ps} 0}
+quietly wave cursor active 4
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -62,4 +62,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {37733117 ps} {38366261 ps}
+WaveRestoreZoom {635643806 ps} {694628684 ps}
