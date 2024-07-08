@@ -87,7 +87,7 @@ hasyncfifo_ahead12to12 u_hasyncfifo_ahead12to12(
 // logic sdo_o;
 LED_send #(
     .LED_NUM(35),//LED帧个数：发送LED帧图像的个数.
-    .WAIT_CNT(5),//等待时间：发送开始和结束等待的时间.
+    .WAIT_CNT(5),//等待时间：发送开始和结束等待的时间, n个cko的周期.
     .DIV_CNT (5)//分频系数: 150M/30M = 5.
 ) u_LED_send(
     .clk (clk_slow),//150M

@@ -38,6 +38,7 @@ typedef enum logic[3:0]
 
 send_state_t c_state,n_state ;
 logic [3:0] block_choose;
+logic [3:0] block_choose_real;
 logic wr_done;
 parameter TOTAL_CNT = FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back + FRAME_N3 + FRAME_N0_front +  FRAME_N0_back + FRAME_N1 + FRAME_N2_front + FRAME_N2_back + FRAME_N4 + FRAME_N7;
 logic [5:0] wr_cnt;
@@ -89,15 +90,6 @@ always @(*) begin
 end
 
 //send_start
-// always @(posedge clk or negedge rstn) begin
-//     if(!rstn) begin
-//         send_start <= 1'b0;
-//     end else if(c_state == SEND) begin
-//         send_start <= 1'b1;
-//     end else begin
-//         send_start <= 1'b0;
-//     end
-// end
 assign send_start = (c_state == SEND) ;
 
 //写fifo使能.
@@ -110,7 +102,6 @@ always @(posedge clk or negedge rstn) begin
         we <= 1'b0;
     end
 end
-//assign we = c_state == FIFO_WR;
 
 //写fifo计数.
 
@@ -122,43 +113,20 @@ always @(posedge clk or negedge rstn) begin
         if (wr_cnt < TOTAL_CNT) begin 
             wr_cnt <= wr_cnt + 1;
         end else begin
-            wr_cnt <= wr_cnt;
+            wr_cnt <= 'd0;
         end
     end else begin
         wr_cnt <= 'd0;
-    end
+    end 
 end
 
 assign wr_done = (wr_cnt == TOTAL_CNT) && (c_state == FIFO_WR);
 
-//
-// always @(posedge clk or negedge rstn) begin
-//     if(!rstn) begin
-//         fifo_data <= 12'b0;
-//     end else if(c_state == FIFO_WR)begin
-//         fifo_data <= {MeanR[block_choose],MeanG[block_choose],MeanB[block_choose]};
-//     end else begin
-//         fifo_data <= fifo_data;
-//     end
-// end
-assign fifo_data = {MeanR[block_choose],MeanG[block_choose],MeanB[block_choose]};
+assign fifo_data = {MeanR[block_choose_real],MeanG[block_choose_real],MeanB[block_choose_real]} & {12{c_state == FIFO_WR}};
+
 //选中区块.
-
-    // parameter FRAME_N7_front = 4,
-    // parameter FRAME_N6       = 4,
-    // parameter FRAME_N5_front = 4,
-    // parameter FRAME_N5_back  = 1,
-    // parameter FRAME_N3       = 4,
-    // parameter FRAME_N0_front = 1,
-    // parameter FRAME_N0_back  = 4,
-    // parameter FRAME_N1       = 4,
-    // parameter FRAME_N2_front = 4,
-    // parameter FRAME_N2_back  = 1,
-    // parameter FRAME_N4       = 4,
-    // parameter FRAME_N7       = 1
-
 logic condition_n0,condition_n1,condition_n2,condition_n3,condition_n4,condition_n5,condition_n6,condition_n7,condition_n8,condition_n9,condition_na,conidtion_nb;
-assign condition_n0 = wr_cnt < (FRAME_N7_front);
+assign condition_n0 =  wr_cnt < (FRAME_N7_front);
 assign condition_n1 =  (wr_cnt >= (FRAME_N7_front)) &&                                                                                                                                                (wr_cnt < (FRAME_N7_front + FRAME_N6)) ;//
 assign condition_n2 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6)) &&                                                                                                                                     (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front)) ;//
 assign condition_n3 =  (wr_cnt >= (FRAME_N7_front + FRAME_N6 + FRAME_N5_front)) &&                                                                                                                    (wr_cnt < (FRAME_N7_front + FRAME_N6 + FRAME_N5_front + FRAME_N5_back)) ;
@@ -202,4 +170,7 @@ always @(posedge clk or negedge rstn) begin
         end    
     end
 end
+
+assign block_choose_real = block_choose & {4{c_state == FIFO_WR}};
+
 endmodule

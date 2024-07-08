@@ -29,9 +29,9 @@ add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/fifo_
 add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/send_start
 add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/c_state
 add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/n_state
-add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/block_choose
+add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/block_choose_real
 add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/wr_done
-add wave -noupdate -expand -group fifo_fsm /tb_led_ctrl_top/uut/u_fifo_fsm/wr_cnt
+add wave -noupdate -expand -group fifo_fsm -radix unsigned /tb_led_ctrl_top/uut/u_fifo_fsm/wr_cnt
 add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/clk_fast
 add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/clk_slow
 add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/rstn
@@ -46,8 +46,8 @@ add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/send_start_sync
 add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/empty_flag
 add wave -noupdate -expand -group top /tb_led_ctrl_top/uut/cko_o
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {664946583 ps} 0} {{Cursor 2} {137597614 ps} 0} {{Cursor 3} {37993704 ps} 0} {{Cursor 4} {637540426 ps} 0}
-quietly wave cursor active 4
+WaveRestoreCursors {{Cursor 1} {667710000 ps} 0} {{Cursor 2} {137597614 ps} 0} {{Cursor 3} {37993704 ps} 0} {{Cursor 4} {459910000 ps} 0}
+quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -62,4 +62,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {635643806 ps} {694628684 ps}
+WaveRestoreZoom {650332173 ps} {679087697 ps}
