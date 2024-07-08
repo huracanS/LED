@@ -51,7 +51,8 @@ send_state_t c_state; /*synthesis keep*/
 send_state_t n_state; /*synthesis keep*/
 //logic SEND_length;
 //>>>>>
- assign cko_o = cko && (c_state == SEND || (c_state == SEND_DONE && wait_cnt == 'd0));
+//assign cko_o = cko && (c_state == SEND || (c_state == SEND_DONE && wait_cnt == 'd0));
+assign cko_o =(c_state == SEND || (c_state == SEND_DONE && wait_cnt == 'd0))?cko:1'b1;
 //>>>>>
 //标志信号.
 //busy标志位.
