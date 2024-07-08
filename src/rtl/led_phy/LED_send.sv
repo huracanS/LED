@@ -87,7 +87,7 @@ always @(*) begin
         end
 
         SEND: begin
-            if((send_cnt >= LED_NUM + 2) && (bit_cnt == 'd31) && cko_n) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
+            if((send_cnt >= LED_NUM + 1) && (bit_cnt == 'd31) && cko_n) begin//(32bit)Start_frame + Led_frame(LED_NUM * 32bit) + End_frame(32bit). 
                 n_state = SEND_DONE;
             end else begin
                 n_state = SEND;
@@ -171,7 +171,7 @@ always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         rd <= 'd0;
     end else if(c_state == SEND && cko_n)begin
-        if(( send_cnt != LED_NUM + 1 && send_cnt != LED_NUM + 2) && bit_cnt == 'd31)//有头帧和尾帧，不读fifo -2.
+        if(( send_cnt != LED_NUM + 1 ) && (send_cnt != LED_NUM) && bit_cnt == 'd31)//有头帧和尾帧，不读fifo -2.
             rd <= 1'b1;
         else 
             rd <= 1'b0;
@@ -199,7 +199,7 @@ always @(posedge clk or negedge rstn) begin
             //frame_reg <= 32'h5555_5555;
             frame_reg <= {8'hff,fifo_data_in};
     end 
-    else if(send_cnt == LED_NUM + 2)
+    else if(send_cnt == LED_NUM + 1)
         frame_reg <= 32'hffff_ffff;
     else begin
         frame_reg <= frame_reg;
@@ -215,7 +215,7 @@ always @(posedge clk or negedge rstn) begin
         send_vld <= 1'b0;
         sdo <= 1'b1;
     end else if( ((c_state == WAIT_SEND && n_state == SEND) || c_state == SEND) && cko_n) begin
-        if((send_cnt == LED_NUM + 2) && bit_cnt == 'd31) begin
+        if((send_cnt == LED_NUM + 1) && bit_cnt == 'd31) begin
             send_vld <= 1'b0;
             sdo <= 1'b1;
         end else begin
@@ -237,7 +237,7 @@ always @(posedge clk or negedge rstn) begin
             if(bit_cnt < 'd31)
                 send_cnt <= send_cnt;
             else begin
-                if(send_cnt == LED_NUM + 2)
+                if(send_cnt == LED_NUM + 1)
                     send_cnt <= 'd0;
                 else 
                     send_cnt <= send_cnt + 1;
