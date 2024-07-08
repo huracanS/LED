@@ -26,16 +26,17 @@ logic rd;
 logic [11:0] fifo_data_out;
 fifo_fsm #(
 //发送灯带分区帧格式
-    .FRAME_N7_front  (4),
-    .FRAME_N6        (4),
-    .FRAME_N5_front  (4),
-    .FRAME_N3        (4),
+    .FRAME_N7_front  (5),
+    .FRAME_N6        (6),
+    .FRAME_N5_front  (5),
+    .FRAME_N5_back   (1),
+    .FRAME_N3        (6),
     .FRAME_N0_front  (1),
-    .FRAME_N0_back   (4),
-    .FRAME_N1        (4),
-    .FRAME_N2_front  (4),
+    .FRAME_N0_back   (5),
+    .FRAME_N1        (5),
+    .FRAME_N2_front  (5),
     .FRAME_N2_back   (1),
-    .FRAME_N4        (4),
+    .FRAME_N4        (6),
     .FRAME_N7        (1)
 ) u_fifo_fsm (
     .clk  (clk_fast), 

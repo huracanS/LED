@@ -7,7 +7,7 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/ctrl_test
+Z0 d//wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/ctrl_test
 vcdc_sbit_handshake
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
@@ -20,16 +20,16 @@ I>_CB]lO?cA4k4bA0=1Thl1
 !s105 cdc_sbit_handshake_sv_unit
 S1
 R0
-w1720193934
+Z3 w1720416102
 8../../src/rtl/led_phy/cdc_sbit_handshake.sv
 F../../src/rtl/led_phy/cdc_sbit_handshake.sv
 L0 2
-Z3 OL;L;10.4;61
-Z4 !s108 1720403616.760000
-Z5 !s107 ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv|../../src/rtl/led_phy/hasyncfifo_ahead12to12.v|../../src/rtl/led_phy/hasyncfifo_12to12_sim.v|../../src/rtl/led_phy/hasyncfifo_12to12.v|../../src/rtl/led_phy/test_pattern.sv|../../src/rtl/led_phy/multi_cycle_calculator.sv|../../src/rtl/led_phy/LED_send.sv|../../src/rtl/led_phy/fifo_fsm.sv|../../src/rtl/led_phy/cdc_sbit_handshake.sv|
-Z6 !s90 -f|./dut.f|
+Z4 OL;L;10.4;61
+Z5 !s108 1720423109.155000
+Z6 !s107 ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv|../../src/rtl/led_phy/hasyncfifo_ahead12to12.v|../../src/rtl/led_phy/hasyncfifo_12to12_sim.v|../../src/rtl/led_phy/multi_cycle_calculator.sv|../../src/rtl/led_phy/cdc_sbit_handshake.sv|../../src/rtl/led_phy/fifo_fsm.sv|../../src/rtl/led_phy/test_pattern.sv|../../src/rtl/led_phy/LED_send.sv|
+Z7 !s90 -f|./dut.f|
 !i113 0
-Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vfifo_fsm
 R1
 R2
@@ -37,21 +37,21 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 0JgW<WX;YT6?Mi^UAR<So0
-IN:Ia41Y>h7;]F@`Z@]eoa1
+!s100 n4Ya<:^YaL;iT::M[c0R_3
+IfE[G:;gZm^jkRUMSOM=5e2
 !s105 fifo_fsm_sv_unit
 S1
 R0
-w1720403602
+w1720422102
 8../../src/rtl/led_phy/fifo_fsm.sv
 F../../src/rtl/led_phy/fifo_fsm.sv
 L0 1
-R3
 R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R8
 vhasyncfifo_12to12
 R2
 r1
@@ -61,16 +61,16 @@ r1
 !s100 el:Cmbe]z:22PNRKzSnXo0
 IM2zdcKdG6<LV;`MmANF803
 R0
-w1720195192
+R3
 8../../src/rtl/led_phy/hasyncfifo_12to12_sim.v
 F../../src/rtl/led_phy/hasyncfifo_12to12_sim.v
 L0 5
-R3
 R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R8
 vhasyncfifo_ahead12to12
 R2
 r1
@@ -80,16 +80,16 @@ r1
 !s100 lnZ^ZNEa>69TLi9oZ5ZgP3
 Ib>L4g9agE=P19`<ekdaQ:1
 R0
-w1720195334
+R3
 8../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
 F../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
 L0 2
-R3
 R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R8
 vled_ctrl_top
 R1
 R2
@@ -97,21 +97,21 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 Y4]DLd;VO`R@^0IiOM;Kn1
-ID^^f17OmM72hVRIcW5<Xl2
+!s100 0Zcm2<Qkb5_ZK[aRmVoKI0
+IC]ajVg29n2h@ZJD?SRd1j1
 !s105 led_ctrl_top_sv_unit
 S1
 R0
-w1720402484
+w1720419525
 8../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
 F../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
 L0 1
-R3
 R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R8
 vLED_send
 R1
 R2
@@ -124,20 +124,20 @@ IWK1Q1Pc0KI[k7FODQ05Fe1
 !s105 LED_send_sv_unit
 S1
 R0
-w1720400332
+R3
 8../../src/rtl/led_phy/LED_send.sv
 F../../src/rtl/led_phy/LED_send.sv
 L0 1
-R3
 R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R8
 n@l@e@d_send
 vmulti_cycle_calculator
 R1
-Z8 !s110 1720403616
+Z9 !s110 1720423109
 !i10b 1
 !s100 U]F27`nPGd>4HNh9JnAV;3
 IQUGG1abaBP<<c<lBmodS>3
@@ -145,19 +145,19 @@ R2
 !s105 multi_cycle_calculator_sv_unit
 S1
 R0
-w1719557799
+R3
 8../../src/rtl/led_phy/multi_cycle_calculator.sv
 F../../src/rtl/led_phy/multi_cycle_calculator.sv
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R8
 vtb_led_ctrl_top
 R1
 R2
@@ -165,24 +165,24 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 5Y5QO2;SP]8YEElDh[7Q]3
-IHVAi^OI`UgPHSD8fJEn_71
+!s100 @P^Lb:VzkiZ@;^5]^d0l91
+IjXX^F8c6[6oNPN4:iAmQl0
 !s105 tb_led_ctrl_top_sv_unit
 S1
 R0
-w1720360487
+w1720421526
 8tb_led_ctrl_top.sv
 Ftb_led_ctrl_top.sv
 L0 3
-R3
-!s108 1720403616.939000
+R4
+!s108 1720423109.829000
 !s107 tb_led_ctrl_top.sv|
 !s90 tb_led_ctrl_top.sv|
 !i113 0
-R7
+R8
 vtest_pattern
 R1
-R8
+R9
 !i10b 1
 !s100 T^Q:CVU[040_4cTFz8]me2
 IJbW4OjczH0eaAVIg[1SNd3
@@ -190,16 +190,16 @@ R2
 !s105 test_pattern_sv_unit
 S1
 R0
-w1720021341
+R3
 8../../src/rtl/led_phy/test_pattern.sv
 F../../src/rtl/led_phy/test_pattern.sv
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-R4
 R5
 R6
-!i113 0
 R7
+!i113 0
+R8

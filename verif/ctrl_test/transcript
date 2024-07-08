@@ -1,4 +1,4 @@
-# Reading E:/Modelsim/tcl/vsim/pref.tcl
+# Reading D:/Modelsim/tcl/vsim/pref.tcl
 # //  ModelSim SE-64 10.4 Dec  3 2014 
 # //
 # //  Copyright 1991-2014 Mentor Graphics Corporation
@@ -15,5 +15,26 @@
 # //
 # vsim.wlf opened as dataset "vsim"
 # do wave.do
-add wave -position 32  vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/block_choose_real
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/ctrl_test/wave.do
+# ** Error: (vish-4014) No objects found matching '/tb_led_ctrl_top/uut/u_fifo_fsm/conidtion_nb'.
+# Executing ONERROR command at macro ./wave.do line 61
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf //wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/ctrl_test/wave.do
+add wave -position insertpoint  \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n0 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n1 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n2 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n3 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n4 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n5 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n6 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n7 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n8 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_n9 \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_na \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/condition_nb
+add wave -position insertpoint  \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/wr_cnt
+add wave -position insertpoint  \
+vsim:/tb_led_ctrl_top/uut/u_fifo_fsm/wr_cnt
+add wave -position insertpoint  \
+vsim:/tb_led_ctrl_top/uut/u_hasyncfifo_ahead12to12/empty_flag
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf //wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/ctrl_test/wave.do
