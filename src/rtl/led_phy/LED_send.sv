@@ -46,13 +46,14 @@ logic [4:0] wait_cnt; /*synthesis keep*/
 logic [10:0] send_cnt; /*synthesis keep*/
 logic [5:0] cnt;
 logic cko_p,cko_n;
+logic send_vld;//发送vld.
 logic cko;
 send_state_t c_state; /*synthesis keep*/
 send_state_t n_state; /*synthesis keep*/
 //logic SEND_length;
 //>>>>>
 //assign cko_o = cko && (c_state == SEND || (c_state == SEND_DONE && wait_cnt == 'd0));
-assign cko_o =(c_state == SEND || (c_state == SEND_DONE && wait_cnt == 'd0))?cko:1'b1;
+assign cko_o =cko && send_vld;
 //>>>>>
 //标志信号.
 //busy标志位.
@@ -207,23 +208,28 @@ always @(posedge clk or negedge rstn) begin
     end
 end
 
-logic send_vld;//发送vld.
+
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         send_vld <= 1'b0;
         sdo <= 1'b1;
-    end else if(c_state != SEND) begin
-        send_vld <= 1'b0;
-        sdo <= 1'b1;
-    end else if( ((c_state == WAIT_SEND && n_state == SEND) || c_state == SEND) && cko_n) begin
-        if((send_cnt == LED_NUM + 1) && bit_cnt == 'd31) begin
+    end else if(cko_n)begin
+        if(c_state != SEND) begin
             send_vld <= 1'b0;
             sdo <= 1'b1;
-        end else begin
-            send_vld <= 1'b1;
-            sdo <= frame_reg[ 31 - bit_cnt];
-            $display("Sending data:frame_reg = %h, sdo = %b, send_cnt = %d ,bit_cnt = %d",frame_reg, frame_reg[ 31 - bit_cnt], send_cnt,31 - bit_cnt);
+        end else if( ((c_state == WAIT_SEND && n_state == SEND) || c_state == SEND)) begin
+            if((send_cnt == LED_NUM + 1) && bit_cnt == 'd31) begin
+                send_vld <= 1'b1;
+                sdo <= 1'b1;
+            end else begin
+                send_vld <= 1'b1;
+                sdo <= frame_reg[ 31 - bit_cnt];
+                $display("Sending data:frame_reg = %h, sdo = %b, send_cnt = %d ,bit_cnt = %d",frame_reg, frame_reg[ 31 - bit_cnt], send_cnt,31 - bit_cnt);
+            end
         end
+    end else begin
+        send_vld <= send_vld;
+        sdo <= sdo;
     end
 end
 //>>>>>
