@@ -57,13 +57,13 @@ add wave -noupdate -expand -group fifo_wr /tb_led_ctrl_top/uut/fifo_data_in
 add wave -noupdate /tb_led_ctrl_top/uut/rd
 add wave -noupdate /tb_led_ctrl_top/uut/fifo_data_out
 add wave -noupdate /tb_led_ctrl_top/uut/u_hasyncfifo_ahead12to12/empty_flag
-add wave -noupdate /tb_led_ctrl_top/uut/cko_o
-add wave -noupdate /tb_led_ctrl_top/uut/sdo_o
+add wave -noupdate -color Red /tb_led_ctrl_top/uut/cko_o
+add wave -noupdate -color Red /tb_led_ctrl_top/uut/sdo_o
 add wave -noupdate -radix unsigned /tb_led_ctrl_top/uut/u_LED_send/bit_cnt
 add wave -noupdate /tb_led_ctrl_top/uut/u_LED_send/send_cnt
 add wave -noupdate /tb_led_ctrl_top/uut/u_LED_send/c_state
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {888948555 ps} 0} {{Cursor 2} {137597614 ps} 0} {{Cursor 3} {37993704 ps} 0} {{Cursor 4} {439898013 ps} 0}
+WaveRestoreCursors {ERROR7/10 {831969605 ps} 1} {{Cursor 2} {137597614 ps} 0} {{Cursor 3} {37993704 ps} 0} {{Cursor 4} {714890000 ps} 0}
 quietly wave cursor active 4
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -79,4 +79,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {2161624738 ps}
+WaveRestoreZoom {300082557 ps} {1268984959 ps}

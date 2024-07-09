@@ -22,8 +22,8 @@ module led_ctrl_top(
 logic we;
 logic [11:0] fifo_data_in;
 logic send_start;
-logic rd;
-logic [11:0] fifo_data_out;
+logic rd; /*synthesis keep*/
+logic [11:0] fifo_data_out;/*synthesis keep*/
 fifo_fsm #(
 //发送灯带分区帧格式
     .FRAME_N7_front  (5),

@@ -4,7 +4,7 @@
    Executable = D:/TD/bin/td.exe
    Built at =   20:34:38 Mar 21 2023
    Run by =     32863
-   Run Date =   Wed Jul 10 03:00:03 2024
+   Run Date =   Wed Jul 10 02:55:29 2024
 
    Run on =     SUPERIOR-LEGION
 ============================================================
@@ -78,7 +78,7 @@ HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/cdc_sbit_handshake.s
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/fifo_fsm.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
 RUN-1001 : Project manager successfully analyzed 8 source files.
-RUN-1003 : finish command "open_project led_4s.prj" in  1.278410s wall, 0.015625s user + 0.046875s system = 0.062500s CPU (4.9%)
+RUN-1003 : finish command "open_project led_4s.prj" in  1.260549s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 RUN-1004 : used memory is 53 MB, reserved memory is 20 MB, peak memory is 53 MB
 RUN-1002 : start command "import_device eagle_s20.db -package EG4S20BG256"
@@ -256,13 +256,13 @@ SYN-1012 : SanityCheck: Model "hasyncfifo_ahead12to12"
 SYN-1012 : SanityCheck: Model "hasyncfifo_12to12"
 SYN-1043 : Mark PLL_150M as IO macro for instance bufg_feedback
 SYN-1011 : Flatten model fpga_ed4g
-SYN-1032 : 1439/12 useful/useless nets, 597/3 useful/useless insts
+SYN-1032 : 1437/12 useful/useless nets, 595/3 useful/useless insts
 SYN-1016 : Merged 21 instances.
-SYN-1032 : 1293/76 useful/useless nets, 481/22 useful/useless insts
+SYN-1032 : 1291/76 useful/useless nets, 479/22 useful/useless insts
 SYN-1016 : Merged 92 instances.
-SYN-1032 : 1206/6 useful/useless nets, 1066/27 useful/useless insts
+SYN-1032 : 1204/6 useful/useless nets, 1064/27 useful/useless insts
 SYN-1014 : Optimize round 1
-SYN-1032 : 1205/1 useful/useless nets, 1065/1 useful/useless insts
+SYN-1032 : 1203/1 useful/useless nets, 1063/1 useful/useless insts
 SYN-1017 : Remove 1 const input seq instances
 SYN-1002 :     reg4_syn_23
 SYN-1021 : Optimized 6 onehot mux instances.
@@ -272,7 +272,7 @@ SYN-1019 : Optimized 5 mux instances.
 SYN-1016 : Merged 31 instances.
 SYN-1015 : Optimize round 1, 430 better
 SYN-1014 : Optimize round 2
-SYN-1032 : 1109/22 useful/useless nets, 969/45 useful/useless insts
+SYN-1032 : 1107/22 useful/useless nets, 967/45 useful/useless insts
 SYN-1017 : Remove 1 const input seq instances
 SYN-1002 :     u_ctrl_top/u_LED_send/reg0_syn_7
 SYN-1019 : Optimized 2 mux instances.
@@ -370,7 +370,7 @@ RUN-1001 :            report           |  standard  |     standard     |
 RUN-1001 :           retiming          |    off     |       off        |        
 RUN-1001 : ------------------------------------------------------------------
 SYN-2001 : Map 3 IOs to PADs
-SYN-1032 : 1108/1 useful/useless nets, 969/0 useful/useless insts
+SYN-1032 : 1106/1 useful/useless nets, 967/0 useful/useless insts
 RUN-1002 : start command "update_pll_param -module fpga_ed4g"
 SYN-2501 : Processed 0 LOGIC_BUF instances.
 SYN-2501 : 1 BUFG to GCLK
@@ -389,7 +389,7 @@ SYN-2501 : Optimize round 2, 0 better
 SYN-2501 : Map 24 macro adder
 SYN-1019 : Optimized 69 mux instances.
 SYN-1016 : Merged 56 instances.
-SYN-1032 : 1621/3 useful/useless nets, 1482/0 useful/useless insts
+SYN-1032 : 1619/3 useful/useless nets, 1480/0 useful/useless insts
 SYN-3001 : Running gate level optimization.
 SYN-2581 : Mapping with K=5, #lut = 353 (3.36), #lev = 5 (1.74)
 SYN-2551 : Post LUT mapping optimization.
@@ -471,5 +471,4 @@ RUN-1001 : Exported congestions
 RUN-1001 : Exported violations
 RUN-1001 : Exported IO constraints
 RUN-1001 : Exported Inst constraints
-RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_030003.log"
-RUN-1001 : Backing up run's log file succeed.
+RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_025529.log"

@@ -8,15 +8,15 @@ IO Statistics
   #inout                    0
 
 Utilization Statistics
-#lut                      337   out of  19600    1.72%
-#reg                      136   out of  19600    0.69%
-#le                       361
-  #lut only               225   out of    361   62.33%
-  #reg only                24   out of    361    6.65%
-  #lut&reg                112   out of    361   31.02%
+#lut                      939   out of  19600    4.79%
+#reg                      601   out of  19600    3.07%
+#le                      1094
+  #lut only               493   out of   1094   45.06%
+  #reg only               155   out of   1094   14.17%
+  #lut&reg                446   out of   1094   40.77%
 #dsp                        0   out of     29    0.00%
-#bram                       1   out of     64    1.56%
-  #bram9k                   0
+#bram                      28   out of     64   43.75%
+  #bram9k                  27
   #fifo9k                   1
 #bram32k                    0   out of     16    0.00%
 #pad                        3   out of    188    1.60%
@@ -24,13 +24,15 @@ Utilization Statistics
   #oreg                     1
   #treg                     0
 #pll                        1   out of      4   25.00%
-#gclk                       1   out of     16    6.25%
+#gclk                       2   out of     16   12.50%
 
 Clock Resource Statistics
-Index     ClockNet                     Type               DriverType         Driver                       Fanout
-#1        u_ctrl_top/u_LED_send/clk    GCLK               pll                u_PLL_150M/pll_inst.clkc1    38
-#2        u_PLL_150M/clk0_buf          GCLK               pll                u_PLL_150M/pll_inst.clkc0    37
-#3        sysclk_i_dup_1               GCLK               io                 sysclk_i_syn_2.di            14
+Index     ClockNet               Type               DriverType         Driver                       Fanout
+#1        clk_10m                GCLK               pll                u_PLL_150M/pll_inst.clkc1    130
+#2        config_inst_syn_9      GCLK               config             config_inst.jtck             127
+#3        sysclk_i_dup_1         GCLK               io                 sysclk_i_syn_2.di            88
+#4        u_PLL_150M/clk0_buf    GCLK               pll                u_PLL_150M/pll_inst.clkc0    37
+#5        clk_3m                 GeneralRouting     pll                u_PLL_150M/pll_inst.clkc2    0
 
 
 Detailed IO Report
@@ -41,28 +43,42 @@ Detailed IO Report
     sdo        OUTPUT        D16        LVCMOS33           8           PULLUP      OREG    
 
 Report Hierarchy Area:
-+----------------------------------------------------------------------------------------------------------+
-|Instance                     |Module                 |le     |lut     |ripple  |seq     |bram    |dsp     |
-+----------------------------------------------------------------------------------------------------------+
-|top                          |fpga_ed4g              |361    |259     |78      |137     |1       |0       |
-|  u_PLL_150M                 |PLL_150M               |1      |1       |0       |0       |0       |0       |
-|  u_ctrl_top                 |led_ctrl_top           |217    |177     |40      |72      |1       |0       |
-|    u_LED_send               |LED_send               |104    |92      |12      |53      |0       |0       |
-|    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1      |1       |0       |1       |0       |0       |
-|    u_fifo_fsm               |fifo_fsm               |107    |79      |28      |17      |0       |0       |
-|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |5      |5       |0       |1       |1       |0       |
-|      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1      |1       |0       |0       |1       |0       |
-+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+|Instance                            |Module                 |le     |lut     |ripple  |seq     |bram    |dsp     |
++-----------------------------------------------------------------------------------------------------------------+
+|top                                 |fpga_ed4g              |1094   |758     |181     |602     |28      |0       |
+|  u_PLL_150M                        |PLL_150M               |1      |1       |0       |0       |0       |0       |
+|  u_ctrl_top                        |led_ctrl_top           |312    |266     |40      |95      |1       |0       |
+|    u_LED_send                      |LED_send               |104    |90      |12      |49      |0       |0       |
+|    u_cdc_sbit_handshake            |cdc_sbit_handshake     |5      |1       |0       |5       |0       |0       |
+|    u_fifo_fsm                      |fifo_fsm               |106    |78      |28      |18      |0       |0       |
+|    u_hasyncfifo_ahead12to12        |hasyncfifo_ahead12to12 |97     |97      |0       |23      |1       |0       |
+|      u_hasyncfifo_12to12           |hasyncfifo_12to12      |2      |2       |0       |0       |1       |0       |
+|  cw_top                            |CW_TOP_WRAPPER         |521    |299     |95      |339     |0       |0       |
+|    wrapper_cwc_top                 |cwc_top                |521    |299     |95      |339     |0       |0       |
+|      cfg_int_inst                  |cwc_cfg_int            |216    |109     |0       |216     |0       |0       |
+|        reg_inst                    |register               |214    |107     |0       |214     |0       |0       |
+|        tap_inst                    |tap                    |2      |2       |0       |2       |0       |0       |
+|      trigger_inst                  |trigger                |305    |190     |95      |123     |0       |0       |
+|        bus_inst                    |bus_top                |99     |57      |34      |36      |0       |0       |
+|          BUS_DETECTOR[0]$bus_nodes |bus_det                |42     |21      |14      |12      |0       |0       |
+|          BUS_DETECTOR[1]$bus_nodes |bus_det                |2      |2       |0       |2       |0       |0       |
+|          BUS_DETECTOR[2]$bus_nodes |bus_det                |15     |8       |6       |7       |0       |0       |
+|          BUS_DETECTOR[3]$bus_nodes |bus_det                |39     |25      |14      |14      |0       |0       |
+|          BUS_DETECTOR[5]$bus_nodes |bus_det                |1      |1       |0       |1       |0       |0       |
+|        emb_ctrl_inst               |emb_ctrl               |110    |81      |29      |55      |0       |0       |
++-----------------------------------------------------------------------------------------------------------------+
 
 
 DataNet Average Fanout:
 
-   Index     Fanout    Nets  
-    #1         1       256   
-    #2         2        46   
-    #3         3        31   
-    #4         4        28   
-    #5        5-10      22   
-    #6       11-50      13   
-    #7       51-100     1    
-  Average     2.55           
+   Index     Fanout     Nets  
+    #1          1       675   
+    #2          2       295   
+    #3          3       202   
+    #4          4        42   
+    #5        5-10       47   
+    #6        11-50      51   
+    #7       51-100      3    
+    #8       101-500     4    
+  Average     3.15            

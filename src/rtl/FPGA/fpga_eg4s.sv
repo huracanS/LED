@@ -11,12 +11,33 @@ module fpga_ed4g(
 //>>>信号定义
 logic  [28:0]	rst_cnt=0;
 logic clk_150m; 
-logic clk_10m;
+logic clk_10m; /*synthesis keep*/
+logic clk_3m; /*synthesis keep*/
 logic [3:0]  MeanR [7:0];
 logic [3:0]  MeanG [7:0];
 logic [3:0]  MeanB [7:0];
-logic [95:0] color_pattern;
-assign color_pattern = {12'hfff,12'hf0f,12'h00f,12'h0ff,12'h0f0,12'hff0,12'hfa0,12'hf00};//白紫蓝青绿黄橙红76543210
+logic [95:0] color_pattern; /*synthesis keep*/
+logic lock;
+logic [27:0] cnt1s;
+always@(posedge sysclk_i,negedge lock)begin
+	if(!lock)begin
+    	cnt1s <= 'd0;
+    end
+    else if(cnt1s[27]==1)begin
+    	cnt1s <= 'd0;
+    end
+    else begin
+    	cnt1s <= cnt1s+1'b1;
+    end
+end
+always@(posedge sysclk_i,negedge lock)begin
+	if(!lock)begin
+    	color_pattern = {12'hfff,12'hf0f,12'h00f,12'h0ff,12'h0f0,12'hff0,12'hfa0,12'hf00};//白紫蓝青绿黄橙红76543210
+    end
+    else if(cnt1s[27])begin
+    	color_pattern = {color_pattern[83:0],color_pattern[95:84]};
+    end
+end
 genvar i;
 generate
     for(i=0;i<8;i=i+1)begin:color_gen
@@ -43,7 +64,8 @@ PLL_150M u_PLL_150M (
   .reset(!rst_cnt[25]),
   .extlock(lock),
   .clk0_out(clk_150m),//LED驱动电路. 
-  .clk1_out(clk_10m)
+  .clk1_out(clk_10m),
+  .clk2_out(clk_3m)
 );
 //--------------------------------------------------------------
 
@@ -64,6 +86,7 @@ led_ctrl_top u_ctrl_top(
 
 logic [21:0]start_cnt;
 logic [21:0]en_cnt;
+
 always @(posedge clk_150m,negedge lock) begin
     if(!lock)begin
         start_cnt <= 'd0;

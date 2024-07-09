@@ -912,4 +912,3 @@ RUN-1003 : finish command "bitgen -bit led_4s.bit" in  1.883849s wall, 7.781250s
 
 RUN-1004 : used memory is 466 MB, reserved memory is 442 MB, peak memory is 661 MB
 RUN-1002 : start command "backup_run_log run.log ../.logs/phy_1/td_20240710_030341.log"
-RUN-1001 : Backing up run's log file succeed.

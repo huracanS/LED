@@ -4,7 +4,7 @@
    Executable = D:/TD/bin/td.exe
    Built at =   20:34:38 Mar 21 2023
    Run by =     32863
-   Run Date =   Wed Jul 10 03:00:03 2024
+   Run Date =   Wed Jul 10 02:41:48 2024
 
    Run on =     SUPERIOR-LEGION
 ============================================================
@@ -67,18 +67,18 @@ RUN-1001 :      rtl_sim_model      |    off     |       off        |
 RUN-1001 :         seq_syn         |     on     |        on        |        
 RUN-1001 : --------------------------------------------------------------
 HDL-1007 : analyze verilog file ../../al_ip/PLL_150M.v
-HDL-1007 : undeclared symbol 'open', assumed default net type 'wire' in ../../al_ip/PLL_150M.v(85)
+HDL-1007 : undeclared symbol 'open', assumed default net type 'wire' in ../../al_ip/PLL_150M.v(78)
 HDL-1007 : analyze verilog file ../../al_ip/hasyncfifo_ahead12to12.v
 HDL-1007 : analyze verilog file ../../../../src/rtl/FPGA/fpga_eg4s.sv
-HDL-1007 : undeclared symbol 'en', assumed default net type 'wire' in ../../../../src/rtl/FPGA/fpga_eg4s.sv(77)
-HDL-1007 : undeclared symbol 'start', assumed default net type 'wire' in ../../../../src/rtl/FPGA/fpga_eg4s.sv(78)
+HDL-1007 : undeclared symbol 'en', assumed default net type 'wire' in ../../../../src/rtl/FPGA/fpga_eg4s.sv(75)
+HDL-1007 : undeclared symbol 'start', assumed default net type 'wire' in ../../../../src/rtl/FPGA/fpga_eg4s.sv(76)
 HDL-1007 : analyze verilog file ../../../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/LED_send.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/cdc_sbit_handshake.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/fifo_fsm.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
 RUN-1001 : Project manager successfully analyzed 8 source files.
-RUN-1003 : finish command "open_project led_4s.prj" in  1.278410s wall, 0.015625s user + 0.046875s system = 0.062500s CPU (4.9%)
+RUN-1003 : finish command "open_project led_4s.prj" in  1.013194s wall, 0.000000s user + 0.031250s system = 0.031250s CPU (3.1%)
 
 RUN-1004 : used memory is 53 MB, reserved memory is 20 MB, peak memory is 53 MB
 RUN-1002 : start command "import_device eagle_s20.db -package EG4S20BG256"
@@ -165,9 +165,9 @@ RUN-1001 :        infer_rom        |     on     |        on        |
 RUN-1001 :      infer_shifter      |     on     |        on        |        
 RUN-1001 : --------------------------------------------------------------
 HDL-1007 : elaborate module fpga_ed4g in ../../../../src/rtl/FPGA/fpga_eg4s.sv(3)
-HDL-1007 : elaborate module PLL_150M in ../../al_ip/PLL_150M.v(24)
+HDL-1007 : elaborate module PLL_150M in ../../al_ip/PLL_150M.v(23)
 HDL-1007 : elaborate module EG_LOGIC_BUFG in D:/TD/arch/eagle_macro.v(8)
-HDL-1007 : elaborate module EG_PHY_PLL(FIN="50.000",FBCLK_DIV=3,CLKC0_DIV=2,CLKC1_DIV=30,CLKC2_DIV=100,CLKC0_ENABLE="ENABLE",CLKC1_ENABLE="ENABLE",CLKC2_ENABLE="ENABLE",FEEDBK_PATH="CLKC0_EXT",STDBY_ENABLE="DISABLE",CLKC1_CPHASE=29,CLKC2_CPHASE=99,GMC_GAIN=4,ICP_CURRENT=13,KVCO=4,LPF_CAPACITOR=1,LPF_RESISTOR=4,SYNC_ENABLE="DISABLE") in D:/TD/arch/eagle_macro.v(930)
+HDL-1007 : elaborate module EG_PHY_PLL(FIN="50.000",FBCLK_DIV=3,CLKC0_DIV=7,CLKC1_DIV=105,CLKC0_ENABLE="ENABLE",CLKC1_ENABLE="ENABLE",FEEDBK_PATH="CLKC0_EXT",STDBY_ENABLE="DISABLE",CLKC0_CPHASE=6,CLKC1_CPHASE=104,GMC_GAIN=4,ICP_CURRENT=13,KVCO=4,LPF_CAPACITOR=1,LPF_RESISTOR=4,SYNC_ENABLE="DISABLE") in D:/TD/arch/eagle_macro.v(930)
 HDL-1007 : elaborate module led_ctrl_top in ../../../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(1)
 HDL-1007 : elaborate module fifo_fsm in ../../../../src/rtl/led_phy/fifo_fsm.sv(1)
 HDL-1007 : elaborate module cdc_sbit_handshake in ../../../../src/rtl/led_phy/cdc_sbit_handshake.sv(2)
@@ -256,13 +256,13 @@ SYN-1012 : SanityCheck: Model "hasyncfifo_ahead12to12"
 SYN-1012 : SanityCheck: Model "hasyncfifo_12to12"
 SYN-1043 : Mark PLL_150M as IO macro for instance bufg_feedback
 SYN-1011 : Flatten model fpga_ed4g
-SYN-1032 : 1439/12 useful/useless nets, 597/3 useful/useless insts
+SYN-1032 : 1217/11 useful/useless nets, 375/3 useful/useless insts
 SYN-1016 : Merged 21 instances.
-SYN-1032 : 1293/76 useful/useless nets, 481/22 useful/useless insts
-SYN-1016 : Merged 92 instances.
-SYN-1032 : 1206/6 useful/useless nets, 1066/27 useful/useless insts
+SYN-1032 : 1071/76 useful/useless nets, 259/22 useful/useless insts
+SYN-1016 : Merged 236 instances.
+SYN-1032 : 840/6 useful/useless nets, 700/27 useful/useless insts
 SYN-1014 : Optimize round 1
-SYN-1032 : 1205/1 useful/useless nets, 1065/1 useful/useless insts
+SYN-1032 : 839/1 useful/useless nets, 699/1 useful/useless insts
 SYN-1017 : Remove 1 const input seq instances
 SYN-1002 :     reg4_syn_23
 SYN-1021 : Optimized 6 onehot mux instances.
@@ -270,9 +270,9 @@ SYN-1020 : Optimized 21 distributor mux.
 SYN-1001 : Optimize 13 less-than instances
 SYN-1019 : Optimized 5 mux instances.
 SYN-1016 : Merged 31 instances.
-SYN-1015 : Optimize round 1, 430 better
+SYN-1015 : Optimize round 1, 398 better
 SYN-1014 : Optimize round 2
-SYN-1032 : 1109/22 useful/useless nets, 969/45 useful/useless insts
+SYN-1032 : 711/22 useful/useless nets, 571/45 useful/useless insts
 SYN-1017 : Remove 1 const input seq instances
 SYN-1002 :     u_ctrl_top/u_LED_send/reg0_syn_7
 SYN-1019 : Optimized 2 mux instances.
@@ -290,8 +290,8 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates              360
-  #and                     44
+#Basic gates              288
+  #and                     36
   #nand                     0
   #or                       6
   #nor                      0
@@ -302,23 +302,23 @@ Gate Statistics
   #bufif1                   0
   #MX21                    33
   #FADD                     0
-  #DFF                    261
+  #DFF                    197
   #LATCH                    0
 #MACRO_ADD                 24
 #MACRO_EQ                  21
-#MACRO_MUX                283
+#MACRO_MUX                179
 #MACRO_OTHERS               2
 
 Report Hierarchy Area:
 +-----------------------------------------------------------------------------+
 |Instance                     |Module                 |gates  |seq    |macros |
 +-----------------------------------------------------------------------------+
-|top                          |fpga_ed4g              |99     |261    |47     |
+|top                          |fpga_ed4g              |91     |197    |47     |
 |  u_PLL_150M                 |PLL_150M               |0      |0      |1      |
-|  u_ctrl_top                 |led_ctrl_top           |97     |68     |38     |
+|  u_ctrl_top                 |led_ctrl_top           |89     |68     |38     |
 |    u_LED_send               |LED_send               |41     |49     |23     |
 |    u_cdc_sbit_handshake     |cdc_sbit_handshake     |4      |6      |0      |
-|    u_fifo_fsm               |fifo_fsm               |41     |12     |14     |
+|    u_fifo_fsm               |fifo_fsm               |33     |12     |14     |
 |    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |11     |1      |1      |
 |      u_hasyncfifo_12to12    |hasyncfifo_12to12      |0      |0      |1      |
 +-----------------------------------------------------------------------------+
@@ -370,7 +370,7 @@ RUN-1001 :            report           |  standard  |     standard     |
 RUN-1001 :           retiming          |    off     |       off        |        
 RUN-1001 : ------------------------------------------------------------------
 SYN-2001 : Map 3 IOs to PADs
-SYN-1032 : 1108/1 useful/useless nets, 969/0 useful/useless insts
+SYN-1032 : 710/1 useful/useless nets, 571/0 useful/useless insts
 RUN-1002 : start command "update_pll_param -module fpga_ed4g"
 SYN-2501 : Processed 0 LOGIC_BUF instances.
 SYN-2501 : 1 BUFG to GCLK
@@ -389,13 +389,13 @@ SYN-2501 : Optimize round 2, 0 better
 SYN-2501 : Map 24 macro adder
 SYN-1019 : Optimized 69 mux instances.
 SYN-1016 : Merged 56 instances.
-SYN-1032 : 1621/3 useful/useless nets, 1482/0 useful/useless insts
+SYN-1032 : 1175/3 useful/useless nets, 1036/0 useful/useless insts
 SYN-3001 : Running gate level optimization.
-SYN-2581 : Mapping with K=5, #lut = 353 (3.36), #lev = 5 (1.74)
+SYN-2581 : Mapping with K=5, #lut = 218 (3.38), #lev = 5 (2.25)
 SYN-2551 : Post LUT mapping optimization.
-SYN-2581 : Mapping with K=5, #lut = 359 (3.32), #lev = 4 (1.69)
-SYN-3001 : Logic optimization runtime opt =   0.04 sec, map =   0.00 sec
-SYN-3001 : Mapper mapped 718 instances into 363 LUTs, name keeping = 70%.
+SYN-2581 : Mapping with K=5, #lut = 216 (3.41), #lev = 4 (1.99)
+SYN-3001 : Logic optimization runtime opt =   0.03 sec, map =   0.00 sec
+SYN-3001 : Mapper mapped 558 instances into 220 LUTs, name keeping = 68%.
 RUN-1002 : start command "report_area -file led_4s_gate.area"
 RUN-1001 : standard
 ***Report Model: fpga_ed4g Device: EG4S20BG256***
@@ -407,16 +407,16 @@ IO Statistics
   #inout                    0
 
 LUT Statistics
-#Total_luts               584
-  #lut4                   326
-  #lut5                    37
+#Total_luts               441
+  #lut4                   182
+  #lut5                    38
   #lut6                     0
   #lut5_mx41                0
   #lut4_alu1b             221
 
 Utilization Statistics
-#lut                      584   out of  19600    2.98%
-#reg                      261   out of  19600    1.33%
+#lut                      441   out of  19600    2.25%
+#reg                      197   out of  19600    1.01%
 #le                         0
 #dsp                        0   out of     29    0.00%
 #bram                       1   out of     64    1.56%
@@ -433,13 +433,13 @@ Report Hierarchy Area:
 +--------------------------------------------------------------------------------------------------+
 |Instance                     |Module                 |lut     |ripple  |seq     |bram    |dsp     |
 +--------------------------------------------------------------------------------------------------+
-|top                          |fpga_ed4g              |363     |221     |262     |1       |0       |
+|top                          |fpga_ed4g              |220     |221     |198     |1       |0       |
 |  u_PLL_150M                 |PLL_150M               |1       |0       |0       |0       |0       |
-|  u_ctrl_top                 |led_ctrl_top           |193     |83      |68      |1       |0       |
-|    u_LED_send               |LED_send               |78      |28      |49      |0       |0       |
+|  u_ctrl_top                 |led_ctrl_top           |146     |83      |68      |1       |0       |
+|    u_LED_send               |LED_send               |80      |28      |49      |0       |0       |
 |    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1       |0       |6       |0       |0       |
 |    u_fifo_fsm               |fifo_fsm               |40      |55      |12      |0       |0       |
-|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |74      |0       |1       |1       |0       |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |25      |0       |1       |1       |0       |
 |      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1       |0       |0       |1       |0       |
 +--------------------------------------------------------------------------------------------------+
 
@@ -447,7 +447,7 @@ SYN-1001 : Packing model "fpga_ed4g" ...
 SYN-4010 : Pack lib has 58 rtl pack models with 25 top pack blocks
 SYN-1014 : Optimize round 1
 SYN-1015 : Optimize round 1, 0 better
-SYN-4002 : Packing 261 DFF/LATCH to SEQ ...
+SYN-4002 : Packing 197 DFF/LATCH to SEQ ...
 SYN-4009 : Pack 5 carry chain into lslice
 SYN-4007 : Packing 108 adder to BLE ...
 SYN-4008 : Packed 108 adder and 3 SEQ to BLE.
@@ -471,5 +471,4 @@ RUN-1001 : Exported congestions
 RUN-1001 : Exported violations
 RUN-1001 : Exported IO constraints
 RUN-1001 : Exported Inst constraints
-RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_030003.log"
-RUN-1001 : Backing up run's log file succeed.
+RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_024148.log"

@@ -472,4 +472,3 @@ RUN-1001 : Exported violations
 RUN-1001 : Exported IO constraints
 RUN-1001 : Exported Inst constraints
 RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_030003.log"
-RUN-1001 : Backing up run's log file succeed.

@@ -71,6 +71,16 @@
                 </FileInfo>
             </File>
         </ADC_FILE>
+        <CWC_FILE>
+            <File Path="cwc001.cwc">
+                <FileInfo>
+                    <Attr Name="UsedInSyn" Val="true"/>
+                    <Attr Name="UsedInP&R" Val="true"/>
+                    <Attr Name="BelongTo" Val="design_1"/>
+                    <Attr Name="CompileOrder" Val="9"/>
+                </FileInfo>
+            </File>
+        </CWC_FILE>
         <IP_FILE>
             <File Path="al_ip/PLL_150M.ipc">
                 <FileInfo>

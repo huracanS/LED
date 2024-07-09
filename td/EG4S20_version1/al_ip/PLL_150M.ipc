@@ -23,14 +23,20 @@
         <clocks>
             <clock>
                 <id>0</id>
-                <clock_division_factor>7</clock_division_factor>
+                <clock_division_factor>2</clock_division_factor>
                 <clock_frequency>150.0000000000000000MHz</clock_frequency>
                 <phase_shift>0.0000000000000000deg</phase_shift>
             </clock>
             <clock>
                 <id>1</id>
-                <clock_division_factor>105</clock_division_factor>
+                <clock_division_factor>30</clock_division_factor>
                 <clock_frequency>10.0000000000000000MHz</clock_frequency>
+                <phase_shift>0.0000000000000000deg</phase_shift>
+            </clock>
+            <clock>
+                <id>2</id>
+                <clock_division_factor>100</clock_division_factor>
+                <clock_frequency>3.0000000000000000MHz</clock_frequency>
                 <phase_shift>0.0000000000000000deg</phase_shift>
             </clock>
         </clocks>

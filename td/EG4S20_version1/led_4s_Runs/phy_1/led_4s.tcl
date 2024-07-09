@@ -45,6 +45,8 @@ set rc [catch {
   open_project {led_4s.prj}
   import_device eagle_s20.db -package EG4S20BG256
   import_db {../syn_1/led_4s_gate.db}
+  config_chipwatcher "../../cwc001.cwc" -dir ""
+  compile_watcher
   place
   export_db {led_4s_place.db}
 } RESULT]

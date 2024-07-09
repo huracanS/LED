@@ -8,8 +8,8 @@ IO Statistics
   #inout                    0
 
 Gate Statistics
-#Basic gates              225
-  #and                     33
+#Basic gates              360
+  #and                     44
   #nand                     0
   #or                       6
   #nor                      0
@@ -20,23 +20,23 @@ Gate Statistics
   #bufif1                   0
   #MX21                    33
   #FADD                     0
-  #DFF                    137
+  #DFF                    261
   #LATCH                    0
-#MACRO_ADD                 23
+#MACRO_ADD                 24
 #MACRO_EQ                  21
-#MACRO_MUX                150
+#MACRO_MUX                283
 #MACRO_OTHERS               2
 
 Report Hierarchy Area:
 +-----------------------------------------------------------------------------+
 |Instance                     |Module                 |gates  |seq    |macros |
 +-----------------------------------------------------------------------------+
-|top                          |fpga_ed4g              |88     |137    |46     |
+|top                          |fpga_ed4g              |99     |261    |47     |
 |  u_PLL_150M                 |PLL_150M               |0      |0      |1      |
-|  u_ctrl_top                 |led_ctrl_top           |86     |68     |38     |
+|  u_ctrl_top                 |led_ctrl_top           |97     |68     |38     |
 |    u_LED_send               |LED_send               |41     |49     |23     |
 |    u_cdc_sbit_handshake     |cdc_sbit_handshake     |4      |6      |0      |
-|    u_fifo_fsm               |fifo_fsm               |30     |12     |14     |
+|    u_fifo_fsm               |fifo_fsm               |41     |12     |14     |
 |    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |11     |1      |1      |
 |      u_hasyncfifo_12to12    |hasyncfifo_12to12      |0      |0      |1      |
 +-----------------------------------------------------------------------------+
