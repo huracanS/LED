@@ -190,6 +190,8 @@ logic [31:0] frame_reg;
 always @(posedge clk or negedge rstn) begin
     if(!rstn) begin
         frame_reg <= 32'd0;
+    end else if(send_cnt == 32'd0 && cko_n) begin
+        frame_reg <= 32'h0000_0000;
     end else if(en) begin
         if(send_cnt == 32'd0) //第一帧 0000_0000.
             frame_reg <= 32'h0000_0000;

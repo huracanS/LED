@@ -8,15 +8,15 @@ IO Statistics
   #inout                    0
 
 LUT Statistics
-#Total_luts               584
-  #lut4                   326
-  #lut5                    37
+#Total_luts               593
+  #lut4                   323
+  #lut5                    49
   #lut6                     0
   #lut5_mx41                0
   #lut4_alu1b             221
 
 Utilization Statistics
-#lut                      584   out of  19600    2.98%
+#lut                      593   out of  19600    3.03%
 #reg                      261   out of  19600    1.33%
 #le                         0
 #dsp                        0   out of     29    0.00%
@@ -34,12 +34,12 @@ Report Hierarchy Area:
 +--------------------------------------------------------------------------------------------------+
 |Instance                     |Module                 |lut     |ripple  |seq     |bram    |dsp     |
 +--------------------------------------------------------------------------------------------------+
-|top                          |fpga_ed4g              |363     |221     |262     |1       |0       |
+|top                          |fpga_ed4g              |372     |221     |262     |1       |0       |
 |  u_PLL_150M                 |PLL_150M               |1       |0       |0       |0       |0       |
-|  u_ctrl_top                 |led_ctrl_top           |193     |83      |68      |1       |0       |
-|    u_LED_send               |LED_send               |78      |28      |49      |0       |0       |
+|  u_ctrl_top                 |led_ctrl_top           |202     |83      |68      |1       |0       |
+|    u_LED_send               |LED_send               |89      |28      |49      |0       |0       |
 |    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1       |0       |6       |0       |0       |
 |    u_fifo_fsm               |fifo_fsm               |40      |55      |12      |0       |0       |
-|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |74      |0       |1       |1       |0       |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |72      |0       |1       |1       |0       |
 |      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1       |0       |0       |1       |0       |
 +--------------------------------------------------------------------------------------------------+
