@@ -83,8 +83,8 @@ initial begin
     clk_slow = 0;
     rstn = 0;
     MeanR = {4'h8,4'h7,4'h6,4'h5,4'h4,4'h3,4'h2,4'h1};
-    MeanG = {4'h8,4'h7,4'h6,4'h5,4'h4,4'h3,4'h2,4'h1};
-    MeanB = {4'h8,4'h7,4'h6,4'h5,4'h4,4'h3,4'h2,4'h1};
+    MeanG = {4'h1,4'h3,4'h5,4'h7,4'h9,4'hb,4'he,4'hf};
+    MeanB = {4'h3,4'h6,4'h9,4'hc,4'hf,4'hd,4'h4,4'h7};
 
     // 复位系统
     #100;

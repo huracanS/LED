@@ -4,7 +4,7 @@
    Executable = D:/TD/bin/td.exe
    Built at =   20:34:38 Mar 21 2023
    Run by =     32863
-   Run Date =   Wed Jul 10 17:15:54 2024
+   Run Date =   Wed Jul 10 15:19:04 2024
 
    Run on =     SUPERIOR-LEGION
 ============================================================
@@ -78,9 +78,9 @@ HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/cdc_sbit_handshake.s
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/fifo_fsm.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
 RUN-1001 : Project manager successfully analyzed 8 source files.
-RUN-1003 : finish command "open_project led_4s.prj" in  1.395556s wall, 0.000000s user + 0.046875s system = 0.046875s CPU (3.4%)
+RUN-1003 : finish command "open_project led_4s.prj" in  1.227074s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
-RUN-1004 : used memory is 53 MB, reserved memory is 20 MB, peak memory is 53 MB
+RUN-1004 : used memory is 49 MB, reserved memory is 20 MB, peak memory is 49 MB
 RUN-1002 : start command "import_device eagle_s20.db -package EG4S20BG256"
 ARC-1001 : Device Initialization.
 ARC-1001 : ------------------------------------------------------------------
@@ -261,7 +261,7 @@ SYN-3001 : Running gate level optimization.
 SYN-2581 : Mapping with K=5, #lut = 205 (3.63), #lev = 5 (1.91)
 SYN-2551 : Post LUT mapping optimization.
 SYN-2581 : Mapping with K=5, #lut = 205 (3.63), #lev = 5 (1.91)
-SYN-3001 : Logic optimization runtime opt =   0.02 sec, map =   0.00 sec
+SYN-3001 : Logic optimization runtime opt =   0.03 sec, map =   0.00 sec
 SYN-3001 : Mapper mapped 495 instances into 205 LUTs, name keeping = 72%.
 SYN-1001 : Packing model "fpga_ed4g" ...
 SYN-4010 : Pack lib has 58 rtl pack models with 25 top pack blocks
@@ -277,9 +277,9 @@ SYN-4012 : Packed 0 FxMUX
 RUN-1002 : start command "legalize_phy_inst"
 SYN-1011 : Flatten model fpga_ed4g
 KIT-1004 : Compile Chipwatcher: Clear obsolete physical data.
-RUN-1003 : finish command "compile_watcher" in  1.365878s wall, 0.140625s user + 0.015625s system = 0.156250s CPU (11.4%)
+RUN-1003 : finish command "compile_watcher" in  1.130519s wall, 0.250000s user + 0.031250s system = 0.281250s CPU (24.9%)
 
-RUN-1004 : used memory is 123 MB, reserved memory is 86 MB, peak memory is 128 MB
+RUN-1004 : used memory is 120 MB, reserved memory is 86 MB, peak memory is 125 MB
 RUN-1002 : start command "place"
 RUN-1001 : Open license file D:/TD/license/Anlogic.lic
 RUN-1001 : Print Global Property
@@ -372,7 +372,7 @@ PHY-3001 : Global placement ...
 PHY-3001 : Initial: Len = 388923
 PHY-3001 : Clustering ...
 PHY-3001 : Level 0 #clusters 1390.
-PHY-3001 : End clustering;  0.000356s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-3001 : End clustering;  0.000647s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-3001 : Run with size of 4
 PHY-3001 : Cell area utilization is 4%
@@ -430,7 +430,7 @@ PHY-3002 : Step(44): len = 25472.9, overlap = 56.125
 PHY-3002 : Step(45): len = 25442.5, overlap = 53.8125
 PHY-3002 : Step(46): len = 25407.1, overlap = 55.9375
 PHY-3001 : Legalization ...
-PHY-3001 : End legalization;  0.008148s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-3001 : End legalization;  0.010129s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-3001 : Run with size of 4
 PHY-3001 : Cell area utilization is 6%
@@ -477,10 +477,10 @@ PHY-1001 : Generate routing nets ...
 PHY-1001 : Reuse net number 0/1620.
 PHY-1001 : Global iterations in 16 thread ...
 PHY-1002 : len = 42888, over cnt = 184(0%), over = 615, worst = 14
-PHY-1001 : End global iterations;  0.079468s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (19.7%)
+PHY-1001 : End global iterations;  0.084424s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-1001 : Congestion index: top1 = 29.83, top5 = 17.99, top10 = 11.88, top15 = 8.49.
-PHY-1001 : End incremental global routing;  0.137435s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (11.4%)
+PHY-1001 : End incremental global routing;  0.184936s wall, 0.000000s user + 0.046875s system = 0.046875s CPU (25.3%)
 
 RUN-1002 : start command "start_timer -report"
 TMR-5001 WARNING: No sdc constraints found while initiating timer.
@@ -488,13 +488,13 @@ TMR-2505 : Start building timing graph for model fpga_ed4g.
 TMR-2506 : Build timing graph completely. Port num: 3, tpin num: 7059, tnet num: 1618, tinst num: 1390, tnode num: 9277, tedge num: 11688.
 TMR-2508 : Levelizing timing graph completed, there are 29 levels in total.
 TMR-2501 : Timing graph initialized successfully.
-OPT-1001 : End timing update;  0.074215s wall, 0.046875s user + 0.000000s system = 0.046875s CPU (63.2%)
+OPT-1001 : End timing update;  0.092545s wall, 0.062500s user + 0.000000s system = 0.062500s CPU (67.5%)
 
 OPT-1001 : 0 high-fanout net processed.
-OPT-1001 : End high-fanout net optimization;  0.235231s wall, 0.062500s user + 0.000000s system = 0.062500s CPU (26.6%)
+OPT-1001 : End high-fanout net optimization;  0.303508s wall, 0.062500s user + 0.046875s system = 0.109375s CPU (36.0%)
 
-OPT-1001 : Current memory(MB): used = 181, reserve = 143, peak = 181.
-OPT-1001 : End physical optimization;  0.252544s wall, 0.078125s user + 0.000000s system = 0.078125s CPU (30.9%)
+OPT-1001 : Current memory(MB): used = 178, reserve = 144, peak = 178.
+OPT-1001 : End physical optimization;  0.324399s wall, 0.062500s user + 0.046875s system = 0.109375s CPU (33.7%)
 
 PHY-3001 : Start packing ...
 SYN-4007 : Packing 0 MUX to BLE ...
@@ -506,7 +506,7 @@ SYN-4005 : Packed 159 SEQ with LUT/SLICE
 SYN-4006 : 157 single LUT's are left
 SYN-4006 : 155 single SEQ's are left
 SYN-4011 : Packing model "fpga_ed4g" (AL_USER_NORMAL) with 731/1217 primitive instances ...
-PHY-3001 : End packing;  0.055315s wall, 0.031250s user + 0.000000s system = 0.031250s CPU (56.5%)
+PHY-3001 : End packing;  0.063474s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (24.6%)
 
 PHY-1001 : Populate physical database on model fpga_ed4g.
 RUN-1001 : There are total 615 instances
@@ -537,7 +537,7 @@ PHY-3002 : Step(77): len = 32164, overlap = 45.75
 PHY-3002 : Step(78): len = 32212.9, overlap = 45.5
 PHY-3002 : Step(79): len = 32539.4, overlap = 44.5
 PHY-3001 : Legalization ...
-PHY-3001 : End legalization;  0.130918s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-3001 : End legalization;  0.130430s wall, 0.000000s user + 0.015625s system = 0.015625s CPU (12.0%)
 
 PHY-3001 : Trial Legalized: Len = 47787.1
 PHY-3001 : Run with size of 2
@@ -558,11 +558,11 @@ PHY-3001 : :::2::: Try harder cell spreading with beta_ = 0.00183084
 PHY-3002 : Step(90): len = 35162.4, overlap = 20.25
 PHY-3002 : Step(91): len = 35173.2, overlap = 20.5
 PHY-3001 : Legalization ...
-PHY-3001 : End legalization;  0.004701s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-3001 : End legalization;  0.004590s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-3001 : Legalized: Len = 41877.2, Over = 0
 PHY-3001 : Spreading special nets. 5 overflows in 2952 tiles.
-PHY-3001 : End spreading;  0.004564s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-3001 : End spreading;  0.004491s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-3001 : 8 instances has been re-located, deltaX = 2, deltaY = 8, maxDist = 2.
 PHY-3001 : Final: Len = 42107.2, Over = 0
@@ -580,10 +580,10 @@ PHY-1002 : len = 56776, over cnt = 123(0%), over = 186, worst = 4
 PHY-1002 : len = 58480, over cnt = 24(0%), over = 37, worst = 4
 PHY-1002 : len = 58584, over cnt = 1(0%), over = 1, worst = 1
 PHY-1002 : len = 58600, over cnt = 0(0%), over = 0, worst = 0
-PHY-1001 : End global iterations;  0.178212s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (8.8%)
+PHY-1001 : End global iterations;  0.171450s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (9.1%)
 
 PHY-1001 : Congestion index: top1 = 27.31, top5 = 20.17, top10 = 15.47, top15 = 11.85.
-PHY-1001 : End incremental global routing;  0.242818s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (6.4%)
+PHY-1001 : End incremental global routing;  0.237537s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (6.6%)
 
 RUN-1002 : start command "start_timer -report"
 TMR-5001 WARNING: No sdc constraints found while initiating timer.
@@ -591,14 +591,14 @@ TMR-2505 : Start building timing graph for model fpga_ed4g.
 TMR-2506 : Build timing graph completely. Port num: 3, tpin num: 5927, tnet num: 1337, tinst num: 613, tnode num: 7510, tedge num: 10253.
 TMR-2508 : Levelizing timing graph completed, there are 29 levels in total.
 TMR-2501 : Timing graph initialized successfully.
-OPT-1001 : End timing update;  0.102303s wall, 0.031250s user + 0.000000s system = 0.031250s CPU (30.5%)
+OPT-1001 : End timing update;  0.100391s wall, 0.046875s user + 0.000000s system = 0.046875s CPU (46.7%)
 
 OPT-1001 : 0 high-fanout net processed.
-OPT-1001 : End high-fanout net optimization;  0.368760s wall, 0.062500s user + 0.000000s system = 0.062500s CPU (16.9%)
+OPT-1001 : End high-fanout net optimization;  0.362135s wall, 0.062500s user + 0.000000s system = 0.062500s CPU (17.3%)
 
-OPT-1001 : Current memory(MB): used = 186, reserve = 148, peak = 186.
+OPT-1001 : Current memory(MB): used = 182, reserve = 148, peak = 182.
 OPT-1001 : Update timing in Manhattan mode
-OPT-1001 : End timing update;  0.001866s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+OPT-1001 : End timing update;  0.001715s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 OPT-1001 : Start pin optimization...
 OPT-1001 : skip pin optimization...
@@ -607,21 +607,21 @@ PHY-1001 : Generate routing nets ...
 PHY-1001 : Reuse net number 1146/1339.
 PHY-1001 : Global iterations in 16 thread ...
 PHY-1002 : len = 58600, over cnt = 0(0%), over = 0, worst = 0
-PHY-1001 : End global iterations;  0.004955s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-1001 : End global iterations;  0.006261s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-1001 : Congestion index: top1 = 27.31, top5 = 20.17, top10 = 15.47, top15 = 11.85.
 OPT-1001 : Update timing in Manhattan mode
-OPT-1001 : End timing update;  0.002416s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+OPT-1001 : End timing update;  0.002294s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 RUN-1001 : QoR Analysis:
 OPT-0007 :   WNS 2147483647 TNS 0 NUM_FEPS 0
 RUN-1001 :   No local congestion issue, and most congested 1% tile average routing util is 26.931034
 RUN-1001 :   Top critical paths
-OPT-1001 : End physical optimization;  0.454139s wall, 0.093750s user + 0.000000s system = 0.093750s CPU (20.6%)
+OPT-1001 : End physical optimization;  0.467303s wall, 0.062500s user + 0.000000s system = 0.062500s CPU (13.4%)
 
-RUN-1003 : finish command "place" in  3.661457s wall, 0.421875s user + 0.250000s system = 0.671875s CPU (18.3%)
+RUN-1003 : finish command "place" in  3.718952s wall, 0.312500s user + 0.187500s system = 0.500000s CPU (13.4%)
 
-RUN-1004 : used memory is 164 MB, reserved memory is 126 MB, peak memory is 186 MB
+RUN-1004 : used memory is 164 MB, reserved memory is 129 MB, peak memory is 183 MB
 RUN-1002 : start command "export_db led_4s_place.db"
 RUN-1001 : Exported /
 RUN-1001 : Exported flow parameters
@@ -696,13 +696,13 @@ PHY-1002 : len = 55472, over cnt = 164(0%), over = 255, worst = 5
 PHY-1002 : len = 56456, over cnt = 99(0%), over = 134, worst = 4
 PHY-1002 : len = 57304, over cnt = 37(0%), over = 53, worst = 3
 PHY-1002 : len = 57704, over cnt = 0(0%), over = 0, worst = 0
-PHY-1001 : End global iterations;  0.177756s wall, 0.046875s user + 0.000000s system = 0.046875s CPU (26.4%)
+PHY-1001 : End global iterations;  0.171608s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-1001 : Congestion index: top1 = 27.00, top5 = 19.92, top10 = 15.35, top15 = 11.77.
-PHY-1001 : End global routing;  0.239902s wall, 0.062500s user + 0.000000s system = 0.062500s CPU (26.1%)
+PHY-1001 : End global routing;  0.242426s wall, 0.031250s user + 0.000000s system = 0.031250s CPU (12.9%)
 
 PHY-1001 : Start detail routing ...
-PHY-1001 : Current memory(MB): used = 217, reserve = 180, peak = 229.
+PHY-1001 : Current memory(MB): used = 213, reserve = 179, peak = 225.
 PHY-1001 : Detailed router is running in normal mode.
 PHY-1001 : Generate detailed routing grids ...
 PHY-1001 : Generate nets ...
@@ -712,18 +712,18 @@ PHY-5010 WARNING: Net clk_3m is skipped due to 0 input or output
 PHY-1001 : net sysclk_i_dup_1 will be routed on clock mesh
 PHY-1001 : clock net config_inst_syn_10 will be merged with clock config_inst_syn_9
 PHY-5010 WARNING: Net clk_3m is skipped due to 0 input or output
-PHY-1001 : Current memory(MB): used = 481, reserve = 448, peak = 481.
-PHY-1001 : End build detailed router design. 3.145851s wall, 1.515625s user + 0.093750s system = 1.609375s CPU (51.2%)
+PHY-1001 : Current memory(MB): used = 477, reserve = 448, peak = 477.
+PHY-1001 : End build detailed router design. 3.128352s wall, 1.265625s user + 0.031250s system = 1.296875s CPU (41.5%)
 
 PHY-1001 : Detail Route ...
 PHY-1001 : ===== Detail Route Phase 1 =====
 PHY-1001 : Clock net routing.....
 PHY-1001 : Routed 0% nets.
 PHY-1022 : len = 24144, over cnt = 0(0%), over = 0, worst = 0, crit = 0
-PHY-1001 : End initial clock net routed; 1.091372s wall, 0.578125s user + 0.015625s system = 0.593750s CPU (54.4%)
+PHY-1001 : End initial clock net routed; 1.009070s wall, 0.546875s user + 0.015625s system = 0.562500s CPU (55.7%)
 
-PHY-1001 : Current memory(MB): used = 513, reserve = 481, peak = 513.
-PHY-1001 : End phase 1; 1.095639s wall, 0.578125s user + 0.015625s system = 0.593750s CPU (54.2%)
+PHY-1001 : Current memory(MB): used = 509, reserve = 481, peak = 509.
+PHY-1001 : End phase 1; 1.013137s wall, 0.546875s user + 0.015625s system = 0.562500s CPU (55.5%)
 
 PHY-1001 : ===== Detail Route Phase 2 =====
 PHY-1001 : Initial routing.....
@@ -733,38 +733,38 @@ PHY-1001 : Routed 48% nets.
 PHY-1001 : Routed 66% nets.
 PHY-1001 : Routed 88% nets.
 PHY-1022 : len = 246240, over cnt = 42(0%), over = 42, worst = 1, crit = 0
-PHY-1001 : Current memory(MB): used = 514, reserve = 483, peak = 514.
-PHY-1001 : End initial routed; 3.347785s wall, 1.125000s user + 0.000000s system = 1.125000s CPU (33.6%)
+PHY-1001 : Current memory(MB): used = 511, reserve = 482, peak = 511.
+PHY-1001 : End initial routed; 2.926638s wall, 0.875000s user + 0.031250s system = 0.906250s CPU (31.0%)
 
-PHY-1001 : Current memory(MB): used = 514, reserve = 483, peak = 514.
-PHY-1001 : End phase 2; 3.349284s wall, 1.125000s user + 0.000000s system = 1.125000s CPU (33.6%)
+PHY-1001 : Current memory(MB): used = 511, reserve = 482, peak = 511.
+PHY-1001 : End phase 2; 2.927849s wall, 0.875000s user + 0.031250s system = 0.906250s CPU (31.0%)
 
 PHY-1001 : ===== Detail Route Phase 3 =====
 PHY-1001 : Ripup-reroute.....
 PHY-1001 : ===== DR Iter 1 =====
 PHY-1022 : len = 245680, over cnt = 11(0%), over = 11, worst = 1, crit = 0
-PHY-1001 : End DR Iter 1; 0.055965s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-1001 : End DR Iter 1; 0.042763s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
 PHY-1001 : ===== DR Iter 2 =====
 PHY-1022 : len = 245728, over cnt = 0(0%), over = 0, worst = 0, crit = 0
-PHY-1001 : End DR Iter 2; 0.024234s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-1001 : End DR Iter 2; 0.029774s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (52.5%)
 
 PHY-1001 : Commit to database.....
 PHY-1001 : 7 feed throughs used by 7 nets
-PHY-1001 : End commit to database; 0.160905s wall, 0.031250s user + 0.000000s system = 0.031250s CPU (19.4%)
+PHY-1001 : End commit to database; 0.171072s wall, 0.078125s user + 0.031250s system = 0.109375s CPU (63.9%)
 
-PHY-1001 : Current memory(MB): used = 528, reserve = 496, peak = 528.
-PHY-1001 : End phase 3; 0.354749s wall, 0.078125s user + 0.000000s system = 0.078125s CPU (22.0%)
+PHY-1001 : Current memory(MB): used = 525, reserve = 496, peak = 525.
+PHY-1001 : End phase 3; 0.374817s wall, 0.125000s user + 0.031250s system = 0.156250s CPU (41.7%)
 
 PHY-1003 : Routed, final wirelength = 245728
-PHY-1001 : Current memory(MB): used = 529, reserve = 497, peak = 529.
-PHY-1001 : End export database. 0.009577s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+PHY-1001 : Current memory(MB): used = 525, reserve = 496, peak = 525.
+PHY-1001 : End export database. 0.009242s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
 
-PHY-1001 : End detail routing;  8.141867s wall, 3.375000s user + 0.109375s system = 3.484375s CPU (42.8%)
+PHY-1001 : End detail routing;  7.670366s wall, 2.921875s user + 0.140625s system = 3.062500s CPU (39.9%)
 
-RUN-1003 : finish command "route" in  8.629677s wall, 3.468750s user + 0.109375s system = 3.578125s CPU (41.5%)
+RUN-1003 : finish command "route" in  8.146503s wall, 3.000000s user + 0.140625s system = 3.140625s CPU (38.6%)
 
-RUN-1004 : used memory is 462 MB, reserved memory is 430 MB, peak memory is 529 MB
+RUN-1004 : used memory is 460 MB, reserved memory is 432 MB, peak memory is 525 MB
 RUN-1002 : start command "report_area -io_info -file led_4s_phy.area"
 RUN-1001 : standard
 ***Report Model: fpga_ed4g Device: EG4S20BG256***
@@ -877,12 +877,11 @@ BIT-1002 : Init pips with 16 threads.
 BIT-1002 : Init pips completely, net num: 1339, pip num: 15162
 BIT-1002 : Init feedthrough completely, num: 7
 BIT-1003 : Multithreading accelaration with 16 threads.
-BIT-1003 : Generate bitstream completely, there are 1434 valid insts, and 41106 bits set as '1'.
+BIT-1003 : Generate bitstream completely, there are 1434 valid insts, and 41108 bits set as '1'.
 BIT-1004 : the usercode register value: 00000000110001001100111110010010
 BIT-1004 : PLL setting string = 0010
 BIT-1004 : Generate bits file led_4s.bit.
-RUN-1003 : finish command "bitgen -bit led_4s.bit" in  1.911362s wall, 6.890625s user + 0.078125s system = 6.968750s CPU (364.6%)
+RUN-1003 : finish command "bitgen -bit led_4s.bit" in  1.855033s wall, 6.781250s user + 0.015625s system = 6.796875s CPU (366.4%)
 
-RUN-1004 : used memory is 465 MB, reserved memory is 434 MB, peak memory is 661 MB
-RUN-1002 : start command "backup_run_log run.log ../.logs/phy_1/td_20240710_171554.log"
-RUN-1001 : Backing up run's log file succeed.
+RUN-1004 : used memory is 464 MB, reserved memory is 442 MB, peak memory is 658 MB
+RUN-1002 : start command "backup_run_log run.log ../.logs/phy_1/td_20240710_151904.log"

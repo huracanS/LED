@@ -9,8 +9,8 @@ IO Statistics
 
 LUT Statistics
 #Total_luts               593
-  #lut4                   323
-  #lut5                    49
+  #lut4                   325
+  #lut5                    47
   #lut6                     0
   #lut5_mx41                0
   #lut4_alu1b             221
@@ -39,7 +39,7 @@ Report Hierarchy Area:
 |  u_ctrl_top                 |led_ctrl_top           |202     |83      |68      |1       |0       |
 |    u_LED_send               |LED_send               |89      |28      |49      |0       |0       |
 |    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1       |0       |6       |0       |0       |
-|    u_fifo_fsm               |fifo_fsm               |40      |55      |12      |0       |0       |
-|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |72      |0       |1       |1       |0       |
+|    u_fifo_fsm               |fifo_fsm               |43      |55      |12      |0       |0       |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |69      |0       |1       |1       |0       |
 |      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1       |0       |0       |1       |0       |
 +--------------------------------------------------------------------------------------------------+

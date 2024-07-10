@@ -1,4 +1,4 @@
-# Reading E:/Modelsim/tcl/vsim/pref.tcl
+# Reading D:/Modelsim/tcl/vsim/pref.tcl
 # //  ModelSim SE-64 10.4 Dec  3 2014 
 # //
 # //  Copyright 1991-2014 Mentor Graphics Corporation
@@ -15,3 +15,5 @@
 # //
 # vsim.wlf opened as dataset "vsim"
 # do wave.do
+add wave -position insertpoint  \
+vsim:/tb_mean/Mean

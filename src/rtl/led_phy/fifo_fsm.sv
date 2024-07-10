@@ -122,7 +122,7 @@ end
 
 assign wr_done = (wr_cnt == TOTAL_CNT) && (c_state == FIFO_WR);
 
-assign fifo_data = {MeanR[block_choose_real],MeanG[block_choose_real],MeanB[block_choose_real]} & {12{c_state == FIFO_WR}};
+assign fifo_data = {MeanB[block_choose_real],MeanG[block_choose_real],MeanR[block_choose_real]} & {12{c_state == FIFO_WR}};
 
 //选中区块.
 logic condition_n0,condition_n1,condition_n2,condition_n3,condition_n4,condition_n5,condition_n6,condition_n7,condition_n8,condition_n9,condition_na,condition_nb;
@@ -162,7 +162,7 @@ always @(posedge clk or negedge rstn) begin
         else if(condition_n9) //FRAME_N2_back
             block_choose <= 4'h2;
         else if(condition_na) //FRAME_N4
-            block_choose <= 4'h3;
+            block_choose <= 4'h4;
         else if(condition_nb) //FRAME_N7
             block_choose <= 4'h7;
         else begin

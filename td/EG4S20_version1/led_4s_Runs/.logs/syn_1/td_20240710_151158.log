@@ -4,7 +4,7 @@
    Executable = D:/TD/bin/td.exe
    Built at =   20:34:38 Mar 21 2023
    Run by =     32863
-   Run Date =   Wed Jul 10 17:15:20 2024
+   Run Date =   Wed Jul 10 15:11:58 2024
 
    Run on =     SUPERIOR-LEGION
 ============================================================
@@ -78,9 +78,9 @@ HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/cdc_sbit_handshake.s
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/fifo_fsm.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
 RUN-1001 : Project manager successfully analyzed 8 source files.
-RUN-1003 : finish command "open_project led_4s.prj" in  1.417593s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+RUN-1003 : finish command "open_project led_4s.prj" in  1.053696s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (1.5%)
 
-RUN-1004 : used memory is 53 MB, reserved memory is 20 MB, peak memory is 53 MB
+RUN-1004 : used memory is 49 MB, reserved memory is 20 MB, peak memory is 49 MB
 RUN-1002 : start command "import_device eagle_s20.db -package EG4S20BG256"
 ARC-1001 : Device Initialization.
 ARC-1001 : ------------------------------------------------------------------
@@ -394,7 +394,7 @@ SYN-3001 : Running gate level optimization.
 SYN-2581 : Mapping with K=5, #lut = 370 (3.31), #lev = 5 (1.75)
 SYN-2551 : Post LUT mapping optimization.
 SYN-2581 : Mapping with K=5, #lut = 368 (3.38), #lev = 4 (1.63)
-SYN-3001 : Logic optimization runtime opt =   0.05 sec, map =   0.00 sec
+SYN-3001 : Logic optimization runtime opt =   0.04 sec, map =   0.00 sec
 SYN-3001 : Mapper mapped 742 instances into 372 LUTs, name keeping = 68%.
 RUN-1002 : start command "report_area -file led_4s_gate.area"
 RUN-1001 : standard
@@ -471,5 +471,4 @@ RUN-1001 : Exported congestions
 RUN-1001 : Exported violations
 RUN-1001 : Exported IO constraints
 RUN-1001 : Exported Inst constraints
-RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_171520.log"
-RUN-1001 : Backing up run's log file succeed.
+RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_151158.log"

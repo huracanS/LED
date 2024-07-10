@@ -15,5 +15,3 @@
 # //
 # vsim.wlf opened as dataset "vsim"
 # do wave.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf //wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/ctrl_test/wave.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf //wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/ctrl_test/wave.do

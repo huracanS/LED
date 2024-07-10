@@ -32,18 +32,18 @@ always@(posedge sysclk_i,negedge lock)begin
 end
 always@(posedge sysclk_i,negedge lock)begin
 	if(!lock)begin
-    	color_pattern = {12'hfff,12'hf0f,12'h00f,12'h0ff,12'h0f0,12'hff0,12'hfa0,12'hf00};//白紫蓝青绿黄橙红76543210
+    	color_pattern = {12'hfff,12'hf0f,12'h00f,12'h0ff,12'h0f0,12'hff0,12'hfa0,12'h9AA};//白紫蓝青绿黄橙红76543210
     end
     else if(cnt1s[27])begin
-    	color_pattern = {color_pattern[83:0],color_pattern[95:84]};
+    	color_pattern = {color_pattern[47:0],color_pattern[95:48]};
     end
 end
 genvar i;
 generate
     for(i=0;i<8;i=i+1)begin:color_gen
-        assign MeanR[i] = color_pattern[i*12+:4];
+        assign MeanB[i] = color_pattern[i*12+:4];
         assign MeanG[i] = color_pattern[i*12+4+:4];
-        assign MeanB[i] = color_pattern[i*12+8+:4];     
+        assign MeanR[i] = color_pattern[i*12+8+:4];     
     end
 endgenerate
   

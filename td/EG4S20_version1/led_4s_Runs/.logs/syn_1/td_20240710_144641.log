@@ -4,7 +4,7 @@
    Executable = D:/TD/bin/td.exe
    Built at =   20:34:38 Mar 21 2023
    Run by =     32863
-   Run Date =   Wed Jul 10 17:15:20 2024
+   Run Date =   Wed Jul 10 14:46:41 2024
 
    Run on =     SUPERIOR-LEGION
 ============================================================
@@ -78,9 +78,9 @@ HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/cdc_sbit_handshake.s
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/fifo_fsm.sv
 HDL-1007 : analyze verilog file ../../../../src/rtl/led_phy/hasyncfifo_ahead12to12.v
 RUN-1001 : Project manager successfully analyzed 8 source files.
-RUN-1003 : finish command "open_project led_4s.prj" in  1.417593s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%)
+RUN-1003 : finish command "open_project led_4s.prj" in  1.253324s wall, 0.000000s user + 0.015625s system = 0.015625s CPU (1.2%)
 
-RUN-1004 : used memory is 53 MB, reserved memory is 20 MB, peak memory is 53 MB
+RUN-1004 : used memory is 49 MB, reserved memory is 20 MB, peak memory is 49 MB
 RUN-1002 : start command "import_device eagle_s20.db -package EG4S20BG256"
 ARC-1001 : Device Initialization.
 ARC-1001 : ------------------------------------------------------------------
@@ -258,21 +258,21 @@ SYN-1043 : Mark PLL_150M as IO macro for instance bufg_feedback
 SYN-1011 : Flatten model fpga_ed4g
 SYN-1032 : 1472/12 useful/useless nets, 599/3 useful/useless insts
 SYN-1016 : Merged 21 instances.
-SYN-1032 : 1327/75 useful/useless nets, 483/22 useful/useless insts
+SYN-1032 : 1326/76 useful/useless nets, 483/22 useful/useless insts
 SYN-1016 : Merged 111 instances.
-SYN-1032 : 1221/6 useful/useless nets, 1081/26 useful/useless insts
+SYN-1032 : 1220/6 useful/useless nets, 1080/27 useful/useless insts
 SYN-1014 : Optimize round 1
-SYN-1032 : 1220/1 useful/useless nets, 1080/1 useful/useless insts
+SYN-1032 : 1219/1 useful/useless nets, 1079/1 useful/useless insts
 SYN-1017 : Remove 1 const input seq instances
 SYN-1002 :     reg4_syn_23
-SYN-1021 : Optimized 7 onehot mux instances.
+SYN-1021 : Optimized 6 onehot mux instances.
 SYN-1020 : Optimized 21 distributor mux.
 SYN-1001 : Optimize 13 less-than instances
 SYN-1019 : Optimized 5 mux instances.
 SYN-1016 : Merged 31 instances.
-SYN-1015 : Optimize round 1, 431 better
+SYN-1015 : Optimize round 1, 430 better
 SYN-1014 : Optimize round 2
-SYN-1032 : 1124/22 useful/useless nets, 984/45 useful/useless insts
+SYN-1032 : 1123/22 useful/useless nets, 983/45 useful/useless insts
 SYN-1017 : Remove 1 const input seq instances
 SYN-1002 :     u_ctrl_top/u_LED_send/reg0_syn_7
 SYN-1019 : Optimized 2 mux instances.
@@ -306,7 +306,7 @@ Gate Statistics
   #LATCH                    0
 #MACRO_ADD                 24
 #MACRO_EQ                  21
-#MACRO_MUX                297
+#MACRO_MUX                296
 #MACRO_OTHERS               2
 
 Report Hierarchy Area:
@@ -370,7 +370,7 @@ RUN-1001 :            report           |  standard  |     standard     |
 RUN-1001 :           retiming          |    off     |       off        |        
 RUN-1001 : ------------------------------------------------------------------
 SYN-2001 : Map 3 IOs to PADs
-SYN-1032 : 1123/1 useful/useless nets, 984/0 useful/useless insts
+SYN-1032 : 1122/1 useful/useless nets, 983/0 useful/useless insts
 RUN-1002 : start command "update_pll_param -module fpga_ed4g"
 SYN-2501 : Processed 0 LOGIC_BUF instances.
 SYN-2501 : 1 BUFG to GCLK
@@ -387,15 +387,15 @@ SYN-2501 : Optimize round 1, 171 better
 SYN-2501 : Optimize round 2
 SYN-2501 : Optimize round 2, 0 better
 SYN-2501 : Map 24 macro adder
-SYN-1019 : Optimized 100 mux instances.
-SYN-1016 : Merged 78 instances.
-SYN-1032 : 1645/3 useful/useless nets, 1506/0 useful/useless insts
+SYN-1019 : Optimized 69 mux instances.
+SYN-1016 : Merged 56 instances.
+SYN-1032 : 1635/3 useful/useless nets, 1496/0 useful/useless insts
 SYN-3001 : Running gate level optimization.
-SYN-2581 : Mapping with K=5, #lut = 370 (3.31), #lev = 5 (1.75)
+SYN-2581 : Mapping with K=5, #lut = 366 (3.31), #lev = 5 (1.74)
 SYN-2551 : Post LUT mapping optimization.
-SYN-2581 : Mapping with K=5, #lut = 368 (3.38), #lev = 4 (1.63)
-SYN-3001 : Logic optimization runtime opt =   0.05 sec, map =   0.00 sec
-SYN-3001 : Mapper mapped 742 instances into 372 LUTs, name keeping = 68%.
+SYN-2581 : Mapping with K=5, #lut = 368 (3.38), #lev = 4 (1.64)
+SYN-3001 : Logic optimization runtime opt =   0.04 sec, map =   0.00 sec
+SYN-3001 : Mapper mapped 732 instances into 372 LUTs, name keeping = 68%.
 RUN-1002 : start command "report_area -file led_4s_gate.area"
 RUN-1001 : standard
 ***Report Model: fpga_ed4g Device: EG4S20BG256***
@@ -408,8 +408,8 @@ IO Statistics
 
 LUT Statistics
 #Total_luts               593
-  #lut4                   325
-  #lut5                    47
+  #lut4                   323
+  #lut5                    49
   #lut6                     0
   #lut5_mx41                0
   #lut4_alu1b             221
@@ -438,8 +438,8 @@ Report Hierarchy Area:
 |  u_ctrl_top                 |led_ctrl_top           |202     |83      |68      |1       |0       |
 |    u_LED_send               |LED_send               |89      |28      |49      |0       |0       |
 |    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1       |0       |6       |0       |0       |
-|    u_fifo_fsm               |fifo_fsm               |43      |55      |12      |0       |0       |
-|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |69      |0       |1       |1       |0       |
+|    u_fifo_fsm               |fifo_fsm               |40      |55      |12      |0       |0       |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |72      |0       |1       |1       |0       |
 |      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1       |0       |0       |1       |0       |
 +--------------------------------------------------------------------------------------------------+
 
@@ -471,5 +471,4 @@ RUN-1001 : Exported congestions
 RUN-1001 : Exported violations
 RUN-1001 : Exported IO constraints
 RUN-1001 : Exported Inst constraints
-RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_171520.log"
-RUN-1001 : Backing up run's log file succeed.
+RUN-1002 : start command "backup_run_log run.log ../.logs/syn_1/td_20240710_144641.log"
