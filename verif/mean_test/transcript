@@ -15,5 +15,3 @@
 # //
 # vsim.wlf opened as dataset "vsim"
 # do wave.do
-add wave -position insertpoint  \
-vsim:/tb_mean/Mean

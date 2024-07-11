@@ -7,7 +7,7 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/10373/Documents/EDU_lab/EXU/LED_send/verif/mean_test
+Z0 d//wsl.localhost/Ubuntu-20.04/home/superior/LED/verif/mean_test
 vmean_cal
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
@@ -15,21 +15,21 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 ZSgPW56CkgQ4HeQPMClG40
-IzBCWo>Ca]B`Rg`[Ebil_g1
+!s100 ?eGVYdf@W3;AGdBjn4Af92
+IQPbFl@cZ=MQd^hVKJdChJ0
 !s105 mean_cal_sv_unit
 S1
 R0
-Z3 w1720021341
+w1720681093
 8../../src/rtl/mean_cal/mean_cal.sv
 F../../src/rtl/mean_cal/mean_cal.sv
 L0 1
-Z4 OL;L;10.4;61
-Z5 !s108 1720161622.085000
-Z6 !s107 ../../src/rtl/mean_cal/square_shift.sv|../../src/rtl/mean_cal/square_adder.sv|../../src/rtl/mean_cal/mean_cal.sv|
-Z7 !s90 -f|./dut.f|
+Z3 OL;L;10.4;61
+Z4 !s108 1720687509.618000
+Z5 !s107 ../../src/rtl/mean_cal/mean_cal.sv|../../src/rtl/mean_cal/square_shift.sv|../../src/rtl/mean_cal/square_adder.sv|
+Z6 !s90 -f|./dut.f|
 !i113 0
-Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vsquare_adder
 R1
 R2
@@ -37,21 +37,21 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 5_LUglB8`SXSKbJOMfaP`0
-IAYljY?nLf5ZN>N[=0lf]V0
+!s100 L46UJO^IIV=6S92zRAD<c0
+InR@OB<f459Ck:PojS:1j>0
 !s105 square_adder_sv_unit
 S1
 R0
-R3
+w1720683057
 8../../src/rtl/mean_cal/square_adder.sv
 F../../src/rtl/mean_cal/square_adder.sv
 L0 1
+R3
 R4
 R5
 R6
-R7
 !i113 0
-R8
+R7
 vsquare_shift
 R1
 R2
@@ -59,21 +59,21 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 >dPCWGEUgz^P3;Bo[DEO90
-I7Y2kRRZh3H<UkQCA559Wo0
+!s100 WU^ICG2oSOb<=mEG73TLD1
+I8o63cjX6]][1W73<`dcQ_0
 !s105 square_shift_sv_unit
 S1
 R0
-R3
+w1720682681
 8../../src/rtl/mean_cal/square_shift.sv
 F../../src/rtl/mean_cal/square_shift.sv
 L0 1
+R3
 R4
 R5
 R6
-R7
 !i113 0
-R8
+R7
 vtb_mean
 R1
 R2
@@ -81,18 +81,18 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 JZnVCVJf510E]bLh9Rj5E3
-ILK]?cJBIR3MH2TSFf3cLJ2
+!s100 YZ>gmAJDVFUC9ma6LnWUN0
+I^i6j=f[n3nTdb3S^jj>>o1
 !s105 tb_mean_sv_unit
 S1
 R0
-R3
+w1720687501
 8tb_mean.sv
 Ftb_mean.sv
-L0 3
-R4
-!s108 1720161622.190000
+L0 2
+R3
+!s108 1720687510.123000
 !s107 tb_mean.sv|
 !s90 tb_mean.sv|
 !i113 0
-R8
+R7

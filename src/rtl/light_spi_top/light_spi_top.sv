@@ -14,12 +14,15 @@ module light_spi_top(
 );
 //signal define
 logic start;
-logic [3:0]  MeanR_ori [7:0];
-logic [3:0]  MeanG_ori [7:0];
-logic [3:0]  MeanB_ori [7:0];
+logic [3:0]  MeanR_ori [15:0];
+logic [3:0]  MeanG_ori [15:0];
+logic [3:0]  MeanB_ori [15:0];
+logic [3:0]  MeanR [15:0];
+logic [3:0]  MeanG [15:0];
+logic [3:0]  MeanB [15:0];
 genvar i;
 generate
-    for(i=0;i<8;i=i+1)begin
+    for(i=0;i<16;i=i+1)begin
         MeanR[i] = EN?MeanR_ori:4'b0000;
         MeanG[i] = EN?MeanG_ori:4'b0000;
         MeanB[i] = EN?MeanB_ori:4'b0000;

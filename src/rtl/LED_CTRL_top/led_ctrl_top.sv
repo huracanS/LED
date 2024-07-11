@@ -8,9 +8,9 @@ module led_ctrl_top(
     
     //main_cac
     input logic start,//开始传输信号.
-    input  logic [3:0]  MeanR [7:0], //8分区的总共R像素 8bit
-    input  logic [3:0]  MeanG [7:0], //8分区的总共G像素 8bit
-    input  logic [3:0]  MeanB [7:0], //8分区的总共B像素 8bit
+    input  logic [3:0]  MeanR [15:0], //8分区的总共R像素 8bit
+    input  logic [3:0]  MeanG [15:0], //8分区的总共G像素 8bit
+    input  logic [3:0]  MeanB [15:0], //8分区的总共B像素 8bit
 
     output logic cko_o,
     output logic sdo_o
@@ -26,18 +26,26 @@ logic rd; /*synthesis keep*/
 logic [11:0] fifo_data_out;/*synthesis keep*/
 fifo_fsm #(
 //发送灯带分区帧格式
-    .FRAME_N7_front  (5),
-    .FRAME_N6        (6),
-    .FRAME_N5_front  (5),
-    .FRAME_N5_back   (1),
-    .FRAME_N3        (6),
-    .FRAME_N0_front  (1),
-    .FRAME_N0_back   (5),
-    .FRAME_N1        (5),
-    .FRAME_N2_front  (5),
-    .FRAME_N2_back   (1),
-    .FRAME_N4        (6),
-    .FRAME_N7        (1)
+    .FRAME_N15_f      (4),
+    .FRAME_N14        (3),
+    .FRAME_N13        (3),
+    .FRAME_N12        (3),
+    .FRAME_N11_f      (3),
+    .FRAME_N11_b      (1),
+    .FRAME_N9         (2),
+    .FRAME_N7         (2),
+    .FRAME_N5         (2),
+    .FRAME_N0_f       (1),
+    .FRAME_N0_b       (3),
+    .FRAME_N1         (3),
+    .FRAME_N2         (3),
+    .FRAME_N3         (3),
+    .FRAME_N4_f       (3),
+    .FRAME_N4_b       (1),
+    .FRAME_N6         (2),
+    .FRAME_N8         (2),
+    .FRAME_N10        (2),
+    .FRAME_N15_b      (1)
 ) u_fifo_fsm (
     .clk  (clk_fast), 
     .rstn (rstn),

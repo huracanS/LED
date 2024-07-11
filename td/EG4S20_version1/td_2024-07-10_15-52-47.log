@@ -92,3 +92,28 @@ RUN-1003 : finish command "download -bit led_4s_Runs\phy_1\led_4s.bit -mode jtag
 
 RUN-1004 : used memory is 562 MB, reserved memory is 574 MB, peak memory is 613 MB
 GUI-1001 : Downloading succeeded!
+HDL-1007 : analyze verilog file ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
+HDL-8007 ERROR: extra comma in parameter association list is not allowed in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(48)
+HDL-8007 ERROR: ignore module module due to previous errors in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(1)
+HDL-1007 : Verilog file '../../src/rtl/LED_CTRL_top/led_ctrl_top.sv' ignored due to errors
+HDL-1007 : analyze verilog file ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
+HDL-8007 ERROR: extra comma in parameter association list is not allowed in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(48)
+HDL-8007 ERROR: ignore module module due to previous errors in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(1)
+HDL-1007 : Verilog file '../../src/rtl/LED_CTRL_top/led_ctrl_top.sv' ignored due to errors
+HDL-1007 : analyze verilog file ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N15_f in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(29)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N14 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(30)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N13 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(31)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N12 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(32)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N11_f in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(33)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N11_b in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(34)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N9 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(35)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N5 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(37)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N0_f in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(38)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N0_b in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(39)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N2 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(41)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N4_f in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(43)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N4_b in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(44)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N8 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(46)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N10 in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(47)
+HDL-8007 ERROR: module 'fifo_fsm' does not have a parameter named FRAME_N15_b in ../../src/rtl/LED_CTRL_top/led_ctrl_top.sv(48)

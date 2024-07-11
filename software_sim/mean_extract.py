@@ -108,8 +108,7 @@ def image_to_bin(image_path, bin_path):
                 # 将RGB值写入二进制文件
                 bin_file.write(struct.pack('BBB', r, g, b))
 
-from PIL import Image
-import struct
+
 
 def bin_to_image(bin_path, width, height):
     # 创建一个新的RGB图像
@@ -132,6 +131,24 @@ def bin_to_image(bin_path, width, height):
     img.show()
 
 
+def read_rgb_from_bin(file_path):
+    rgb_list = []
+
+    with open(file_path, 'rb') as f:
+        data = f.read()
+
+    if len(data) != 48:
+        raise ValueError("File does not contain exactly 48 bytes")
+
+    for i in range(0, len(data), 3):
+        r = data[i]
+        g = data[i+1]
+        b = data[i+2]
+        rgb_list.append([r, g, b])
+
+    return rgb_list
+
+
 
 
 if __name__ == "__main__":
@@ -145,11 +162,11 @@ if __name__ == "__main__":
 
     # 定义要计算均值的矩形区域
     rec_aeras=[
-        [0,0,380,20],#aera 0
-        [385,0,765,20],#aera 1
-        [770,0,1150,20],#aera 2
-        [1155,0,1535,20],#aera 3
-        [1540,0,1920,20], #aera 4
+        [0,0,340,20],#aera 0
+        [395,0,735,20],#aera 1
+        [790,0,1130,20],#aera 2
+        [1185,0,1525,20],#aera 3
+        [1580,0,1920,20], #aera 4
         
         [0,25,20,365],#aera 5
         [1900,25,1920,365],#aera 6
@@ -158,11 +175,11 @@ if __name__ == "__main__":
         [0,715,20,1055],#aera 9
         [1900,715,1920,1055],#aera 10
         
-        [0,1060,380,1080],#aera 11
-        [385,1060,765,1080],#aera 12
-        [770,1060,1150,1080],#aera 13
-        [1155,1060,1535,1080],#aera 14
-        [1540,1060,1920,1080], #aera 15
+        [0,1060,340,1080],#aera 11
+        [395,1060,735,1080],#aera 12
+        [790,1060,1130,1080],#aera 13
+        [1185,1060,1525,1080],#aera 14
+        [1580,1060,1920,1080], #aera 15
     ]
     '''-----------------------------------------------------'''
     
@@ -173,27 +190,33 @@ if __name__ == "__main__":
     #-------------------------------------------------
     '''-----------------------------------------------------'''
     
-    '''-----------绘制均值分区-------------------------------'''        
+    '''-----------算法计算均值分区并绘制分区框-----------------'''        
     mean_rgb_lst=cal_recmean_on_image(image, rec_aeras)
+    image.save("image_add_rec.jpg")
     '''-----------------------------------------------------'''    
 
 
     '''-----------存储均值列表-------------------------------'''     
-    #------------------------------------------------
-    for rgb_lst in mean_rgb_lst:
-        print(rgb_lst)
-    bin_file_path = 'rgb_means.bin'
-    save_rgb_list_to_bin(mean_rgb_lst,'./output/rgb_means.bin')
-    #---------------------------------------------------
+    # for rgb_lst in mean_rgb_lst:
+    #     print(rgb_lst)
+    # bin_file_path = 'rgb_means.bin'
+    save_rgb_list_to_bin(mean_rgb_lst,'./output/algo_rgb_means.bin')
     '''-----------------------------------------------------'''     
-    #image.show()
-    image.save("image_add_rec.jpg")
-    
-    
-    rgb_rec_image=show_mean_rgb(mean_rgb_lst,rec_aeras)
-    #rgb_rec_image.show()
-    rgb_rec_image.save("image_mean_rec.jpg")
 
+    # rgb_rec_image=show_mean_rgb(mean_rgb_lst,rec_aeras)
+    # #rgb_rec_image.show()
+    # rgb_rec_image.save("image_mean_rec.jpg")
+    '''-----------读取算法均值结果并存储图像---------------------------''' 
+    algo_mean_rgb_lst=read_rgb_from_bin('./output/algo_rgb_means.bin')
+    algo_rgb_rec_image = show_mean_rgb(algo_mean_rgb_lst,rec_aeras)
+    algo_rgb_rec_image.save("algo_mean_rec.jpg")    
+    '''--------------------------------------------------------------''' 
+       
+    '''-----------读取RTL均值结果并存储图像---------------------------''' 
+    rtl_mean_rgb_lst=read_rgb_from_bin("./output/rtl_rgb_means.bin")
+    rtl_rgb_rec_image = show_mean_rgb(rtl_mean_rgb_lst,rec_aeras)
+    rtl_rgb_rec_image.save("rtl_mean_rec.jpg")
+    '''--------------------------------------------------------------''' 
 
 
 
