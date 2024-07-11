@@ -103,7 +103,7 @@ LED_send #(
     .rstn(rstn),
     
     //控制fifo.
-    .fifo_data_in({fifo_data_out[11:8],4'b1111,fifo_data_out[7:4],4'b1111,fifo_data_out[3:0],4'b1111}),//输入的数据 RGB
+    .fifo_data_in({fifo_data_out[11:8],4'b0000,fifo_data_out[7:4],4'b0000,fifo_data_out[3:0],4'b0000}),//输入的数据 RGB
     .rd          (rd),//fifo读使能.
 
     //输入数据使能和数据.

@@ -6,38 +6,57 @@ module light_spi_top(
     input   logic   data_en,
     input   logic   [23:0]  data,
     //register interface
-    input   logic   EN, // open sk9822 led
-    input   logic   update,//erver 20ms pulse
+    input   logic   [31:0]  LIGHT_SPI_CTRL,
     //sl9822 spi interface
     output  logic   cko,
     output  logic   sdo
 );
+
 //signal define
 logic start;
+logic reg_update;
+logic reg_update_d1;
+logic update; /*synthesis keep*/
+logic EN;
 logic [3:0]  MeanR_ori [15:0];
 logic [3:0]  MeanG_ori [15:0];
 logic [3:0]  MeanB_ori [15:0];
 logic [3:0]  MeanR [15:0];
 logic [3:0]  MeanG [15:0];
 logic [3:0]  MeanB [15:0];
+//*********register**********************
+assign reg_update = LIGHT_SPI_CTRL[1];
+assign EN         = LIGHT_SPI_CTRL[0];
+//=======================================
+
+//------------posedge detect---------------
+always @(posedge clk,negedge rst_n) begin
+    if(~rst_n)begin
+        reg_update_d1 <= 1'b0;
+    end
+    else begin
+        reg_update_d1 <= reg_update;
+    end
+end
+assign  update = reg_update & ~reg_update_d1; //posedge gen
 genvar i;
 generate
-    for(i=0;i<16;i=i+1)begin
-        MeanR[i] = EN?MeanR_ori:4'b0000;
-        MeanG[i] = EN?MeanG_ori:4'b0000;
-        MeanB[i] = EN?MeanB_ori:4'b0000;
+    for(i=0;i<16;i=i+1)begin:mean_value_sel
+        assign MeanR[i] = EN?MeanR_ori[i]:4'b0000;
+        assign MeanG[i] = EN?MeanG_ori[i]:4'b0000;
+        assign MeanB[i] = EN?MeanB_ori[i]:4'b0000;
     end
 endgenerate
 //-----------mean_cal-----------------
 mean_cal u_mean_cal(
-    clk         (clk            ),
-    rst_n       (rst_n          ),
-    data_en     (data_en        ),
-    data        (data           ), 
-    MeanR       (MeanR_ori      ),
-    MeanG       (MeanG_ori      ),
-    MeanB       (MeanB_ori      ), 
-    start_o     (start          )
+    .clk         (clk            ),
+    .rst_n       (rst_n          ),
+    .data_en     (data_en        ),
+    .data        (data           ), 
+    .MeanR       (MeanR_ori      ),
+    .MeanG       (MeanG_ori      ),
+    .MeanB       (MeanB_ori      ), 
+    .start_o     (start          )
 );
 
 //-----------led_ctrl-----------------

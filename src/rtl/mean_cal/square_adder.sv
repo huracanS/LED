@@ -8,7 +8,7 @@ module square_adder(
     output  logic [16:0] SumB [15:0],
     output  logic start
 );
-//380*20=7600 ~= 8192 = 2^13
+//340*20=6800 ~= 7200 = 1/2^13 + 1/2^16
 localparam  ROW_LEN = 1080;
 localparam  COL_LEN = 1920;
 logic [3:0] Rin,Gin,Bin;

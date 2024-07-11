@@ -13,10 +13,10 @@ logic  [28:0]	rst_cnt=0;
 logic clk_150m; 
 logic clk_10m; /*synthesis keep*/
 logic clk_3m; /*synthesis keep*/
-logic [3:0]  MeanR [7:0];
-logic [3:0]  MeanG [7:0];
-logic [3:0]  MeanB [7:0];
-logic [95:0] color_pattern; /*synthesis keep*/
+logic [3:0]  MeanR [15:0];
+logic [3:0]  MeanG [15:0];
+logic [3:0]  MeanB [15:0];
+logic [191:0] color_pattern; /*synthesis keep*/
 logic lock;
 logic [27:0] cnt1s;
 always@(posedge sysclk_i,negedge lock)begin
@@ -30,17 +30,18 @@ always@(posedge sysclk_i,negedge lock)begin
     	cnt1s <= cnt1s+1'b1;
     end
 end
-always@(posedge sysclk_i,negedge lock)begin
-	if(!lock)begin
-    	color_pattern = {12'hfff,12'hf0f,12'h00f,12'h0ff,12'h0f0,12'hff0,12'hfa0,12'h9AA};//白紫蓝青绿黄橙红76543210
-    end
-    else if(cnt1s[27])begin
-    	color_pattern = {color_pattern[47:0],color_pattern[95:48]};
-    end
-end
+assign color_pattern = {12'h742,12'h001,12'h645,12'h967,12'ha66,12'h422,12'h312,12'h524,12'hb55,12'h424,12'h634,12'ha67,12'hdcc,12'hddd,12'hdcc,12'hdbb};
+// always@(posedge sysclk_i,negedge lock)begin
+// 	if(!lock)begin
+//     	color_pattern = {12'hfff,12'hf0f,12'h00f,12'h0ff,12'h0f0,12'hff0,12'hfa0,12'h9AA};//白紫蓝青绿黄橙红76543210
+//     end
+//     else if(cnt1s[27])begin
+//     	color_pattern = {color_pattern[47:0],color_pattern[95:48]};
+//     end
+// end
 genvar i;
 generate
-    for(i=0;i<8;i=i+1)begin:color_gen
+    for(i=0;i<16;i=i+1)begin:color_gen
         assign MeanB[i] = color_pattern[i*12+:4];
         assign MeanG[i] = color_pattern[i*12+4+:4];
         assign MeanR[i] = color_pattern[i*12+8+:4];     

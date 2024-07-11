@@ -8,16 +8,16 @@ IO Statistics
   #inout                    0
 
 LUT Statistics
-#Total_luts               593
-  #lut4                   325
-  #lut5                    47
+#Total_luts               468
+  #lut4                   294
+  #lut5                    22
   #lut6                     0
   #lut5_mx41                0
-  #lut4_alu1b             221
+  #lut4_alu1b             152
 
 Utilization Statistics
-#lut                      593   out of  19600    3.03%
-#reg                      261   out of  19600    1.33%
+#lut                      468   out of  19600    2.39%
+#reg                      138   out of  19600    0.70%
 #le                         0
 #dsp                        0   out of     29    0.00%
 #bram                       1   out of     64    1.56%
@@ -34,12 +34,12 @@ Report Hierarchy Area:
 +--------------------------------------------------------------------------------------------------+
 |Instance                     |Module                 |lut     |ripple  |seq     |bram    |dsp     |
 +--------------------------------------------------------------------------------------------------+
-|top                          |fpga_ed4g              |372     |221     |262     |1       |0       |
+|top                          |fpga_ed4g              |316     |152     |139     |1       |0       |
 |  u_PLL_150M                 |PLL_150M               |1       |0       |0       |0       |0       |
-|  u_ctrl_top                 |led_ctrl_top           |202     |83      |68      |1       |0       |
-|    u_LED_send               |LED_send               |89      |28      |49      |0       |0       |
+|  u_ctrl_top                 |led_ctrl_top           |270     |43      |69      |1       |0       |
+|    u_LED_send               |LED_send               |88      |28      |49      |0       |0       |
 |    u_cdc_sbit_handshake     |cdc_sbit_handshake     |1       |0       |6       |0       |0       |
-|    u_fifo_fsm               |fifo_fsm               |43      |55      |12      |0       |0       |
-|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |69      |0       |1       |1       |0       |
+|    u_fifo_fsm               |fifo_fsm               |43      |15      |13      |0       |0       |
+|    u_hasyncfifo_ahead12to12 |hasyncfifo_ahead12to12 |138     |0       |1       |1       |0       |
 |      u_hasyncfifo_12to12    |hasyncfifo_12to12      |1       |0       |0       |1       |0       |
 +--------------------------------------------------------------------------------------------------+

@@ -45,8 +45,8 @@ add wave -noupdate -group top /tb_led_ctrl_top/uut/fifo_data_out
 add wave -noupdate -group top /tb_led_ctrl_top/uut/send_start_sync
 add wave -noupdate -group top /tb_led_ctrl_top/uut/empty_flag
 add wave -noupdate -group top /tb_led_ctrl_top/uut/cko_o
-add wave -noupdate -group clk /tb_led_ctrl_top/clk_fast
-add wave -noupdate -group clk /tb_led_ctrl_top/clk_slow
+add wave -noupdate -expand -group clk /tb_led_ctrl_top/clk_fast
+add wave -noupdate -expand -group clk /tb_led_ctrl_top/clk_slow
 add wave -noupdate /tb_led_ctrl_top/start
 add wave -noupdate /tb_led_ctrl_top/en
 add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/c_state
@@ -62,8 +62,32 @@ add wave -noupdate -color Gold /tb_led_ctrl_top/uut/sdo_o
 add wave -noupdate -radix unsigned /tb_led_ctrl_top/uut/u_LED_send/bit_cnt
 add wave -noupdate -radix unsigned /tb_led_ctrl_top/uut/u_LED_send/send_cnt
 add wave -noupdate /tb_led_ctrl_top/uut/u_LED_send/c_state
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/block_choose_real
+add wave -noupdate /tb_led_ctrl_top/uut/we
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/fifo_data
+add wave -noupdate -color Magenta /tb_led_ctrl_top/uut/u_fifo_fsm/wr_cnt
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n0
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n1
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n2
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n3
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n4
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n5
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n6
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n7
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n8
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_n9
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_na
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_nb
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_nc
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_nd
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_ne
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_nf
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_ng
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_nh
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_ni
+add wave -noupdate /tb_led_ctrl_top/uut/u_fifo_fsm/condition_nj
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {ERROR7/10 {831969605 ps} 1} {{Cursor 2} {422293143 ps} 0} {{Cursor 3} {37993704 ps} 0} {{Cursor 4} {714890000 ps} 0}
+WaveRestoreCursors {ERROR7/10 {831969605 ps} 1} {{Cursor 2} {420083466 ps} 0} {{Cursor 3} {37993704 ps} 0} {{Cursor 4} {714890000 ps} 0}
 quietly wave cursor active 2
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -79,4 +103,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {423863707 ps} {438189435 ps}
+WaveRestoreZoom {420060565 ps} {420245311 ps}
